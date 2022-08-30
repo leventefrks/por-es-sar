@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <section>
+    <article>
+      <div class="blockquote">
+        <blockquote>
+          „Budapesti por és sár kiadvány már első ránézésre elárulta, hogy
+          komoly kutatómunka rejlik mögötte, egyszerre szolgál tanulságos és
+          megmosolyogtató részletekkel Budapest fénykorát illetően.”
+        </blockquote>
+        <p>Mayer Kitti, Hype and Hyper</p>
+      </div>
+
+      <div class="blockquote">
+        <blockquote>
+          „Érdekes szembesülni azzal, hogy a Budapestet a világ egyik legszebb
+          fővárosává tévő épületek mennyi vitát és mennyi vitriolos megjegyzést
+          váltottak ki nem csak a szakértőkből, újságírókból, de nagy íróinkból
+          is
+        </blockquote>
+        <p>Karafiáth Orsolya, Magyar Narancs</p>
+      </div>
+
+      <div class="blockquote">
+        <blockquote>
+          „Mintha már akkor kiderült volna, hogy rosszat, gúnyosat írni
+          valamiről könnyebb, mint higgadtat, elemzőt. Ez volt a korai
+          kattintásvadászat”
+        </blockquote>
+        <p>Török András, Vademecum Hírlevél</p>
+      </div>
+
+      <div class="blockquote">
+        <blockquote>
+          „A Budapesti por és sár című könyvecske olyan, mint egy rajtkő: pici,
+          de messzire lehet róla ugrani.”
+        </blockquote>
+        <p>Kovács Krisztina és Bartha Dorka, Énbudapestem</p>
+      </div>
+
+      <div class="blockquote">
+        <blockquote>
+          „Csodás projekt indult: a Por és sár az elmúlt százötven év
+          legerősebb, az ország átalakulásának lépéseit ellenző, vagy épp az
+          állapota felett kesergő cikkrészleteit mutatja be.”
+        </blockquote><p>Vincze Miklós, 24.hu</p>
+      </div>
+    </article>
+  </section>
+</Layout>
+
+<style>
+  article {
+    margin: 0 auto;
+    max-width: 75ch;
+  }
+
+  .blockquote:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+
+  blockquote {
+    line-height: 1.4;
+    font-size: 1.2rem;
+  }
+
+  p {
+    position: relative;
+    font-weight: 900;
+    font-size: 1.3rem;
+    padding-left: 2rem;
+  }
+
+  p:before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+</style>

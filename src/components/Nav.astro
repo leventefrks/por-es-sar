@@ -1,0 +1,102 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<header class="header">
+  <nav>
+    <h1><a href="/">Por és sár</a></h1>
+    <ul>
+      <li>
+        <a class={currentPath === '' ? 'active' : ''} href="/"> Főoldal</a>
+      </li>
+      <li>
+        <a class={currentPath === 'blog' ? 'active' : ''} href="/blog"> Blog</a>
+      </li>
+      <li>
+        <a class={currentPath === 'rolam' ? 'active' : ''} href="/rolam">
+          Rólam
+        </a>
+      </li>
+      <li>
+        <a class={currentPath === 'media' ? 'active' : ''} href="/media">
+          Média
+        </a>
+      </li>
+      <li>
+        <a
+          class={currentPath === 'varosnezes' ? 'active' : ''}
+          href="/varosnezes"
+        >
+          Városnézés
+        </a>
+      </li>
+      <li>
+        <a
+          class={currentPath === 'kapcsolat' ? 'active' : ''}
+          href="/kapcsolat"
+        >
+          Kapcsolat
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+    opacity: 0.9;
+    isolation: isolate;
+    z-index: 1;
+    padding: 1rem 2rem;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1 > a {
+    font-family: 'Roboto Serif';
+    font-size: 2rem;
+    color: #000;
+    text-decoration: none;
+    transition: text-decoration linear 0.15s;
+  }
+
+  h1 > a:hover {
+    text-decoration: underline;
+  }
+
+  ul {
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  ul a {
+    letter-spacing: 0.1em;
+    font-size: 1.2rem;
+    color: #000;
+    text-decoration: none;
+    opacity: 0.72;
+    transition: text-shadow 0.25s ease-in opacity linear 0.15s;
+  }
+
+  .active {
+    opacity: 1;
+    text-shadow: 0 0 0.65px #000, 0 0 0.65px #000;
+  }
+
+  ul a:hover,
+  ul a:focsus {
+    opacity: 1;
+  }
+</style>

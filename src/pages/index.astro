@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import budapestiporessar_fuzet from '../images/budapestiporessar_fuzet.jpg';
+---
+
+<Layout title="Por es Sar">
+  <section>
+    <div class="jumbotron">
+      <h1>Por és sár</h1>
+      <h2>Anti városnéző füzet</h2>
+    </div>
+    <div class="hero-wrapper">
+      <img src={budapestiporessar_fuzet} alt="hero" width="500" height="500" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .hero-wrapper {
+    filter: grayscale(1);
+    height: 500px;
+    width: 500px;
+    border-radius: 4rem;
+  }
+
+  .hero-wrapper img {
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 2rem;
+  }
+
+  blockquote {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.8;
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="hu">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700&display=swap"
+    rel="stylesheet"
+  />
+  <title>Por és sár</title>
+
+  <Nav />
+  <main id="content">
+    <slot />
+  </main>
+  <Footer />
+
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 100vh;
+      padding: 10rem 0 10rem;
+      width: min(100% - 8rem, 1440px);
+      margin-inline: auto;
+    }
+  </style>
+
+</html>
