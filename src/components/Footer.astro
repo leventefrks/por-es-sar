@@ -43,11 +43,19 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
     bottom: 0;
     left: 0;
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
     justify-content: space-between;
     width: 100vw;
     background-color: #f2f2f2;
-    padding: 2rem 4rem 0.5rem;
-    height: 8rem;
+  }
+
+  @media (min-width: 700px) {
+    footer {
+      flex-direction: row;
+      padding: 2rem 4rem 1rem;
+    }
   }
 
   h3 {

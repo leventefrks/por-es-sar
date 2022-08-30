@@ -16,22 +16,29 @@ import budapestiporessar_fuzet from '../images/budapestiporessar_fuzet.jpg';
 </Layout>
 
 <style>
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 4rem;
+  }
+
+  @media (min-width: 1000px) {
+    section {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   h1 {
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: 700;
     margin-bottom: 1rem;
   }
 
-  section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-
   .hero-wrapper {
     filter: grayscale(1);
-    height: 500px;
-    width: 500px;
+    height: 100%;
+    max-width: 500px;
     border-radius: 4rem;
   }
 

@@ -11,9 +11,6 @@ const currentPath = pathname.slice(1);
         <a class={currentPath === '' ? 'active' : ''} href="/"> Főoldal</a>
       </li>
       <li>
-        <a class={currentPath === 'blog' ? 'active' : ''} href="/blog"> Blog</a>
-      </li>
-      <li>
         <a class={currentPath === 'rolam' ? 'active' : ''} href="/rolam">
           Rólam
         </a>
@@ -68,24 +65,21 @@ const currentPath = pathname.slice(1);
     font-size: 2rem;
     color: #000;
     text-decoration: none;
-    transition: text-decoration linear 0.15s;
+    transition: border linear 0.15s;
   }
 
   h1 > a:hover {
-    text-decoration: underline;
+    border-bottom: 2px solid #000;
   }
 
   ul {
     display: flex;
     gap: 2rem;
-    text-align: center;
   }
 
   ul a {
-    letter-spacing: 0.1em;
-    font-size: 1.2rem;
-    color: #000;
     text-decoration: none;
+    font-size: 1.2rem;
     opacity: 0.72;
     transition: text-shadow 0.25s ease-in opacity linear 0.15s;
   }

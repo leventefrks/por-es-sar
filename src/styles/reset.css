@@ -28,6 +28,11 @@ svg {
   max-width: 100%;
 }
 
+img,
+svg {
+  pointer-events: none;
+}
+
 input,
 button,
 textarea,
