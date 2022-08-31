@@ -10,6 +10,11 @@ h6 {
   color: #000;
 }
 
+a:focus {
+  outline: 1px dashed #000;
+  border-radius: 0.2rem;
+}
+
 blockquote,
 p {
   font-family: 'Lato';

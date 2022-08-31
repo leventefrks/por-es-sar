@@ -5,7 +5,9 @@ const currentPath = pathname.slice(1);
 
 <header class="header">
   <nav>
-    <h1><a href="/">Por és sár</a></h1>
+    <h1>
+      <a href="/">Por és sár</a>
+    </h1>
     <ul>
       <li>
         <a class={currentPath === '' ? 'active' : ''} href="/"> Főoldal</a>
@@ -56,7 +58,7 @@ const currentPath = pathname.slice(1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
@@ -80,13 +82,15 @@ const currentPath = pathname.slice(1);
   ul a {
     text-decoration: none;
     font-size: 1.2rem;
+    padding: 0.2rem 0.5rem;
     opacity: 0.72;
     transition: text-shadow 0.25s ease-in opacity linear 0.15s;
   }
 
   .active {
     opacity: 1;
-    text-shadow: 0 0 0.65px #000, 0 0 0.65px #000;
+    text-shadow: 0 0 0.85px #d88518, 0 0 0.85px #d88518;
+    color: #d88518;
   }
 
   ul a:hover,

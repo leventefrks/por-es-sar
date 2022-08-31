@@ -1,8 +1,6 @@
 ---
 import '../styles/reset.css';
 import '../styles/global.css';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
 ---
 
 <!DOCTYPE html>
@@ -21,22 +19,21 @@ import Footer from '../components/Footer.astro';
     href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Serif:opsz,wght@8..144,600;8..144,700&display=swap"
     rel="stylesheet"
   />
-  <title>Por Ès s·r</title>
+  <title>Por √©s s√°r</title>
 
-  <Nav />
   <main id="content">
     <slot />
   </main>
-  <Footer />
 
   <style>
     main {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       flex: 1;
       min-height: 100vh;
-      padding: 6rem 0 6rem;
-      width: min(100% - 8rem, 1400px);
+      width: min(100% - 3rem, 1440px);
       margin-inline: auto;
     }
   </style>
