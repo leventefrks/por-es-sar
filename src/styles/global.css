@@ -2,13 +2,14 @@
   --color-primary: #000;
   --color-secondary: #fadb85;
   --color-selection: #dabd68;
-  --font-family-primary: 'Roboto Serif';
-  --font-family-secondary: 'Lato';
-  --shadow-color: 0deg 0% 64%;
-  --shadow: 1px 1px 1.3px hsl(var(--shadow-color) / 0.56),
-    2.3px 2.3px 2.9px -1.3px hsl(var(--shadow-color) / 0.45),
-    7.2px 7.2px 9.2px -2.7px hsl(var(--shadow-color) / 0.35),
-    19.7px 19.7px 25.1px -4px hsl(var(--shadow-color) / 0.24);
+  --color-skeleton: #ddd;
+  --font-family-primary: 'Roboto Serif', serif;
+  --color-shadow: 0deg 0% 64%;
+  --font-family-secondary: 'Lato', sans-serif;
+  --shadow: 1px 1px 1.3px hsl(var(--color-shadow) / 0.56),
+    2.3px 2.3px 2.9px -1.3px hsl(var(--color-shadow) / 0.45),
+    7.2px 7.2px 9.2px -2.7px hsl(var(--color-shadow) / 0.35),
+    19.7px 19.7px 25.1px -4px hsl(var(--color-shadow) / 0.24);
 }
 
 ::selection {

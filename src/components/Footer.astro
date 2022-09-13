@@ -1,6 +1,7 @@
 ---
 const facebookUrl = 'https://www.facebook.com/poressar/';
 const instagramUrl = 'https://www.instagram.com/poressar/';
+const astroUrl = 'https://astro.build/';
 ---
 
 <footer>
@@ -9,16 +10,21 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
       <div>Copyright © 2022</div>
       <div class="tech-stack">
         <span class="built-text">
-          Built with <img
-            class="icon"
-            src="/astro-logo.svg"
-            alt="astro logo"
-            width="24"
-            height="24"
-          />
+          Built with <a
+            href={astroUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              class="icon"
+              src="/astro-logo.svg"
+              alt="astro logo"
+              width="24"
+              height="24"
+            />
+          </a>
           and <span>❤️</span>
         </span>
-        <span class="location"> Budapest - Hungary</span>
+        <span class="location"> Budapest, Hungary</span>
       </div>
     </div>
     <div class="legal-text">Minden jog fenntartva</div>
