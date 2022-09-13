@@ -1,3 +1,8 @@
+:root {
+  --color-primary: #000;
+  --color-secondary: #fadb85;
+}
+
 h1,
 h2,
 h4,
@@ -6,12 +11,8 @@ h6 {
   font-family: 'Roboto Serif';
 }
 
-* {
-  color: #000;
-}
-
 a:focus {
-  outline: 1px dashed #000;
+  outline: 1px dashed var(--color-primary);
   border-radius: 0.2rem;
 }
 

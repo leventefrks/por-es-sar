@@ -1,21 +1,33 @@
 ---
-import facebook from '../images/facebook.svg';
-import instagram from '../images/instagram.svg';
-
 const facebookUrl = 'https://www.facebook.com/poressar/';
 const instagramUrl = 'https://www.instagram.com/poressar/';
 ---
 
 <footer>
-  <div>
-    <h3>Por és sár</h3>
-    <p>Copyright © 2022 - Por és sár</p>
+  <div class="copywright-wrapper">
+    <div class="copywright">
+      <div>Copyright © 2022</div>
+      <div class="tech-stack">
+        <span class="built">
+          Built with <img
+            class="icon"
+            src="/astro-logo.svg"
+            alt="astro logo"
+            width="24"
+            height="24"
+          />
+          and <span>❤️</span>
+        </span>
+        <span class="location"> Budapest - Hungary</span>
+      </div>
+    </div>
+    <div>Minden jog fenntartva</div>
   </div>
   <ul class="social-icons">
     <li class="icon">
       <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
         <img
-          src={facebook}
+          src="/facebook-logo.svg"
           alt="facebook"
           title="facebook"
           width="32"
@@ -26,7 +38,7 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
     <li class="icon">
       <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
         <img
-          src={instagram}
+          src="/instagram-logo.svg"
           alt="instagram"
           title="instagram"
           width="32"
@@ -37,50 +49,106 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
   </ul>
 </footer>
 
-<style>
+<style lang="scss">
   footer {
-    position: relative;
     bottom: 0;
     left: 0;
     display: flex;
+    gap: 1rem;
+    padding: 1rem 1rem 1.5rem;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
     flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
     justify-content: space-between;
-    width: 100vw;
-    background-color: #f2f2f2;
-  }
+    width: 100%;
+    font-family: 'Lato';
+    background-color: var(--color-primary);
+    color: #fff;
 
-  @media (min-width: 700px) {
-    footer {
-      flex-direction: row;
-      padding: 2rem 4rem 1rem;
+    .copywright-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .copywright {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .tech-stack {
+      position: relative;
+      display: inline-flex;
+      gap: 1rem;
+
+      .built {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .location {
+        position: relative;
+      }
+
+      .built,
+      .location {
+        &:before {
+          display: none;
+          position: absolute;
+          content: '';
+          height: 24px;
+          width: 1px;
+          background-color: #fff;
+          left: -8px;
+          top: 2px;
+        }
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        flex-shrink: 0;
+        transition: transform 0.25s ease-in;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
     }
   }
 
-  h3 {
-    font-family: 'Roboto serif';
-    font-size: 1.2rem;
-  }
+  @media screen and (min-width: 700px) {
+    footer {
+      flex-direction: row;
+      gap: unset;
+      text-align: left;
+      padding: 1rem 60px;
 
-  .social-icons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
+      .copywright-wrapper {
+        justify-content: flex-start;
+      }
 
-  .icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    flex-shrink: 0;
-    transition: transform 0.25s ease-in;
-  }
-
-  .icon:hover {
-    transform: scale(1.2);
-  }
-
-  img {
-    border-radius: 5px;
+      .copywright {
+        flex-direction: row;
+      }
+      .tech-stack {
+        .built,
+        .location {
+          &:before {
+            display: block;
+          }
+        }
+      }
+    }
   }
 </style>
