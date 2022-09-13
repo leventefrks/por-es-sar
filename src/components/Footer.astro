@@ -8,7 +8,7 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
     <div class="copywright">
       <div>Copyright © 2022</div>
       <div class="tech-stack">
-        <span class="built">
+        <span class="built-text">
           Built with <img
             class="icon"
             src="/astro-logo.svg"
@@ -21,7 +21,7 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
         <span class="location"> Budapest - Hungary</span>
       </div>
     </div>
-    <div>Minden jog fenntartva</div>
+    <div class="legal-text">Minden jog fenntartva</div>
   </div>
   <ul class="social-icons">
     <li class="icon">
@@ -62,7 +62,7 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    font-family: 'Lato';
+    font-family: var(--font-family-secondary);
     background-color: var(--color-primary);
     color: #fff;
 
@@ -70,6 +70,10 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
       display: flex;
       flex-direction: column;
       gap: 5px;
+
+      .legal-text {
+        font-size: 12px;
+      }
     }
 
     .copywright {
@@ -85,12 +89,12 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
       display: inline-flex;
       gap: 10px;
 
-      .built {
+      .built-text {
         display: inline-flex;
         align-items: center;
         gap: 5px;
       }
-      .built,
+      .built-text,
       .location {
         position: relative;
         &:before {
@@ -143,7 +147,7 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
         flex-direction: row;
         gap: 1rem;
 
-        .built,
+        .built-text,
         .location {
           &:before {
             display: block;

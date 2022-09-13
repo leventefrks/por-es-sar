@@ -1,14 +1,27 @@
 :root {
   --color-primary: #000;
   --color-secondary: #fadb85;
+  --color-selection: #dabd68;
+  --font-family-primary: 'Roboto Serif';
+  --font-family-secondary: 'Lato';
+  --shadow-color: 0deg 0% 64%;
+  --shadow: 1px 1px 1.3px hsl(var(--shadow-color) / 0.56),
+    2.3px 2.3px 2.9px -1.3px hsl(var(--shadow-color) / 0.45),
+    7.2px 7.2px 9.2px -2.7px hsl(var(--shadow-color) / 0.35),
+    19.7px 19.7px 25.1px -4px hsl(var(--shadow-color) / 0.24);
+}
+
+::selection {
+  background-color: var(--color-selection);
 }
 
 h1,
 h2,
+h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto Serif';
+  font-family: var(--font-family-primary);
 }
 
 a:focus {
@@ -18,5 +31,5 @@ a:focus {
 
 blockquote,
 p {
-  font-family: 'Lato';
+  font-family: var(--font-family-secondary);
 }

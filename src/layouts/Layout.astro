@@ -1,6 +1,8 @@
 ---
 import '../styles/reset.css';
 import '../styles/global.css';
+import Features from '../components/Features.astro';
+import Introduction from '../components/Introduction.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -24,6 +26,8 @@ import Footer from '../components/Footer.astro';
 
   <main>
     <slot />
+    <Features />
+    <Introduction />
     <Footer />
   </main>
   <style is:global>
@@ -51,8 +55,7 @@ import Footer from '../components/Footer.astro';
 
     blockquote,
     p {
-      font-family: 'Lato';
-      color: ;
+      font-family: var(--font-family-primary);
     }
   </style>
 
