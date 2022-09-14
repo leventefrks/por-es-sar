@@ -1,0 +1,58 @@
+<div class="purchase">
+  <h3><strong>Megvásárolható</strong><br /> az alábbi helyeken</h3>
+  <ul class="shops"></ul>
+  <span class="divider">vagy</span>
+  <a href="" class="cta"></a>
+</div>
+
+<style lang="scss">
+  .purchase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 3rem;
+    border-radius: 20px;
+    gap: 40px;
+    background-color: var(--color-secondary);
+
+    h3 {
+      font-family: var(--font-family-secondary);
+    }
+
+    .divider {
+      position: relative;
+      font-family: var(--font-family-secondary);
+      font-size: 26px;
+      line-height: 34px;
+      text-align: center;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 50px;
+        height: 1px;
+        background-color: var(--color-primary);
+      }
+
+      &:before {
+        left: 0;
+      }
+
+      &:after {
+        right: 0;
+      }
+    }
+
+    .cta {
+      background-color: var(--color-primary);
+      font-family: var(--font-family-secondary);
+      padding: 0.5rem 2rem;
+      color: #fff;
+      border-radius: 5px;
+      border: 0;
+      text-decoration: none;
+    }
+  }
+</style>
