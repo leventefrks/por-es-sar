@@ -1,6 +1,7 @@
 ---
 import '../styles/reset.css';
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
 import Features from '../components/Features.astro';
 import Introduction from '../components/Introduction.astro';
 import Testimonials from '../components/Testimonials.astro';
@@ -27,6 +28,7 @@ import Footer from '../components/Footer.astro';
 
   <main>
     <slot />
+    <Nav />
     <Features />
     <Introduction />
     <Testimonials />

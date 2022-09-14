@@ -1,5 +1,5 @@
 <section class="testimonials">
-  <h3 class="main-title">A füzetről írták</h3>
+  <h2 class="main-title">A füzetről írták</h2>
   <div class="quote">
     <p class="text">
       Érdekes szembesülni azzal, hogy a Budapestet a világ egyik legszebb
@@ -37,16 +37,10 @@
     }
 
     .quote {
+      position: relative;
       display: flex;
       flex-direction: column;
-    }
-
-    .text {
-      position: relative;
-      margin-bottom: 1rem;
-      font-size: 32px;
-      line-height: 40px;
-      font-weight: 300;
+      margin: 0 auto;
 
       &:before {
         position: absolute;
@@ -55,6 +49,13 @@
         width: 50px;
         height: 50px;
       }
+    }
+
+    .text {
+      margin-bottom: 1rem;
+      font-size: 28px;
+      line-height: 40px;
+      font-weight: 300;
     }
 
     .author {
@@ -103,7 +104,7 @@
 
   @media screen and (min-width: 700px) {
     .testimonials {
-      padding: 5rem 165px;
+      padding: 7rem 165px;
 
       .main-title {
         margin-bottom: 4rem;

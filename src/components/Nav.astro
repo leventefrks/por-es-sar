@@ -10,18 +10,19 @@ const currentPath = pathname.slice(1);
     </h1>
     <ul>
       <li>
-        <a class={currentPath === '' ? 'active' : ''} href="/">Főoldal</a>
+        <a class={currentPath === '' && 'active'} href="/">Főoldal</a>
       </li>
       <li>
-        <a class={currentPath === 'rolam' ? 'active' : ''} href="/rolam">
-          Rólam
-        </a>
+        <a class={currentPath === 'setak' && 'active'} href="/setak"> Séták</a>
       </li>
       <li>
-        <a
-          class={currentPath === 'kapcsolat' ? 'active' : ''}
-          href="/kapcsolat"
-        >
+        <a class={currentPath === 'media' && 'active'} href="/media"> Média</a>
+      </li>
+      <li>
+        <a class={currentPath === 'rolam' && 'active'} href="/rolam">Rólam</a>
+      </li>
+      <li>
+        <a class={currentPath === 'kapcsolat' && 'active'} href="/kapcsolat">
           Kapcsolat
         </a>
       </li>
@@ -29,7 +30,7 @@ const currentPath = pathname.slice(1);
   </nav>
 </header>
 
-<style>
+<style lang="scss">
   .header {
     position: fixed;
     width: 100%;
@@ -38,50 +39,48 @@ const currentPath = pathname.slice(1);
     opacity: 0.9;
     isolation: isolate;
     z-index: 1;
-    padding: 1rem 2rem;
-  }
+    padding: 1rem 60px;
 
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
-  }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100vw;
+    }
 
-  h1 > a {
-    font-family: 'Roboto Serif';
-    font-size: 2rem;
-    color: #000;
-    text-decoration: none;
-    transition: border linear 0.15s;
-  }
+    h1 {
+      a {
+        font-family: var(--font-family-primary);
+        font-size: 2rem;
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: border linear 0.15s;
+      }
 
-  h1 > a:hover {
-    border-bottom: 2px solid #000;
-  }
+      &:hover {
+        border-bottom: 2px solid var(--color-primary);
+      }
+    }
 
-  ul {
-    display: flex;
-    gap: 2rem;
-  }
+    ul {
+      display: flex;
+      gap: 2rem;
 
-  ul a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 0.2rem 0.5rem;
-    opacity: 0.72;
-    transition: text-shadow 0.25s ease-in opacity linear 0.15s;
-  }
+      li {
+        a {
+          text-decoration: none;
+          font-size: 1.2rem;
+          padding: 0.2rem 0.5rem;
+          opacity: 0.72;
+          color: var(--color-primary);
+          font-family: var(--font-family-secondary);
+          transition: text-shadow 0.25s ease-in opacity linear 0.15s;
+        }
+      }
+    }
 
-  .active {
-    opacity: 1;
-    text-shadow: 0 0 0.85px #d88518, 0 0 0.85px #d88518;
-    color: #d88518;
-  }
-
-  ul a:hover,
-  ul a:focsus {
-    opacity: 1;
+    .active {
+      text-decoration: underline;
+    }
   }
 </style>

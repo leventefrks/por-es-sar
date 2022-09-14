@@ -19,7 +19,7 @@ const features = [
 ---
 
 <section class="features">
-  <h3 class="main-title">Több mint egy füzet</h3>
+  <h2 class="main-title">Több mint egy füzet</h2>
   <ul>
     {
       features.map(feature => {
@@ -51,7 +51,7 @@ const features = [
     .main-title {
       margin-bottom: 2rem;
       text-align: center;
-      color: var(--color-secondary);
+      color: var(--color-primary);
       font-weight: 700;
       font-size: 42px;
       line-height: 52px;
@@ -62,6 +62,7 @@ const features = [
       grid-template-columns: 1fr;
       gap: 2rem;
       align-items: center;
+      padding: 0;
 
       .feature {
         position: relative;
@@ -97,17 +98,17 @@ const features = [
         }
 
         &:first-of-type {
-          background: url('feature-iparmuveszeti-muzeum.jpeg');
+          background: url('feature-iparmuveszeti-muzeum.jpg');
           background-size: cover;
         }
 
         &:nth-of-type(2) {
-          background: url('feature-bazilika.jpeg');
+          background: url('feature-bazilika.jpg');
           background-size: cover;
         }
 
         &:last-of-type {
-          background-image: url('feature-lanchid.jpeg');
+          background-image: url('feature-lanchid.jpg');
           background-size: cover;
         }
 
@@ -134,7 +135,7 @@ const features = [
 
   @media screen and (min-width: 700px) {
     .features {
-      padding: 5rem 165px;
+      padding: 7rem 165px;
 
       .main-title {
         font-size: 60px;
