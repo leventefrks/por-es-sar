@@ -30,7 +30,6 @@ a:focus {
   border-radius: 0.2rem;
 }
 
-blockquote,
-p {
+blockquote {
   font-family: var(--font-family-secondary);
 }
