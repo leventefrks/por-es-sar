@@ -30,6 +30,14 @@ a:focus {
   border-radius: 0.2rem;
 }
 
-blockquote {
+.cta {
+  text-align: center;
+  background-color: var(--color-primary);
   font-family: var(--font-family-secondary);
+  padding: 0.5rem 2.5rem;
+  color: #fff;
+  border-radius: 5px;
+  border: 0;
+  text-decoration: none;
+  transition: all 250ms ease-in;
 }

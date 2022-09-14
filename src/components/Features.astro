@@ -20,7 +20,7 @@ const features = [
 
 <section class="features">
   <h2 class="main-title">Több mint egy füzet</h2>
-  <ul>
+  <ul class="items">
     {
       features.map(feature => {
         return (
@@ -48,7 +48,7 @@ const features = [
     padding: 2rem;
     margin: 0 auto;
 
-    ul {
+    .items {
       display: grid;
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -60,12 +60,11 @@ const features = [
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 300px;
         text-align: center;
         padding: 1rem;
         gap: 5px;
         border-radius: 10px;
-        background-color: #333;
+        background-color: var(--color-primary);
         box-shadow: var(--shadow);
         cursor: auto;
         user-select: none;
@@ -123,12 +122,13 @@ const features = [
     }
   }
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 1000px) {
     .features {
-      padding: 7rem 165px;
+      padding: 2rem 7rem;
 
-      ul {
+      .items {
         grid-template-columns: repeat(3, 300px);
+        grid-auto-flow: column;
         justify-content: space-between;
       }
     }

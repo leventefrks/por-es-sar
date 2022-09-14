@@ -4,6 +4,7 @@ import Layout from '../layouts/FullPage.astro';
 
 <Layout class="full-page">
   <div class="card">
+    <img src="/404.jpeg" alt="404 - A lap nem található" />
     <h1 class="page-not-found">404</h1>
     <p class="text">
       Lehet, hogy eltévedtél itt nincs már más csak<br />
@@ -24,14 +25,14 @@ import Layout from '../layouts/FullPage.astro';
     justify-content: flex-end;
     text-align: center;
     padding: 1rem;
-    background-color: #333;
     border-radius: 10px;
-    background-image: url('/404.jpeg');
-    background-blend-mode: overlay;
-    background-size: cover;
     max-width: 340px;
     height: 500px;
     width: 100%;
+
+    img {
+      position: absolute;
+    }
 
     &:before {
       position: absolute;
@@ -61,13 +62,5 @@ import Layout from '../layouts/FullPage.astro';
 
   .cta {
     margin-top: 2rem;
-    background-color: var(--color-primary);
-    font-family: var(--font-family-secondary);
-    padding: 0.5rem 2.5rem;
-    color: #fff;
-    border-radius: 5px;
-    border: 0;
-    text-decoration: none;
-    transition: all 250ms ease-in;
   }
 </style>

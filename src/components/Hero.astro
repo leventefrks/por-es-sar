@@ -1,0 +1,59 @@
+<div class="hero">
+  <div class="intro-text">
+    <h2 class="title">Az anti városnéző füzet</h2>
+    <p class="text">
+      „Tudd meg, elődeinknek mi minden nem tetszett hazánkban – gyengéd irónia
+      és maró gúny, örökös elégedetlenkedés és folytonos pocskondiázás!”
+    </p>
+    <a href="/" class="cta">Tovább</a>
+  </div>
+  <div class="jumbotron">
+    <img src="/hero-image.jpg" alt="por és sár" />
+  </div>
+</div>
+
+<style lang="scss">
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    padding: 0 2rem;
+    gap: 4rem;
+    height: 100vh;
+
+    .intro-text {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        margin-bottom: 0.5rem;
+        font-size: 38px;
+        font-family: var(--font-family-primary);
+      }
+
+      .text {
+        margin-bottom: 2rem;
+        font-family: var(--font-family-secondary);
+        font-weight: 300;
+        font-size: 28px;
+        line-height: 42px;
+      }
+
+      .cta {
+        width: min-content;
+      }
+    }
+
+    .jumbotron {
+      max-width: 670px;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .hero {
+      grid-template-columns: 1fr 1fr;
+      padding: 0 7rem;
+    }
+  }
+</style>
