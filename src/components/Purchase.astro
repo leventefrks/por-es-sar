@@ -38,7 +38,11 @@ const shops = [
           return (
             <li class="shop">
               <a href={shop.url} target="_blank" rel="noopener noreferrer">
-                <img src={`/purchase-${shop.src}-logo.jpg`} alt={shop.name} />
+                <img
+                  src={`/purchase-${shop.src}-logo.jpg`}
+                  alt={shop.name}
+                  loading="lazy"
+                />
               </a>
             </li>
           );

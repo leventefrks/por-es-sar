@@ -2,6 +2,17 @@
 const facebookUrl = 'https://www.facebook.com/poressar/';
 const instagramUrl = 'https://www.instagram.com/poressar/';
 const astroUrl = 'https://astro.build/';
+
+const socialIcons = [
+  {
+    name: 'facebook',
+    url: facebookUrl,
+  },
+  {
+    name: 'instagram',
+    url: instagramUrl,
+  },
+];
 ---
 
 <footer>
@@ -10,11 +21,9 @@ const astroUrl = 'https://astro.build/';
       <div>Copyright © 2022</div>
       <div class="tech-stack">
         <span class="built-text">
-          Built with <a
-            href={astroUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            ><img
+          Built with
+          <a href={astroUrl} target="_blank" rel="noopener noreferrer">
+            <img
               class="icon"
               src="/astro-logo.svg"
               alt="astro logo"
@@ -24,34 +33,30 @@ const astroUrl = 'https://astro.build/';
           </a>
           and <span>❤️</span>
         </span>
-        <span class="location"> Budapest, Hungary</span>
+        <span class="location">Budapest, Hungary</span>
       </div>
     </div>
     <div class="legal-text">Minden jog fenntartva</div>
   </div>
   <ul class="social-icons">
-    <li class="icon">
-      <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
-        <img
-          src="/facebook-logo.svg"
-          alt="facebook"
-          title="facebook"
-          width="32"
-          height="32"
-        />
-      </a>
-    </li>
-    <li class="icon">
-      <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-        <img
-          src="/instagram-logo.svg"
-          alt="instagram"
-          title="instagram"
-          width="32"
-          height="32"
-        />
-      </a>
-    </li>
+    {
+      socialIcons.map(icon => {
+        return (
+          <li class="icon">
+            <a href={icon.url} target="_blank" rel="noopener noreferrer">
+              <img
+                src={`/${icon.name}-logo.svg`}
+                alt={icon.name}
+                title={icon.name}
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </a>
+          </li>
+        );
+      })
+    }
   </ul>
 </footer>
 
