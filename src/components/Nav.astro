@@ -5,7 +5,7 @@ const currentPath = pathname.slice(1);
 
 <header class="header">
   <nav>
-    <h1>
+    <h1 class="brand-logo">
       <a href="/">Por és sár</a>
     </h1>
     <ul>
@@ -47,10 +47,10 @@ const currentPath = pathname.slice(1);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100vw;
+      width: 100%;
     }
 
-    h1 {
+    .brand-logo {
       a {
         font-family: var(--font-family-primary);
         font-size: 2.5rem;
