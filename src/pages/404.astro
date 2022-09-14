@@ -27,6 +27,7 @@ import FullPage from '../layouts/FullPage.astro';
     background-color: #333;
     border-radius: 10px;
     background-image: url('/404.jpeg');
+    background-blend-mode: overlay;
     background-size: cover;
     max-width: 340px;
     height: 500px;
@@ -39,7 +40,8 @@ import FullPage from '../layouts/FullPage.astro';
       height: 100%;
       left: -3rem;
       top: -3rem;
-      background: url('rectangle-grid--gray.svg') no-repeat;
+      background-image: url('/rectangle-grid--gray.svg');
+      background-repeat: no-repeat;
     }
 
     h1 {
@@ -50,6 +52,7 @@ import FullPage from '../layouts/FullPage.astro';
     p {
       color: #fff;
       font-size: 28px;
+      font-family: var(--font-family-secondary);
       strong {
         font-size: 34px;
       }
@@ -60,10 +63,11 @@ import FullPage from '../layouts/FullPage.astro';
     margin-top: 2rem;
     background-color: var(--color-primary);
     font-family: var(--font-family-secondary);
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 2.5rem;
     color: #fff;
     border-radius: 5px;
     border: 0;
     text-decoration: none;
+    transition: all 250ms ease-in;
   }
 </style>
