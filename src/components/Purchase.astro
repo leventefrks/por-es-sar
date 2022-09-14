@@ -1,58 +1,155 @@
-<div class="purchase">
-  <h3><strong>Megvásárolható</strong><br /> az alábbi helyeken</h3>
-  <ul class="shops"></ul>
-  <span class="divider">vagy</span>
-  <a href="" class="cta"></a>
-</div>
+---
+const shops = [
+  {
+    name: 'Írók boltja',
+    url: 'https://irokboltja.hu/',
+    src: 'irokboltja',
+  },
+  {
+    name: 'Hype and Hyper',
+    url: 'https://hypeandhyper.com/',
+    src: 'hypeandhyper',
+  },
+  {
+    name: 'ISBN',
+    url: 'https://www.isbnbooks.hu/',
+    src: 'isbn',
+  },
+  {
+    name: 'Urbanum',
+    url: 'https://urbanum.hu/',
+    src: 'urbanum',
+  },
+];
+---
+
+<section class="purchase">
+  <h2 class="main-title">
+    Ezentúl máshogy fogod látni a fővárost és nevezetességeit
+  </h2>
+  <div class="card">
+    <h3>
+      <strong>Megvásárolható</strong><br />
+      <span>az alábbi helyeken</span>
+    </h3>
+    <ul class="shops">
+      {
+        shops.map(shop => {
+          return (
+            <li class="shop">
+              <a href={shop.url} target="_blank" rel="noopener noreferrer">
+                <img src={`/purchase-${shop.src}-logo.jpg`} alt={shop.name} />
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+    <span class="divider">vagy</span>
+    <a href="mailto:poressar@gmail.com" class="cta">Írj nekem</a>
+  </div>
+</section>
 
 <style lang="scss">
   .purchase {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 3rem;
-    border-radius: 20px;
-    gap: 40px;
-    background-color: var(--color-secondary);
+    position: relative;
+    max-width: 1210px;
+    min-width: 100%;
+    padding: 2rem;
+    margin: 0 auto;
 
-    h3 {
-      font-family: var(--font-family-secondary);
-    }
-
-    .divider {
-      position: relative;
-      font-family: var(--font-family-secondary);
-      font-size: 26px;
-      line-height: 34px;
+    .main-title {
+      margin-bottom: 4rem;
       text-align: center;
-
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        width: 50px;
-        height: 1px;
-        background-color: var(--color-primary);
-      }
-
-      &:before {
-        left: 0;
-      }
-
-      &:after {
-        right: 0;
-      }
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: 42px;
+      line-height: 52px;
     }
 
-    .cta {
-      background-color: var(--color-primary);
-      font-family: var(--font-family-secondary);
-      padding: 0.5rem 2rem;
-      color: #fff;
-      border-radius: 5px;
-      border: 0;
-      text-decoration: none;
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 3rem;
+      border-radius: 20px;
+      gap: 2rem;
+      max-width: 525px;
+      width: 100%;
+      background-color: var(--color-secondary);
+
+      h3 {
+        text-align: center;
+        font-family: var(--font-family-secondary);
+
+        strong {
+          font-size: 30px;
+        }
+
+        span {
+          font-size: 26px;
+          font-weight: 400;
+        }
+      }
+
+      .shops {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .divider {
+        position: relative;
+        font-family: var(--font-family-secondary);
+        font-size: 26px;
+        line-height: 34px;
+        text-align: center;
+
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          width: 150px;
+          height: 1px;
+          background-color: var(--color-primary);
+        }
+
+        &:before {
+          left: 5rem;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &:after {
+          right: 5rem;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      .cta {
+        text-align: center;
+        min-width: 100%;
+        background-color: var(--color-primary);
+        font-family: var(--font-family-secondary);
+        padding: 0.6rem 1rem;
+        color: #fff;
+        font-size: 24px;
+        border-radius: 5px;
+        border: 0;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .purchase {
+      .main-title {
+        margin-bottom: 4rem;
+        font-size: 60px;
+      }
     }
   }
 </style>

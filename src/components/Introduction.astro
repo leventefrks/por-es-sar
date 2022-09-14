@@ -3,7 +3,7 @@ const facebookUrl = 'https://www.facebook.com/poressar/';
 const instagramUrl = 'https://www.instagram.com/poressar/';
 ---
 
-<div class="introduction">
+<section class="introduction">
   <h2 class="main-title">por és sár</h2>
   <p class="text">
     „Tudd meg, elődeinknek mi minden nem tetszett hazánkban – gyengéd irónia és
@@ -25,33 +25,41 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
   <p class="text">
     A por és a sár pedig egyszerre a szó szoros értelmében vett valóság, amely
     megkeseríti az emberek életét, illetve a rossz ötleteket, elhibázott
-    megvalósításokat és az elmaradottságot megjelenítő szimbólum. A projekt
-    végül kiadvány és séta formájában is formát öltött: 2021-ben megjelent a
-    Budapesti por és sár antivárosnéző füzet, 2022 óta pedig budapesti
-    antivárosnéző sétán is részt lehet venni.
+    megvalósításokat és az elmaradottságot megjelenítő szimbólum. <br />A
+    projekt végül kiadvány és séta formájában is formát öltött: 2021-ben
+    megjelent a Budapesti por és sár antivárosnéző füzet, 2022 óta pedig
+    budapesti antivárosnéző sétán is részt lehet venni.
   </p>
-</div>
+</section>
 
 <style lang="scss">
   .introduction {
     position: relative;
     max-width: 1210px;
     min-width: 100%;
-    padding: 2rem;
+    padding: 7rem;
     margin: 0 auto;
     background-color: var(--color-secondary);
 
-    // &:before {
-    //   position: absolute;
-    //   content: '';
-    //   top: 0;
-    //   left: 0;
-    //   background-image: url('torn-paper.jpg');
-    //   background-size: 100%;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-repeat: no-repeat;
-    // }
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      background: url('/torn-ripped-paper.svg') no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 140px;
+    }
+
+    &:before {
+      top: -1px;
+      transform: rotate(180deg);
+    }
+
+    &:after {
+      bottom: -1px;
+    }
 
     .main-title {
       margin-bottom: 4rem;
@@ -81,7 +89,7 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
 
   @media screen and (min-width: 700px) {
     .introduction {
-      padding: 7rem 165px;
+      padding: 9rem 165px;
 
       .main-title {
         margin-bottom: 4rem;
