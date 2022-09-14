@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FullPage from '../layouts/FullPage.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
@@ -9,12 +10,14 @@ import Purchase from '../components/Purchase.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
+<FullPage>
   <Nav />
   <Hero />
-  <Features />
-  <Introduction />
-  <Testimonials />
-  <Purchase />
-  <Footer />
-</Layout>
+  <Layout>
+    <Features />
+    <Introduction />
+    <Testimonials />
+    <Purchase />
+    <Footer />
+  </Layout>
+</FullPage>
