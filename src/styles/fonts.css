@@ -69,10 +69,10 @@
 
 @font-face {
   font-family: 'Lato';
-  src: url('Lato-Black.eot');
-  src: url('Lato-Black.eot?#iefix') format('embedded-opentype'),
-    url('Lato-Black.woff2') format('woff2'),
-    url('Lato-Black.woff') format('woff');
+  src: url('../fonts/Lato-Black.eot');
+  src: url('../fonts/Lato-Black.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Lato-Black.woff2') format('woff2'),
+    url('../fonts/Lato-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -80,10 +80,10 @@
 
 @font-face {
   font-family: 'Lato';
-  src: url('Lato-Light.eot');
-  src: url('Lato-Light.eot?#iefix') format('embedded-opentype'),
-    url('Lato-Light.woff2') format('woff2'),
-    url('Lato-Light.woff') format('woff');
+  src: url('../fonts/Lato-Light.eot');
+  src: url('../fonts/Lato-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Lato-Light.woff2') format('woff2'),
+    url('../fonts/Lato-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -91,9 +91,10 @@
 
 @font-face {
   font-family: 'Lato';
-  src: url('Lato-Bold.eot');
-  src: url('Lato-Bold.eot?#iefix') format('embedded-opentype'),
-    url('Lato-Bold.woff2') format('woff2'), url('Lato-Bold.woff') format('woff');
+  src: url('../fonts/Lato-Bold.eot');
+  src: url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Lato-Bold.woff2') format('woff2'),
+    url('../fonts/Lato-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -101,10 +102,10 @@
 
 @font-face {
   font-family: 'Lato';
-  src: url('Lato-Regular.eot');
-  src: url('Lato-Regular.eot?#iefix') format('embedded-opentype'),
-    url('Lato-Regular.woff2') format('woff2'),
-    url('Lato-Regular.woff') format('woff');
+  src: url('../fonts/Lato-Regular.eot');
+  src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Lato-Regular.woff2') format('woff2'),
+    url('../fonts/Lato-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

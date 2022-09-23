@@ -3,6 +3,7 @@ import '../styles/reset.css';
 import '../styles/global.css';
 import FullPage from '../layouts/FullPage.astro';
 import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 
 const infos = [
   {
@@ -32,16 +33,6 @@ const infos = [
   },
 ];
 ---
-
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 <FullPage>
   <Nav />
@@ -77,19 +68,20 @@ const infos = [
       }
     </ul>
   </section>
+  <Footer />
 </FullPage>
 
 <style lang="scss">
   .about-me {
     max-width: 80rem;
     width: 100%;
-    padding: 8rem;
+    padding: 10rem 7rem;
     margin: 0 auto;
 
     article {
       display: grid;
       grid-template-columns: 1fr;
-      margin-bottom: 4rem;
+      margin: 4rem 0 4rem;
       gap: 2rem;
     }
 
@@ -133,8 +125,8 @@ const infos = [
         content: '';
         width: 300px;
         height: 300px;
-        bottom: -2rem;
-        left: -2rem;
+        bottom: -3rem;
+        left: -2.5rem;
         background: url('/rectangle-grid--yellow.svg') no-repeat;
       }
 
@@ -156,6 +148,8 @@ const infos = [
       display: flex;
       flex-direction: column;
       gap: 2rem;
+      max-width: 85ch;
+      margin: 0 auto;
 
       .year {
         margin-bottom: 1rem;

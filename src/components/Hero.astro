@@ -8,7 +8,7 @@
     <a href="/" class="cta">Tovább</a>
   </div>
   <div class="jumbotron">
-    <img src="/hero-image.jpg" alt="por és sár" />
+    <img src="/hero-image.jpg" class="hero-image" alt="por és sár" />
   </div>
 </div>
 
@@ -26,9 +26,20 @@
       max-width: 500px;
 
       .title {
+        position: relative;
         margin-bottom: 0.5rem;
         font-size: 32px;
         font-family: var(--font-family-primary);
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: -3rem;
+          left: -3rem;
+          width: 64px;
+          height: 100%;
+          background: url('./rectangle-small--gray.svg') no-repeat;
+        }
       }
 
       .text {
@@ -44,6 +55,7 @@
       position: relative;
       width: 100%;
       height: 100vh;
+      isolation: isolate;
 
       &:before {
         position: absolute;
@@ -54,17 +66,30 @@
         background: linear-gradient(
           180deg,
           rgba(250, 219, 133, 1) 61%,
-          rgba(255, 255, 255, 1) 85%
+          #ffffff 85%
         );
       }
 
-      img {
+      &:after {
         position: absolute;
+        content: '';
+        bottom: 8rem;
+        right: 6.5rem;
+        width: 341px;
+        height: 348px;
+        z-index: 1;
+        background: url('./rectangle-grid--gray.svg') no-repeat;
+      }
+
+      .hero-image {
+        position: relative;
         top: 50%;
         left: -10%;
         transform: translateY(-50%);
         aspect-ratio: 1.42;
         border-radius: 10px;
+        isolation: isolate;
+        z-index: 2;
         width: clamp(10vw, 50vw, 500px);
       }
     }
