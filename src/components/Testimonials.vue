@@ -1,41 +1,27 @@
 <template>
   <section class="testimonials">
     <h2 class="main-title">A füzetről írták</h2>
-    <transition-group tag="ul" name="slide">
-      <li
-        v-for="(item, index) in items"
-        v-bind:key="item.src"
-        class="quote-slider"
-      >
-        <div v-show="active === index" class="quote">
-          <p class="text">{{ item.quote }}</p>
-          <div class="author">
-            <img
-              :src="`/${item.src}.jpeg`"
-              :alt="item.name"
-              class="profile"
-              width="80"
-              height="80"
-              loading="lazy"
-            />
-            <span class="name">{{ item.name }}</span>
-            <span class="position">{{ item.company }}</span>
-          </div>
-        </div>
-      </li>
-    </transition-group>
+    <transition mode="out-in" name="fade" tag="div">
+      <Quote :key="currentItem.id" :current-item="currentItem" />
+    </transition>
   </section>
 </template>
 
 <script>
+import Quote from './Quote.vue';
+
 const Testimonials = {
   name: 'Testimonials',
 
+  components: {
+    Quote,
+  },
+
   data() {
     return {
-      active: 0,
       items: [
         {
+          id: 0,
           quote:
             'Érdekes szembesülni azzal, hogy a Budapestet a világ egyik legszebb fővárosává tévő épületek mennyi vitát és mennyi vitriolos megjegyzést váltottak ki nem csak a szakértőkből, újságírókból, de nagy íróinkból is',
           src: 'karafiath-orsolya',
@@ -43,6 +29,7 @@ const Testimonials = {
           company: 'Magyar Narancs',
         },
         {
+          id: 1,
           quote:
             'Mintha már akkor kiderült volna, hogy rosszat, gúnyosat írni valamiről könnyebb, mint higgadtat, elemzőt. Ez volt a korai kattintásvadászat.',
           src: 'torok-andras',
@@ -50,6 +37,7 @@ const Testimonials = {
           company: 'Vademecum Hírlevél',
         },
         {
+          id: 2,
           quote:
             'A Budapesti por és sár kiadvány már első ránézésre elárulta, hogy komoly kutatómunka rejlik mögötte, egyszerre szolgál tanulságos és megmosolyogtató részletekkel Budapest fénykorát illetően.',
           src: 'mayer-kitti',
@@ -58,26 +46,35 @@ const Testimonials = {
         },
       ],
       interval: null,
+      currentIndex: 0,
     };
   },
 
   mounted() {
-    this.interval = setInterval(() => {
-      if (this.active >= this.totalItems) {
-        this.active = 0;
-      } else {
-        this.active++;
-      }
-    }, 4000);
+    this.startSlide();
   },
 
-  destroy() {
-    clearInterval(this.interval);
+  beforeDestroy() {
+    if (this.interval) clearInterval(this.interval);
+  },
+
+  methods: {
+    startSlide() {
+      this.interval = setInterval(this.next, 4000);
+    },
+
+    next() {
+      if (this.items.length - 1 <= this.currentIndex) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
+    },
   },
 
   computed: {
-    totalItems() {
-      return this.items.length - 1;
+    currentItem() {
+      return this.items[this.currentIndex];
     },
   },
 };
@@ -88,83 +85,24 @@ export default Testimonials;
 <style lang="scss">
 .testimonials {
   max-width: 70rem;
+  width: 100%;
   padding: 2rem;
   margin: 0 auto;
-
-  .quote-slider {
-    position: relative;
-  }
-
-  .quote {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-  }
-
-  .text {
-    margin-bottom: 1rem;
-    font-size: 24px;
-    font-weight: 300;
-    font-family: var(--font-family-secondary);
-  }
-
-  .author {
-    align-self: flex-end;
-    display: grid;
-    grid-template-columns: 1fr;
-    font-family: var(--font-family-secondary);
-
-    .image-wrapper {
-      margin-bottom: 5px;
-      width: 80px;
-      height: 80px;
-    }
-
-    .profile {
-      margin-bottom: 10px;
-      border-radius: 50%;
-      filter: grayscale(0.95);
-      background-color: var(--color-skeleton);
-      user-select: none;
-    }
-
-    .name {
-      font-size: 28px;
-      line-height: 32px;
-      font-weight: 900;
-    }
-
-    .position {
-      display: flex;
-      align-items: center;
-      position: relative;
-      font-size: 16px;
-      padding-left: 35px;
-
-      &:before {
-        position: absolute;
-        content: '';
-        width: 20px;
-        height: 2px;
-        left: 0;
-        background-color: var(--color-primary);
-      }
-    }
-  }
 }
 
-.slide-enter-active,
-.slide-leave-active {
-  transition: left 0.5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 500ms ease-in-out;
 }
 
-.slide-enter {
-  left: 100%;
+.fade-enter {
+  opacity: 1;
+  transform: translateX(-100px);
 }
 
-.slide-leave-to {
-  left: -100%;
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(100px);
 }
 
 @media screen and (min-width: 700px) {
