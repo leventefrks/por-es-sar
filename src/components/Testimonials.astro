@@ -1,26 +1,82 @@
 <section class="testimonials">
   <h2 class="main-title">A füzetről írták</h2>
-  <div class="quote">
-    <p class="text">
-      Érdekes szembesülni azzal, hogy a Budapestet a világ egyik legszebb
-      fővárosává tévő épületek mennyi vitát és mennyi vitriolos megjegyzést
-      váltottak ki nem csak a szakértőkből, újságírókból, de nagy íróinkból is.
-    </p>
-    <div class="author">
-      <img
-        src="/karafiath-orsolya.jpeg"
-        alt="Karafiáth Orsolya"
-        class="profile"
-        width="80"
-        height="80"
-        alt="name"
-        loading="lazy"
-      />
-      <span class="name">Karafiath Orsolya</span>
-      <span class="position">Magyar Narancs</span>
-    </div>
-  </div>
+  <transition-group
+    tag="div"
+    v-bind:name="direction > 0 ? 'slide' : 'slide-invert'"
+    class="slider_list"
+  >
+    <template
+      v-for="({name, src, company}, index) in items"
+      v-bind:key="src"
+      v-show="index === active"
+    >
+      <div class="quote">
+        <p class="text">
+          Érdekes szembesülni azzal, hogy a Budapestet a világ egyik legszebb
+          fővárosává tévő épületek mennyi vitát és mennyi vitriolos megjegyzést
+          váltottak ki nem csak a szakértőkből, újságírókból, de nagy íróinkból
+          is.
+        </p>
+        <div class="author">
+          <img
+            src="/karafiath-orsolya.jpeg"
+            alt="Karafiáth Orsolya"
+            class="profile"
+            width="80"
+            height="80"
+            alt="name"
+            loading="lazy"
+          />
+          <span class="name">Karafiath Orsolya</span>
+          <span class="position">Magyar Narancs</span>
+        </div>
+      </div>
+    </template>
+  </transition-group>
 </section>
+
+<script>
+  const TESTIMONIALS = [
+    {
+      quote: '',
+      src: 'karafiath-orsolya',
+      name: 'Karafiáth Orsolya',
+      company: 'Magyar Narancs',
+    },
+    {
+      quote: '',
+      src: 'torok-andras',
+      name: 'Török András',
+      company: 'Vademecum Hírlevél',
+    },
+  ];
+
+  const Testimonials = {
+    name: 'Testimonials',
+
+    data() {
+      return {
+        items: TESTIMONIALS,
+        active: 0,
+        direction: 1,
+      };
+    },
+
+    computed: {
+      total() {
+        return this.imgList.length;
+      },
+    },
+    methods: {
+      change(index) {
+        this.direction = index > this.active ? 1 : -1;
+        this.active = (index + this.total) % this.total;
+      },
+    },
+  };
+
+  export default Testimonials;
+</script>
 
 <style lang="scss">
   .testimonials {
@@ -68,6 +124,7 @@
       }
 
       .profile {
+        margin-bottom: 10px;
         border-radius: 50%;
         filter: grayscale(0.95);
         background-color: var(--color-skeleton);
