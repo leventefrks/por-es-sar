@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('../fonts/RobotoSerif-Black.eot');
+  src: url('../fonts/RobotoSerif-Black.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/RobotoSerif-Black.woff2') format('woff2'),
+    url('../fonts/RobotoSerif-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('../fonts/RobotoSerif-Bold.eot');
+  src: url('../fonts/RobotoSerif-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/RobotoSerif-Bold.woff2') format('woff2'),
+    url('../fonts/RobotoSerif-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('../fonts/RobotoSerif-ExtraBold.eot');
+  src: url('../fonts/RobotoSerif-ExtraBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/RobotoSerif-ExtraBold.woff2') format('woff2'),
+    url('../fonts/RobotoSerif-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('../fonts/RobotoSerif-SemiBold.eot');
+  src: url('../fonts/RobotoSerif-SemiBold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/RobotoSerif-SemiBold.woff2') format('woff2'),
+    url('../fonts/RobotoSerif-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('../fonts/RobotoSerif-Regular.eot');
+  src: url('../fonts/RobotoSerif-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/RobotoSerif-Regular.woff2') format('woff2'),
+    url('../fonts/RobotoSerif-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('../fonts/RobotoSerif-Light.eot');
+  src: url('../fonts/RobotoSerif-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/RobotoSerif-Light.woff2') format('woff2'),
+    url('../fonts/RobotoSerif-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
