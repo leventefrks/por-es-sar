@@ -72,6 +72,10 @@ const features = [
         isolation: isolate;
         transition: transform 150ms ease-in;
 
+        &:hover {
+          transform: scale(1.1);
+        }
+
         &:before {
           content: '';
           position: absolute;
@@ -83,23 +87,22 @@ const features = [
           z-index: -1;
         }
 
-        &:hover {
-          transform: scale(1.05);
+        &:first-of-type,
+        &:nth-of-type(2),
+        &:last-of-type {
+          background-size: cover;
         }
 
         &:first-of-type {
           background: url('/feature-iparmuveszeti-muzeum.jpg');
-          background-size: cover;
         }
 
         &:nth-of-type(2) {
           background: url('/feature-bazilika.jpg');
-          background-size: cover;
         }
 
         &:last-of-type {
           background-image: url('/feature-lanchid.jpg');
-          background-size: cover;
         }
 
         .icon {
