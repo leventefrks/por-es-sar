@@ -16,6 +16,7 @@
     "vue": "^3.2.37"
   },
   "dependencies": {
-    "@fontsource/roboto-serif": "^4.5.8"
+    "autoprefixer": "^10.4.12",
+    "cssnano": "^5.1.13"
   }
 }
