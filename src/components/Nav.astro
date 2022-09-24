@@ -26,25 +26,30 @@ const navItems = [
   document.addEventListener('DOMContentLoaded', () => {
     const headerEffect = () => {
       const header = document.querySelector('.header');
-      const target = document.querySelector('.hero');
 
-      const options = {
-        root: null,
-        rootMargin: '-20px',
-        threshold: 0.75,
-      };
+      if ('IntersectionObserver' in window) {
+        const target = document.querySelector('.hero');
 
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            header.classList.remove('header--white');
-          } else {
-            header.classList.add('header--white');
-          }
-        });
-      }, options);
+        const options = {
+          root: null,
+          rootMargin: '-20px',
+          threshold: 0.75,
+        };
 
-      observer.observe(target);
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              header.classList.remove('header--white');
+            } else {
+              header.classList.add('header--white');
+            }
+          });
+        }, options);
+
+        observer.observe(target);
+      }
+
+      header.classList.add('header--white');
     };
 
     headerEffect();
