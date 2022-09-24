@@ -88,6 +88,7 @@ export default Testimonials;
   width: 100%;
   padding: 2rem;
   margin: 0 auto;
+  content-visibility: auto;
 }
 
 .fade-enter-active,

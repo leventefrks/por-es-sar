@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <div class="quote">
-      <p class="text">{{ currentItem.quote }}</p>
-      <div class="author">
-        <img
-          :src="`/${currentItem.src}.jpeg`"
-          :alt="currentItem.name"
-          class="profile"
-          :width="80"
-          :height="80"
-        />
-        <span class="name">{{ currentItem.name }}</span>
-        <span class="position">{{ currentItem.company }}</span>
-      </div>
+  <div class="quote">
+    <p class="text">{{ currentItem.quote }}</p>
+    <div class="author">
+      <img
+        :src="`/${currentItem.src}.jpeg`"
+        :alt="currentItem.name"
+        class="profile"
+        :width="80"
+        :height="80"
+      />
+      <span class="name">{{ currentItem.name }}</span>
+      <span class="position">{{ currentItem.company }}</span>
     </div>
   </div>
 </template>
