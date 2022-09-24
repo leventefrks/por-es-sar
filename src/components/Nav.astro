@@ -22,6 +22,35 @@ const navItems = [
 ];
 ---
 
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const headerEffect = () => {
+      const header = document.querySelector('.header');
+      const target = document.querySelector('.hero');
+
+      const options = {
+        root: null,
+        rootMargin: '-20px',
+        threshold: 0.75,
+      };
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            header.classList.remove('header--white');
+          } else {
+            header.classList.add('header--white');
+          }
+        });
+      }, options);
+
+      observer.observe(target);
+    };
+
+    headerEffect();
+  });
+</script>
+
 <header class="header">
   <nav>
     <h1 class="brand-logo">
@@ -52,23 +81,22 @@ const navItems = [
 <style lang="scss">
   .header {
     position: fixed;
+    top: 0;
     width: 100%;
     max-width: 1440px;
-    margin-inline: auto;
     display: flex;
-    top: 0;
-    background: #fff;
-    isolation: isolate;
-    opacity: 1;
-    z-index: 1;
+    margin-inline: auto;
     height: 60px;
-    overflow: hidden;
     padding: 1rem 7rem;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    backdrop-filter: blur(0px);
+    isolation: isolate;
+    z-index: 1;
+    transition: all 250ms ease-in-out;
 
     &--white {
-      background-color: #fff;
-      opacity: 0.9;
+      background-color: #ffffffe6;
+      backdrop-filter: blur(4px);
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 10px 0px;
     }
 
     nav {
