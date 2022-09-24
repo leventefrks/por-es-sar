@@ -63,14 +63,14 @@ const navItems = [
     </h1>
     <ul class="nav-items">
       <li class="nav-item">
-        <a class={currentPath === '' && 'active'} href="/">Főoldal</a>
+        <a class={currentPath === '' ? 'active' : ''} href="/">Főoldal</a>
       </li>
       {
         navItems.map(item => {
           return (
             <li class="nav-item">
               <a
-                class={currentPath === item.route && 'active'}
+                class={currentPath === item.route ? 'active' : ''}
                 href={`/${item.route}`}
               >
                 {item.name}
