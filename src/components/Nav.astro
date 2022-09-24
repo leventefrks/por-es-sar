@@ -1,6 +1,8 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
+const title = 'por és sár';
+const mainPage = 'Főoldal';
 
 const navItems = [
   {
@@ -59,11 +61,11 @@ const navItems = [
 <header class="header">
   <nav>
     <h1 class="brand-logo">
-      <a href="/">por és sár</a>
+      <a href="/">{title}</a>
     </h1>
     <ul class="nav-items">
       <li class="nav-item">
-        <a class={currentPath === '' ? 'active' : ''} href="/">Főoldal</a>
+        <a class={currentPath === '' ? 'active' : ''} href="/">{mainPage}</a>
       </li>
       {
         navItems.map(item => {
