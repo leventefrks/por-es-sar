@@ -47,7 +47,7 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
 <style lang="scss">
   .media {
     max-width: 80rem;
-    padding: 8rem 2rem;
+    padding: 2rem;
     margin: 0 auto;
     .title {
       font-family: var(--font-family-primary);
@@ -76,7 +76,13 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
     }
 
     .video-player {
-      border: none;
+      margin: 0 auto;
+      max-width: 500px;
+      width: 100%;
+
+      iframe {
+        border: 0;
+      }
     }
   }
 
