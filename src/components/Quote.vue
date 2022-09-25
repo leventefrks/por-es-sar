@@ -1,16 +1,16 @@
 <template>
   <div class="quote">
-    <p class="text">{{ currentItem.quote }}</p>
+    <p class="text">{{ currentQuote.quote }}</p>
     <div class="author">
       <img
-        :src="`/${currentItem.src}.jpeg`"
-        :alt="currentItem.name"
+        :src="`/${currentQuote.src}.jpeg`"
+        :alt="currentQuote.name"
         class="profile"
         :width="80"
         :height="80"
       />
-      <span class="name">{{ currentItem.name }}</span>
-      <span class="position">{{ currentItem.company }}</span>
+      <span class="name">{{ currentQuote.name }}</span>
+      <span class="position">{{ currentQuote.company }}</span>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ const Quote = {
   name: 'Quote',
 
   props: {
-    currentItem: {
+    currentQuote: {
       type: Object,
       default: () => ({}),
     },
@@ -32,7 +32,7 @@ export default Quote;
 
 <style lang="scss">
 .quote {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -54,31 +54,24 @@ export default Quote;
 .text {
   margin-bottom: 1rem;
   font-size: 24px;
-  font-weight: 300;
   font-family: var(--font-family-secondary);
 }
 
 .author {
   align-self: flex-end;
-  display: grid;
-  grid-template-columns: 1fr;
+  margin-right: 1.5rem;
   font-family: var(--font-family-secondary);
-
-  .image-wrapper {
-    margin-bottom: 5px;
-    width: 80px;
-    height: 80px;
-  }
 
   .profile {
     margin-bottom: 10px;
     border-radius: 50%;
-    filter: grayscale(0.95);
+    filter: grayscale(95%);
     background-color: var(--color-skeleton);
     user-select: none;
   }
 
   .name {
+    font-family: var(--font-family-secondary);
     font-size: 28px;
     line-height: 32px;
     font-weight: 900;

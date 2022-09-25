@@ -1,8 +1,8 @@
 <template>
   <section class="testimonials">
     <h2 class="main-title">A füzetről írták</h2>
-    <transition mode="out-in" name="fade" tag="div">
-      <Quote :key="currentItem.id" :current-item="currentItem" />
+    <transition mode="out-in" name="fade">
+      <Quote :key="currentQuote.id" :current-quote="currentQuote" />
     </transition>
   </section>
 </template>
@@ -50,8 +50,8 @@ const Testimonials = {
     };
   },
 
-  mounted() {
-    this.startSlide();
+  created() {
+    this.onStartQuoteSlide();
   },
 
   beforeDestroy() {
@@ -59,21 +59,19 @@ const Testimonials = {
   },
 
   methods: {
-    startSlide() {
-      this.interval = setInterval(this.next, 4000);
-    },
-
-    next() {
-      if (this.items.length - 1 <= this.currentIndex) {
-        this.currentIndex = 0;
-      } else {
-        this.currentIndex++;
-      }
+    onStartQuoteSlide() {
+      this.interval = setInterval(() => {
+        if (this.items.length - 1 <= this.currentIndex) {
+          this.currentIndex = 0;
+        } else {
+          this.currentIndex++;
+        }
+      }, 3500);
     },
   },
 
   computed: {
-    currentItem() {
+    currentQuote() {
       return this.items[this.currentIndex];
     },
   },
@@ -84,6 +82,7 @@ export default Testimonials;
 
 <style lang="scss">
 .testimonials {
+  position: relative;
   max-width: 70rem;
   width: 100%;
   padding: 2rem;
@@ -93,22 +92,27 @@ export default Testimonials;
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 500ms ease-in-out;
+  transition: all 800ms ease-in;
 }
 
-.fade-enter {
+.fade-enter-to,
+.fade-leave-to {
   opacity: 1;
-  transform: translateX(-100px);
 }
 
+.fade-enter-from,
+.fade-leave-to {
+  transform: translateX(35px);
+}
+
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-  transform: translateX(100px);
 }
 
 @media screen and (min-width: 700px) {
   .testimonials {
-    padding: 8rem 7rem;
+    padding: 8rem 7rem 18rem;
 
     .quote {
       &:before {

@@ -1,6 +1,4 @@
 ---
-import '../styles/reset.css';
-import '../styles/global.css';
 import FullPage from '../layouts/FullPage.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -74,7 +72,6 @@ const infos = [
 <style lang="scss">
   .about-me {
     max-width: 80rem;
-    width: 100%;
     padding: 10rem 7rem;
     margin: 0 auto;
 
@@ -115,7 +112,7 @@ const infos = [
       margin: 0 auto;
 
       img {
-        filter: grayscale(1);
+        filter: grayscale(100%);
         border-radius: inherit;
       }
 

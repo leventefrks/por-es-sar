@@ -3,10 +3,127 @@ import FullPage from '../layouts/FullPage.astro';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const tours = [
+  {
+    id: 1,
+    name: 'city-tour-1',
+  },
+  {
+    id: 2,
+    name: 'city-tour-2',
+  },
+  {
+    id: 3,
+    name: 'city-tour-3',
+  },
+  {
+    id: 4,
+    name: 'city-tour-4',
+  },
+];
 ---
 
 <FullPage>
   <Nav />
-  <Layout />
+  <Layout>
+    <section class="city-tour">
+      <article>
+        <h2 class="title">Antivárosnéző séta</h2>
+        <p class="text">
+          Ha kíváncsi vagy, hogy elődeinknek mi nem tetszett és miért nem
+          tetszett az 1873 és 1914 között fokozatosan világvárossá váló
+          Budapesten, gyere el és ismerd meg az egy-másfél évszázaddal ezelőtti
+          kritikusok és elégedetlenkedők véleményét, ahogy gyengéd iróniával,
+          maró gúnnyal vagy épp keserű humorral írtak a változásokról és a város
+          új építészeti látványosságairól – amelyek ma már Budapest hangulatának
+          és városimázsának meghatározó elemei.
+        </p>
+
+        <p class="text text--thin">
+          Az antivárosnéző sétán a főváros jól ismert helyeit és alkotásait nem
+          a megszokott, feltétlen csodálat és kötelező áhítat nevében, vagy
+          sosem hallott titkok feltárásának céljából, hanem a korabeli kritika
+          szemszögéből mutatom be.
+        </p>
+      </article>
+
+      <div class="gallery">
+        {
+          tours.map(tour => {
+            return (
+              <div class="image-wrapper">
+                <img
+                  src={`${tour.name}.jpg`}
+                  alt="Városnéző séta"
+                  class="image"
+                />
+              </div>
+            );
+          })
+        }
+      </div>
+    </section>
+  </Layout>
   <Footer />
 </FullPage>
+
+<style lang="scss">
+  .city-tour {
+    max-width: 80rem;
+    padding: 8rem 2rem;
+    margin: 0 auto;
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .title {
+      font-family: var(--font-family-primary);
+      margin-bottom: 2rem;
+      font-size: 56px;
+      line-height: 70px;
+      text-align: center;
+    }
+
+    .text {
+      font-family: var(--font-family-secondary);
+      font-size: 20px;
+      line-height: 1.8;
+      font-weight: 600;
+      max-width: 65ch;
+      margin: 0 auto;
+
+      &--thin {
+        font-weight: 400;
+      }
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 450px));
+      place-content: center;
+      gap: 2rem;
+      margin-top: 4rem;
+
+      .image-wrapper {
+        padding: 1rem;
+        border-radius: 3px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 10px 0px;
+        .image {
+          border-radius: inherit;
+          object-fit: cover;
+          aspect-ratio: 1 / 1;
+          filter: grayscale(100%);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .city-tour {
+      padding: 8rem 7rem;
+    }
+  }
+</style>
