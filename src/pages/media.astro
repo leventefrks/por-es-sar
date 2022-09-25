@@ -3,10 +3,86 @@ import FullPage from '../layouts/FullPage.astro';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const urbanumUrl = 'https://urbanum.hu/';
+const wikipediaUrl =
+  'https://hu.wikipedia.org/wiki/T%C3%B6r%C3%B6k_Andr%C3%A1s_(m%C5%B1vel%C5%91d%C3%A9st%C3%B6rt%C3%A9n%C3%A9sz)';
+const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
 ---
 
 <FullPage>
   <Nav />
-  <Layout />
+  <Layout>
+    <section class="media">
+      <article>
+        <h2 class="title">Szép (volt) Budapest?!</h2>
+        <h3 class="sub-title">Beszélgetés a Budapesti por és sárról</h3>
+        <p class="text">
+          2022. június 20-án <a
+            href={urbanumUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Török András
+          </a> helytörténész, számos Budapestről szóló könyv írója, Gáspár Balázs,
+          a Budapesti por és sár antivárosnéző füzet szerzője és Kulcsár Géza, az
+          <a href={urbanumUrl} target="_blank" rel="noopener noreferrer">
+            Urbanum
+          </a> egyik alapítója beszélgetett az Urbanumban a Budapesti por és sár
+          kapcsán a főváros múltjáról, jelenéről és jövőjéről; többek között arról,
+          hogy a Monarchia korabeli, fokozatosan világvárossá váló Budapesten kik
+          voltak a kritikusok és elégedetlenkedők, mennyi igazság volt/van a bírálataikban,
+          és hogy mi (volt) szép és mi nem Budapesten.
+        </p>
+
+        <div class="vide-player">
+          <iframe width="500" height="500" src={youtubeUrl}> </iframe>
+        </div>
+      </article>
+    </section>
+  </Layout>
   <Footer />
 </FullPage>
+
+<style lang="scss">
+  .media {
+    max-width: 80rem;
+    padding: 8rem 2rem;
+    margin: 0 auto;
+    .title {
+      font-family: var(--font-family-primary);
+      font-size: clamp(2rem, 3rem, 3.5rem);
+      text-align: center;
+    }
+
+    .sub-title {
+      font-family: var(--font-family-primary);
+      font-size: clamp(1.3rem, 1.5rem, 2rem);
+      text-align: center;
+      color: var(--color-secondary);
+    }
+
+    .text {
+      font-family: var(--font-family-secondary);
+      font-size: 20px;
+      line-height: 1.8;
+      max-width: 75ch;
+      margin: 4rem auto 0;
+
+      a {
+        font-weight: 600;
+        color: var(--color-primary);
+      }
+    }
+
+    .video-player {
+      border: none;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .media {
+      padding: 8rem 7rem;
+    }
+  }
+</style>
