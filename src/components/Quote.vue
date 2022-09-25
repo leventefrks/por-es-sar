@@ -46,7 +46,7 @@ export default Quote;
     font-weight: 700;
     line-height: 1;
     left: 50%;
-    top: -15%;
+    top: -20%;
     transform: translateX(-50%);
     color: var(--color-secondary);
   }
@@ -54,7 +54,7 @@ export default Quote;
 
 .text {
   margin-bottom: 1rem;
-  font-size: 24px;
+  font-size: clamp(1.1rem, 1.5rem, 1.7rem);
   font-family: var(--font-family-secondary);
 }
 
@@ -73,7 +73,7 @@ export default Quote;
 
   .name {
     font-family: var(--font-family-secondary);
-    font-size: 28px;
+    font-size: clamp(1.1rem, 1.3rem, 1.7rem);
     line-height: 32px;
     font-weight: 900;
   }
@@ -82,7 +82,7 @@ export default Quote;
     display: flex;
     align-items: center;
     position: relative;
-    font-size: 16px;
+    font-size: clamp(0.8rem, 1rem, 1.3rem);
     padding-left: 35px;
 
     &:before {

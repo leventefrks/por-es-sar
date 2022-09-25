@@ -7,6 +7,46 @@ import Footer from '../components/Footer.astro';
 
 <FullPage>
   <Nav />
-  <Layout />
+  <Layout>
+    <section class="contact">
+      <article>
+        <h2 class="title">Kapcsolat</h2>
+        <p class="text"></p>
+      </article>
+    </section>
+  </Layout>
   <Footer />
 </FullPage>
+
+<style lang="scss">
+  .contact {
+    max-width: 70rem;
+    padding: 1rem;
+    margin: 0 auto;
+    .title {
+      font-family: var(--font-family-primary);
+      font-size: clamp(2rem, 3rem, 3.5rem);
+      text-align: center;
+    }
+
+    .sub-title {
+      font-family: var(--font-family-primary);
+      font-size: clamp(1.3rem, 1.5rem, 2rem);
+      text-align: center;
+      color: var(--color-secondary);
+    }
+
+    .text {
+      font-family: var(--font-family-secondary);
+      font-size: 20px;
+      line-height: 1.8;
+      max-width: 75ch;
+      margin: 4rem auto 4rem;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    .contact {
+      padding: 8rem 7rem 0;
+    }
+  }
+</style>

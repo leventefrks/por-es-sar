@@ -18,6 +18,7 @@
     display: grid;
     grid-template-columns: 1fr;
     place-items: center;
+    background-color: #fff;
     padding-left: 7rem;
     gap: 2rem;
     height: 100vh;
@@ -28,7 +29,7 @@
       .title {
         position: relative;
         margin-bottom: 0.5rem;
-        font-size: 32px;
+        font-size: clamp(1.5rem, 2rem, 2.5rem);
         font-family: var(--font-family-primary);
 
         &:before {
@@ -45,8 +46,7 @@
       .text {
         margin-bottom: 2rem;
         font-family: var(--font-family-secondary);
-        font-weight: 400;
-        font-size: 22px;
+        font-size: clamp(1.075rem, 1.375rem, 1.575rem);
         line-height: 36px;
       }
     }

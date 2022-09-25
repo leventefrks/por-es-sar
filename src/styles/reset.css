@@ -11,10 +11,10 @@
 html,
 body {
   height: 100%;
-  font-display: optional;
 }
 
 body {
+  background-color: #f3f4f6;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }

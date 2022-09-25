@@ -37,9 +37,7 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
 <style lang="scss">
   .introduction {
     position: relative;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 2rem;
+    padding: 10rem 1rem;
     background-color: var(--color-secondary);
     content-visibility: auto;
 
@@ -64,11 +62,10 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
     }
 
     .text {
-      font-family: var(--font-family-secondary);
-      font-size: 20px;
-      line-height: 1.8;
-      max-width: 65ch;
       margin: 0 auto;
+      font-size: clamp(1.1rem, 1.2rem, 1.3rem);
+      line-height: 1.7;
+      max-width: 65ch;
     }
 
     strong {
@@ -85,7 +82,7 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
 
   @media screen and (min-width: 700px) {
     .introduction {
-      padding: 12rem 2rem;
+      padding: 12rem 0rem;
     }
   }
 </style>

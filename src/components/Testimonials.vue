@@ -1,9 +1,11 @@
 <template>
   <section class="testimonials">
     <h2 class="main-title">A füzetről írták</h2>
-    <transition mode="out-in" name="fade">
-      <Quote :key="currentQuote.id" :current-quote="currentQuote" />
-    </transition>
+    <div class="quote-container">
+      <transition mode="out-in" name="fade">
+        <Quote :key="currentQuote.id" :current-quote="currentQuote" />
+      </transition>
+    </div>
   </section>
 </template>
 
@@ -74,7 +76,7 @@ const Testimonials = {
         } else {
           this.currentIndex++;
         }
-      }, 3500);
+      }, 7000);
     },
   },
 
@@ -90,12 +92,17 @@ export default Testimonials;
 
 <style lang="scss">
 .testimonials {
-  position: relative;
   max-width: 70rem;
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   margin: 0 auto;
   content-visibility: auto;
+
+  .quote-container {
+    position: relative;
+    margin: 0 auto;
+    height: 50vh;
+  }
 }
 
 .fade-enter-active,
@@ -120,7 +127,7 @@ export default Testimonials;
 
 @media screen and (min-width: 700px) {
   .testimonials {
-    padding: 8rem 7rem 18rem;
+    padding: 4rem 7rem 4rem;
 
     .quote {
       &:before {

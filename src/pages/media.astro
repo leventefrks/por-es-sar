@@ -35,9 +35,7 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
           és hogy mi (volt) szép és mi nem Budapesten.
         </p>
 
-        <div class="vide-player">
-          <iframe width="500" height="500" src={youtubeUrl}> </iframe>
-        </div>
+        <div class="video-player"></div>
       </article>
     </section>
   </Layout>
@@ -46,8 +44,8 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
 
 <style lang="scss">
   .media {
-    max-width: 80rem;
-    padding: 2rem;
+    max-width: 70rem;
+    padding: 1rem;
     margin: 0 auto;
     .title {
       font-family: var(--font-family-primary);
@@ -67,7 +65,7 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
       font-size: 20px;
       line-height: 1.8;
       max-width: 75ch;
-      margin: 4rem auto 0;
+      margin: 4rem auto 4rem;
 
       a {
         font-weight: 600;
@@ -79,10 +77,6 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
       margin: 0 auto;
       max-width: 500px;
       width: 100%;
-
-      iframe {
-        border: 0;
-      }
     }
   }
 
