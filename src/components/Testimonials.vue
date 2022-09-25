@@ -37,12 +37,20 @@ const Testimonials = {
           company: 'Vademecum Hírlevél',
         },
         {
-          id: 2,
+          id: 3,
           quote:
             'A Budapesti por és sár kiadvány már első ránézésre elárulta, hogy komoly kutatómunka rejlik mögötte, egyszerre szolgál tanulságos és megmosolyogtató részletekkel Budapest fénykorát illetően.',
           src: 'mayer-kitti',
           name: 'Mayer Kitti',
           company: 'Hype And Hyper',
+        },
+        {
+          id: 4,
+          quote:
+            'Csodás projekt indult: a Por és sár az elmúlt százötven év legerősebb, az ország átalakulásának lépéseit ellenző, vagy épp az állapota felett kesergő cikkrészleteit mutatja be.',
+          src: 'vincze-miklos',
+          name: 'Vincze Miklós',
+          company: '24.hu',
         },
       ],
       interval: null,
