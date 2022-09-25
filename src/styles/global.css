@@ -6,8 +6,8 @@
   --color-selection: #dabd68;
   --color-skeleton: #ddd;
   --font-family-primary: 'Roboto Serif', serif;
-  --color-shadow: 0deg 0% 64%;
   --font-family-secondary: 'Lato', sans-serif;
+  --color-shadow: 0deg 0% 64%;
   --shadow: 1px 1px 1.3px hsl(var(--color-shadow) / 0.56),
     2.3px 2.3px 2.9px -1.3px hsl(var(--color-shadow) / 0.45),
     7.2px 7.2px 9.2px -2.7px hsl(var(--color-shadow) / 0.35),
