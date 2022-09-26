@@ -34,9 +34,8 @@ export default Quote;
 <style lang="scss">
 .quote {
   position: absolute;
-  display: flex;
-  flex-direction: column;
   margin: 0 auto;
+  will-change: transform;
 
   &:before {
     position: absolute;
@@ -59,8 +58,8 @@ export default Quote;
 }
 
 .author {
-  align-self: flex-end;
-  margin-right: 1.5rem;
+  width: fit-content;
+  margin: 1.5rem 0 0 auto;
   font-family: var(--font-family-secondary);
 
   .profile {
@@ -79,9 +78,9 @@ export default Quote;
   }
 
   .position {
+    position: relative;
     display: flex;
     align-items: center;
-    position: relative;
     font-size: clamp(0.8rem, 1rem, 1.3rem);
     padding-left: 35px;
 

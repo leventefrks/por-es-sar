@@ -34,17 +34,16 @@ const navItems = [
         const target = document.querySelector('.hero');
 
         const options = {
-          root: null,
-          rootMargin: '-20px',
-          threshold: 0.75,
+          rootMargin: '0px',
+          threshold: 0.85,
         };
 
-        const observer = new IntersectionObserver(entries => {
+        const observer = new IntersectionObserver((entries, observer) => {
           entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              header.classList.remove('header--white');
-            } else {
+            if (!entry.isIntersecting) {
               header.classList.add('header--white');
+            } else {
+              header.classList.remove('header--white');
             }
           });
         }, options);
@@ -90,7 +89,8 @@ const navItems = [
   .header {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     max-width: 1440px;
     display: flex;
     margin-inline: auto;
@@ -98,7 +98,7 @@ const navItems = [
     padding: 0 7rem;
     isolation: isolate;
     z-index: 1;
-    transition: all 250ms ease-in-out;
+    transition: background-color, backdrop-filter, box-shadow 150ms ease-in-out;
 
     &--white {
       background-color: #ffffffe6;
@@ -115,11 +115,10 @@ const navItems = [
       .brand-logo {
         a {
           font-family: var(--font-family-primary);
-          font-size: 2.5rem;
+          font-size: clamp(1.1rem, 2rem, 2.5rem);
           font-weight: 900;
           color: var(--color-primary);
           text-decoration: none;
-          transition: border linear 0.15s;
         }
       }
     }
@@ -132,10 +131,28 @@ const navItems = [
         a {
           position: relative;
           text-decoration: none;
-          font-size: 1.2rem;
+          font-size: clamp(1.1rem, 1.2rem, 1.5rem);
           padding: 0.2rem;
           color: var(--color-primary);
           font-family: var(--font-family-secondary);
+
+          &:after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-primary);
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 250ms ease-in;
+            z-index: -1;
+          }
+
+          &:hover:after {
+            transform: scaleX(1);
+          }
         }
 
         .active {

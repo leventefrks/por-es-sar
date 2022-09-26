@@ -101,7 +101,7 @@ export default Testimonials;
   .quote-container {
     position: relative;
     margin: 0 auto;
-    height: 45vh;
+    height: 50vh;
   }
 }
 
