@@ -3,8 +3,18 @@
 :root {
   --color-primary: #000;
   --color-secondary: #fadb85;
+  --color-background: #fff;
+  --color-main-background: #f3f4f6;
+  --color-navigation: #ffffffe6;
+  --color-footer: #000;
+  --color-feature: #000;
   --color-selection: #dabd68;
   --color-skeleton: #ddd;
+  --color-hero-gradient: linear-gradient(
+    180deg,
+    rgba(250, 219, 133, 1) 51%,
+    #ffffff 84%
+  );
   --font-family-primary: 'Roboto Serif', serif;
   --font-family-secondary: 'Lato', sans-serif;
   --color-shadow: 0deg 0% 64%;
@@ -12,6 +22,17 @@
     2.3px 2.3px 2.9px -1.3px hsl(var(--color-shadow) / 0.45),
     7.2px 7.2px 9.2px -2.7px hsl(var(--color-shadow) / 0.35),
     19.7px 19.7px 25.1px -4px hsl(var(--color-shadow) / 0.24);
+}
+
+.dark-mode {
+  --color-primary: #161625;
+  --color-background: #121212;
+  --color-main-background: #000;
+  --color-navigation: #181818;
+  --color-feature: #282828;
+  --color-footer: #181818;
+  --color-primary: #fff;
+  --color-hero-gradient: linear-gradient(180deg, #282828 51%, #121212 84%);
 }
 
 ::selection {

@@ -25,7 +25,7 @@ const Testimonials = {
         {
           id: 0,
           quote:
-            'Érdekes szembesülni azzal, hogy a Budapestet a világ egyik legszebb fővárosává tévő épületek mennyi vitát és mennyi vitriolos megjegyzést váltottak ki nem csak a szakértőkből, újságírókból, de nagy íróinkból is',
+            'Érdekes szembesülni azzal, hogy a Budapestet a világ egyik legszebb fővárosává tévő épületek mennyi vitát és mennyi vitriolos megjegyzést váltottak ki nem csak a szakértőkből, újságírókból, de nagy íróinkból is.',
           src: 'karafiath-orsolya',
           name: 'Karafiáth Orsolya',
           company: 'Magyar Narancs',
@@ -92,14 +92,14 @@ export default Testimonials;
 
 <style lang="scss">
 .testimonials {
-  max-width: 70rem;
-  width: 100%;
   padding: 1rem;
   margin: 0 auto;
   content-visibility: auto;
+  background-color: var(--color-background);
 
   .quote-container {
     position: relative;
+    max-width: 70rem;
     margin: 0 auto;
     height: 50vh;
   }

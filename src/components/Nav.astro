@@ -1,4 +1,6 @@
 ---
+import DarkModeSwitcher from './DarkModeSwitcher.vue';
+
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 
@@ -88,6 +90,7 @@ const navItems = [
       }
     </ul>
   </nav>
+  <DarkModeSwitcher client:load />
 </header>
 
 <style lang="scss">
@@ -102,10 +105,11 @@ const navItems = [
     padding: 0 1.25rem;
     isolation: isolate;
     z-index: 1;
+
     transition: background-color, backdrop-filter, box-shadow 150ms ease-in-out;
 
     &--white {
-      background-color: #ffffffe6;
+      background-color: var(--color-navigation);
       backdrop-filter: blur(4px);
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 10px 0px;
     }
@@ -136,6 +140,7 @@ const navItems = [
           text-decoration: none;
           font-size: clamp(1.1rem, 1.2rem, 1.5rem);
           padding: 0.2rem;
+          font-weight: 500;
           color: var(--color-primary);
           font-family: var(--font-family-secondary);
 
@@ -177,7 +182,7 @@ const navItems = [
     }
   }
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 1000px) {
     .header {
       padding: 0 7rem;
 

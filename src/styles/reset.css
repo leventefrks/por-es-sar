@@ -6,6 +6,7 @@
 
 * {
   margin: 0;
+  user-select: none;
 }
 
 html,
@@ -14,7 +15,7 @@ body {
 }
 
 body {
-  background-color: #f3f4f6;
+  background-color: var(--color-main-background);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }

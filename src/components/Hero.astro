@@ -5,7 +5,7 @@
       „Tudd meg, elődeinknek mi minden nem tetszett hazánkban – gyengéd irónia
       és maró gúny, örökös elégedetlenkedés és folytonos pocskondiázás!”
     </p>
-    <a href="/" class="cta">Tovább</a>
+    <!-- <a href="/" class="cta">Tovább</a> -->
   </article>
   <div class="jumbotron">
     <div class="image-wrapper">
@@ -20,14 +20,16 @@
     display: grid;
     grid-template-columns: 1fr;
     place-items: end;
-    background-color: #fff;
+    background-color: var(--color-background);
     padding-left: 0;
     height: 100vh;
+    user-select: none;
 
     .intro-text {
       max-width: 62ch;
       width: 100%;
       padding: 0rem 1.25rem 2rem;
+      color: var(--color-primary);
 
       .title {
         position: relative;
@@ -67,11 +69,7 @@
         content: '';
         height: 100%;
         min-width: 100%;
-        background: linear-gradient(
-          180deg,
-          rgba(250, 219, 133, 1) 51%,
-          #ffffff 84%
-        );
+        background: var(--color-hero-gradient);
       }
 
       .image-wrapper {
