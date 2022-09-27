@@ -2,6 +2,7 @@
 const facebookUrl = 'https://www.facebook.com/poressar/';
 const instagramUrl = 'https://www.instagram.com/poressar/';
 const astroUrl = 'https://astro.build/';
+const netlifyUrl = 'https://www.netlify.com/';
 
 const socialIcons = [
   {
@@ -32,11 +33,15 @@ const socialIcons = [
             />
           </a>
           and <span>❤️</span>
+          <span>hosted by</span>
+          <a href={netlifyUrl} target="_blank" rel="noopener noreferrer">
+            <img src="/netlify-logo.svg" alt="netlify logo" height="16" />
+          </a>
         </span>
         <span class="location">Budapest, Hungary</span>
       </div>
     </div>
-    <div class="legal-text">Minden jog fenntartva</div>
+    <!-- <div class="legal-text">Minden jog fenntartva</div> -->
   </div>
   <ul class="social-icons">
     {
@@ -67,7 +72,7 @@ const socialIcons = [
     display: flex;
     gap: 1rem;
     padding: 1rem 0.5rem 1.5rem;
-    font-size: 14px;
+    font-size: 12px;
     align-items: center;
     text-align: center;
     flex-direction: column;
@@ -109,6 +114,8 @@ const socialIcons = [
       .built-text,
       .location {
         position: relative;
+        align-self: center;
+
         &:before {
           display: none;
           position: absolute;
@@ -117,7 +124,7 @@ const socialIcons = [
           width: 1px;
           background-color: #fff;
           left: -8px;
-          top: 4px;
+          top: 0;
         }
       }
     }

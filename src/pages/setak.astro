@@ -24,50 +24,48 @@ const tours = [
 ];
 ---
 
-<FullPage>
+<Layout>
   <Nav />
-  <Layout>
-    <section class="city-tour">
-      <article>
-        <h2 class="title">Antivárosnéző séta</h2>
-        <p class="text">
-          Ha kíváncsi vagy, hogy elődeinknek mi nem tetszett és miért nem
-          tetszett az 1873 és 1914 között fokozatosan világvárossá váló
-          Budapesten, gyere el és ismerd meg az egy-másfél évszázaddal ezelőtti
-          kritikusok és elégedetlenkedők véleményét, ahogy gyengéd iróniával,
-          maró gúnnyal vagy épp keserű humorral írtak a változásokról és a város
-          új építészeti látványosságairól – amelyek ma már Budapest hangulatának
-          és városimázsának meghatározó elemei.
-        </p>
+  <section class="city-tour">
+    <article>
+      <h2 class="title">Antivárosnéző séta</h2>
+      <p class="text">
+        Ha kíváncsi vagy, hogy elődeinknek mi nem tetszett és miért nem tetszett
+        az 1873 és 1914 között fokozatosan világvárossá váló Budapesten, gyere
+        el és ismerd meg az egy-másfél évszázaddal ezelőtti kritikusok és
+        elégedetlenkedők véleményét, ahogy gyengéd iróniával, maró gúnnyal vagy
+        épp keserű humorral írtak a változásokról és a város új építészeti
+        látványosságairól – amelyek ma már Budapest hangulatának és
+        városimázsának meghatározó elemei.
+      </p>
 
-        <p class="text text--thin">
-          Az antivárosnéző sétán a főváros jól ismert helyeit és alkotásait nem
-          a megszokott, feltétlen csodálat és kötelező áhítat nevében, vagy
-          sosem hallott titkok feltárásának céljából, hanem a korabeli kritika
-          szemszögéből mutatom be.
-        </p>
-      </article>
+      <p class="text text--thin">
+        Az antivárosnéző sétán a főváros jól ismert helyeit és alkotásait nem a
+        megszokott, feltétlen csodálat és kötelező áhítat nevében, vagy sosem
+        hallott titkok feltárásának céljából, hanem a korabeli kritika
+        szemszögéből mutatom be.
+      </p>
+    </article>
 
-      <div class="gallery">
-        {
-          tours.map(tour => {
-            return (
-              <div class="image-wrapper">
-                <img
-                  src={`/${tour.name}.jpg`}
-                  alt="Városnéző séta"
-                  class="image"
-                  loading="lazy"
-                />
-              </div>
-            );
-          })
-        }
-      </div>
-    </section>
-  </Layout>
+    <div class="gallery">
+      {
+        tours.map(tour => {
+          return (
+            <div class="image-wrapper">
+              <img
+                src={`/${tour.name}.jpg`}
+                alt="Városnéző séta"
+                class="image"
+                loading="lazy"
+              />
+            </div>
+          );
+        })
+      }
+    </div>
+  </section>
   <Footer />
-</FullPage>
+</Layout>
 
 <style lang="scss">
   .city-tour {

@@ -5,18 +5,16 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<FullPage>
+<Layout>
   <Nav />
-  <Layout>
-    <section class="contact">
-      <article>
-        <h2 class="title">Kapcsolat</h2>
-        <p class="text"></p>
-      </article>
-    </section>
-  </Layout>
-  <Footer />
-</FullPage>
+  <section class="contact">
+    <article>
+      <h2 class="title">Kapcsolat</h2>
+      <p class="text"></p>
+    </article>
+  </section>
+</Layout>
+<Footer />
 
 <style lang="scss">
   .contact {

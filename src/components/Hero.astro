@@ -1,32 +1,33 @@
-<div class="hero">
-  <div class="intro-text">
+<section class="hero">
+  <article class="intro-text">
     <h2 class="title">Az antivárosnéző füzet</h2>
     <p class="text">
       „Tudd meg, elődeinknek mi minden nem tetszett hazánkban – gyengéd irónia
       és maró gúny, örökös elégedetlenkedés és folytonos pocskondiázás!”
     </p>
     <a href="/" class="cta">Tovább</a>
-  </div>
+  </article>
   <div class="jumbotron">
     <div class="image-wrapper">
       <img src="/hero-image-opt.jpg" class="hero-image" alt="por és sár" />
     </div>
   </div>
-</div>
+</section>
 
 <style lang="scss">
   .hero {
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
-    place-items: center;
+    place-items: end;
     background-color: #fff;
     padding-left: 0;
-    gap: 2rem;
     height: 100vh;
 
     .intro-text {
       max-width: 62ch;
+      width: 100%;
+      padding: 0rem 1.25rem 2rem;
 
       .title {
         position: relative;
@@ -35,11 +36,12 @@
         font-family: var(--font-family-primary);
 
         &:before {
+          display: none;
           content: '';
           position: absolute;
-          top: -3rem;
-          left: -3rem;
-          width: 64px;
+          top: -2.3rem;
+          left: -2.8rem;
+          width: 44px;
           height: 100%;
           background: url('/rectangle-small--yellow.svg') no-repeat;
         }
@@ -67,24 +69,25 @@
         min-width: 100%;
         background: linear-gradient(
           180deg,
-          rgba(250, 219, 133, 1) 61%,
-          #ffffff 85%
+          rgba(250, 219, 133, 1) 51%,
+          #ffffff 84%
         );
       }
 
       .image-wrapper {
         position: relative;
         top: 50%;
-        left: -10%;
+        padding: 0 1.25rem;
         transform: translateY(-50%);
         border-radius: 10px;
-        max-width: 675px;
+        max-width: 650px;
 
         &:before {
+          display: none;
           position: absolute;
           content: '';
-          bottom: -3.5rem;
-          right: -3.5rem;
+          bottom: -2.8rem;
+          right: -2rem;
           width: 341px;
           height: 348px;
           z-index: 1;
@@ -108,6 +111,27 @@
     .hero {
       grid-template-columns: 1fr 1fr;
       gap: 0;
+      place-items: center;
+
+      .intro-text {
+        padding: 0;
+
+        .title {
+          &:before {
+            display: block;
+          }
+        }
+      }
+
+      .jumbotron {
+        &:before {
+          display: block;
+        }
+      }
+
+      .image-wrapper {
+        left: -10%;
+      }
     }
   }
 </style>

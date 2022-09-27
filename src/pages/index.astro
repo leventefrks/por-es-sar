@@ -10,14 +10,12 @@ import Purchase from '../components/Purchase.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<FullPage>
+<Layout>
   <Nav />
-  <Layout>
-    <Hero />
-    <Features />
-    <Introduction />
-    <Testimonials client:visible />
-    <Purchase />
-    <Footer />
-  </Layout>
-</FullPage>
+  <Hero />
+  <Features />
+  <Introduction />
+  <Testimonials client:visible />
+  <Purchase />
+  <Footer />
+</Layout>

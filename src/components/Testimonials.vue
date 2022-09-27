@@ -117,7 +117,7 @@ export default Testimonials;
 
 .fade-enter-from,
 .fade-leave-to {
-  transform: translateX(35px);
+  transform: translateX(-10%);
 }
 
 .fade-enter-from,

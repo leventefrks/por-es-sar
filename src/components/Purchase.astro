@@ -1,24 +1,24 @@
 ---
 const shops = [
   {
-    name: 'Írók boltja',
-    url: 'https://irokboltja.hu/',
-    src: 'irokboltja',
-  },
-  {
-    name: 'Hype and Hyper',
-    url: 'https://hypeandhyper.com/',
-    src: 'hypeandhyper',
-  },
-  {
     name: 'ISBN',
     url: 'https://www.isbnbooks.hu/',
     src: 'isbn',
   },
   {
+    name: 'Írók boltja',
+    url: 'https://irokboltja.hu/',
+    src: 'irokboltja',
+  },
+  {
     name: 'Urbanum',
     url: 'https://urbanum.hu/',
     src: 'urbanum',
+  },
+  {
+    name: 'Hype and Hyper',
+    url: 'https://hypeandhyper.com/',
+    src: 'hypeandhyper',
   },
 ];
 ---
@@ -41,9 +41,10 @@ const shops = [
             <li class="shop">
               <a href={shop.url} target="_blank" rel="noopener noreferrer">
                 <img
-                  src={`/purchase-${shop.src}-logo.jpg`}
+                  src={`/purchase-${shop.src}-logo.webp`}
                   alt={shop.name}
                   loading="lazy"
+                  height="40"
                 />
               </a>
             </li>
@@ -56,7 +57,7 @@ const shops = [
 
 <style lang="scss">
   .purchase {
-    padding: 2rem 1rem;
+    padding: 2rem 1.25rem;
     margin: 0 auto;
     content-visibility: auto;
 

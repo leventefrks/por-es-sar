@@ -27,50 +27,55 @@ const navItems = [
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
+    const isMobile = () =>
+      /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    const hasInterSectionObserver = () => 'IntersectionObserver' in window;
+
     const headerEffect = () => {
       const header = document.querySelector('.header');
+      const target = document.querySelector('.hero');
 
-      if ('IntersectionObserver' in window) {
-        const target = document.querySelector('.hero');
+      const options = {
+        rootMargin: '0px',
+        threshold: 0.85,
+      };
 
-        const options = {
-          rootMargin: '0px',
-          threshold: 0.85,
-        };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            header.classList.add('header--white');
+          } else {
+            header.classList.remove('header--white');
+          }
+        });
+      }, options);
 
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-              header.classList.add('header--white');
-            } else {
-              header.classList.remove('header--white');
-            }
-          });
-        }, options);
-
-        observer.observe(target);
-      } else {
-        header.classList.add('header--white');
-      }
+      observer.observe(target);
     };
 
-    headerEffect();
+    if (isMobile() || !hasInterSectionObserver()) {
+      const header = document.querySelector('.header');
+      header.classList.add('header--white');
+    } else {
+      headerEffect();
+    }
   });
 </script>
 
 <header class="header">
-  <nav>
+  <nav role="navigation">
     <h1 class="brand-logo">
       <a href="/">{title}</a>
     </h1>
-    <ul class="nav-items">
-      <li class="nav-item">
-        <a class={currentPath === '' ? 'active' : ''} href="/">{mainPage}</a>
+    <ul class="nav-items" role="list">
+      <li class="nav-item" role="listitem">
+        <a href="/" class={currentPath === '' ? 'active' : ''}>{mainPage}</a>
       </li>
       {
         navItems.map(item => {
           return (
-            <li class="nav-item">
+            <li class="nav-item" role="listitem">
               <a
                 class={currentPath === item.route ? 'active' : ''}
                 href={`/${item.route}`}
@@ -91,11 +96,10 @@ const navItems = [
     top: 0;
     left: 0;
     right: 0;
-    max-width: 1440px;
     display: flex;
-    margin-inline: auto;
+    width: 100%;
     min-height: 60px;
-    padding: 0 7rem;
+    padding: 0 1.25rem;
     isolation: isolate;
     z-index: 1;
     transition: background-color, backdrop-filter, box-shadow 150ms ease-in-out;
@@ -115,7 +119,7 @@ const navItems = [
       .brand-logo {
         a {
           font-family: var(--font-family-primary);
-          font-size: clamp(1.1rem, 2rem, 2.5rem);
+          font-size: clamp(1.1rem, 1.9rem, 2.5rem);
           font-weight: 900;
           color: var(--color-primary);
           text-decoration: none;
@@ -124,8 +128,7 @@ const navItems = [
     }
 
     .nav-items {
-      display: flex;
-      gap: 2rem;
+      display: none;
 
       .nav-item {
         a {
@@ -170,6 +173,17 @@ const navItems = [
             z-index: -1;
           }
         }
+      }
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .header {
+      padding: 0 7rem;
+
+      .nav-items {
+        display: flex;
+        gap: 2rem;
       }
     }
   }

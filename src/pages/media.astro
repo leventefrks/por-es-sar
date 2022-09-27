@@ -10,37 +10,35 @@ const wikipediaUrl =
 const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
 ---
 
-<FullPage>
+<Layout>
   <Nav />
-  <Layout>
-    <section class="media">
-      <article>
-        <h2 class="title">Szép (volt) Budapest?!</h2>
-        <h3 class="sub-title">Beszélgetés a Budapesti por és sárról</h3>
-        <p class="text">
-          2022. június 20-án <a
-            href={wikipediaUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Török András
-          </a> helytörténész, számos Budapestről szóló könyv írója, Gáspár Balázs,
-          a Budapesti por és sár antivárosnéző füzet szerzője és Kulcsár Géza, az
-          <a href={urbanumUrl} target="_blank" rel="noopener noreferrer">
-            Urbanum
-          </a> egyik alapítója beszélgetett az Urbanumban a Budapesti por és sár
-          kapcsán a főváros múltjáról, jelenéről és jövőjéről; többek között arról,
-          hogy a Monarchia korabeli, fokozatosan világvárossá váló Budapesten kik
-          voltak a kritikusok és elégedetlenkedők, mennyi igazság volt/van a bírálataikban,
-          és hogy mi (volt) szép és mi nem Budapesten.
-        </p>
+  <section class="media">
+    <article>
+      <h2 class="title">Szép (volt) Budapest?!</h2>
+      <h3 class="sub-title">Beszélgetés a Budapesti por és sárról</h3>
+      <p class="text">
+        2022. június 20-án <a
+          href={wikipediaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Török András
+        </a> helytörténész, számos Budapestről szóló könyv írója, Gáspár Balázs,
+        a Budapesti por és sár antivárosnéző füzet szerzője és Kulcsár Géza, az
+        <a href={urbanumUrl} target="_blank" rel="noopener noreferrer">
+          Urbanum
+        </a> egyik alapítója beszélgetett az Urbanumban a Budapesti por és sár kapcsán
+        a főváros múltjáról, jelenéről és jövőjéről; többek között arról, hogy a
+        Monarchia korabeli, fokozatosan világvárossá váló Budapesten kik voltak a
+        kritikusok és elégedetlenkedők, mennyi igazság volt/van a bírálataikban,
+        és hogy mi (volt) szép és mi nem Budapesten.
+      </p>
 
-        <div class="video-player"></div>
-      </article>
-    </section>
-  </Layout>
+      <div class="video-player"></div>
+    </article>
+  </section>
   <Footer />
-</FullPage>
+</Layout>
 
 <style lang="scss">
   .media {
