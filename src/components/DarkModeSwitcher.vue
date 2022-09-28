@@ -4,7 +4,7 @@
       <input
         class="switch"
         type="checkbox"
-        @change="toggleDarkMode($event.target.checked)"
+        @change.prevent="toggleDarkMode($event)"
       />
       <div>
         <div class="moon">
@@ -97,16 +97,33 @@ const DarkModeSwitcher = {
     };
   },
 
+  mounted() {
+    console.log('theme', this.getTheme(), 'preference');
+    this.isDarkMode = this.getTheme();
+  },
+
   methods: {
-    toggleDarkMode(isChecked) {
-      this.isDarkMode = isChecked;
+    toggleDarkMode($event) {
+      this.isDarkMode = $event.target.checked;
 
       if (this.isDarkMode) {
-        document.querySelector('body').classList.add('dark-mode');
+        document.querySelector('html').classList.add('dark');
       } else {
-        document.querySelector('body').classList.remove('dark-mode');
+        document.querySelector('html').classList.remove('dark');
       }
+
+      localStorage.setItem('dark', this.isDarkMode);
     },
+
+    getTheme() {
+      return JSON.parse(localStorage.getItem('darkMode'));
+    },
+
+    // getMediaPreference() {
+    //   return (hasDarkPreference = window.matchMedia(
+    //     '(prefers-color-scheme: dark)'
+    //   ).matches);
+    // },
   },
 };
 
@@ -118,11 +135,11 @@ export default DarkModeSwitcher;
   --dark-color: #1f2937;
   --border-width: 2px;
   --icon-size: 35px;
+  position: relative;
   display: grid;
-  position: absolute;
   place-content: center;
   min-height: 100%;
-  right: 2rem;
+  margin-left: 0;
 
   .switch {
     display: none;
@@ -175,6 +192,12 @@ export default DarkModeSwitcher;
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .switch-wrapper {
+    margin-left: 2rem;
   }
 }
 </style>

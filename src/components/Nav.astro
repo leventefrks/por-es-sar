@@ -66,6 +66,9 @@ const navItems = [
 </script>
 
 <header class="header">
+  <a class="skip-to-content-link" href="#introduction">
+    Ugrás a <strong>por és sár </strong>tartalmához
+  </a>
   <nav role="navigation">
     <h1 class="brand-logo">
       <a href="/">{title}</a>
@@ -100,19 +103,43 @@ const navItems = [
     left: 0;
     right: 0;
     display: flex;
-    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
     min-height: 60px;
     padding: 0 1.25rem;
     isolation: isolate;
     z-index: 1;
-
     transition: background-color, backdrop-filter, box-shadow 150ms ease-in-out;
 
     &--white {
       background-color: var(--color-navigation);
       backdrop-filter: blur(4px);
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 10px 0px;
+      box-shadow: var(--shadow-elevation-low);
     }
+
+    .skip-to-content-link {
+      position: absolute;
+      left: 0;
+      display: block;
+      text-align: center;
+      width: 100%;
+      font-family: var(--font-family-secondary);
+      font-size: 1rem;
+      background: var(--color-cta-background) ;
+      color: var(--color-cta-font-color);
+      padding: 1.2rem;
+      transform: translateY(-100%);
+      isolation: isolate;
+      z-index: 1;
+      transition: transform 250ms;
+
+      strong {
+        font-size: 1.3rem;
+      }
+    }
+      .skip-to-content-link:focus {
+        transform: translateY(0);
+      }
 
     nav {
       display: flex;
@@ -121,6 +148,7 @@ const navItems = [
       width: 100%;
 
       .brand-logo {
+        margin: auto;
         a {
           font-family: var(--font-family-primary);
           font-size: clamp(1.1rem, 1.9rem, 2.5rem);
@@ -184,7 +212,13 @@ const navItems = [
 
   @media screen and (min-width: 1000px) {
     .header {
-      padding: 0 7rem;
+      padding: 0 2rem;
+
+      nav {
+        .brand-logo {
+          margin: unset;
+        }
+      }
 
       .nav-items {
         display: flex;

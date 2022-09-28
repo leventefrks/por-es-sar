@@ -1,4 +1,7 @@
 <section class="hero">
+  <a class="skip-to-content-link" href="#main">
+    Skip to content
+  </a>
   <article class="intro-text">
     <h2 class="title">Az antivárosnéző füzet</h2>
     <p class="text">
@@ -22,8 +25,22 @@
     place-items: end;
     background-color: var(--color-background);
     padding-left: 0;
-    height: 100vh;
+    height: min(800px, 100vh);
     user-select: none;
+
+    .skip-to-content-link {
+      background: var(--color-cta-background) ;
+      color: var(--color-cta-font-color);
+      height: 30px;
+      left: 50%;
+      padding: 8px;
+      position: absolute;
+      // transform: translateY(-100%);
+      transition: transform 250ms;
+    }
+      .skip-to-content-link:focus {
+        transform: translateY(0%);
+      }
 
     .intro-text {
       max-width: 62ch;
@@ -61,6 +78,7 @@
       position: relative;
       min-width: 100%;
       height: 100%;
+      padding: 0 1.25rem;
       isolation: isolate;
 
       &:before {
@@ -75,10 +93,10 @@
       .image-wrapper {
         position: relative;
         top: 50%;
-        padding: 0 1.25rem;
         transform: translateY(-50%);
         border-radius: 10px;
         max-width: 650px;
+        box-shadow: var(--shadow-elevation-high);
 
         &:before {
           display: none;
@@ -122,6 +140,7 @@
       }
 
       .jumbotron {
+        padding: 0;
         &:before {
           display: block;
         }
@@ -129,6 +148,10 @@
 
       .image-wrapper {
         left: -10%;
+
+        &:before {
+          display: block;
+        }
       }
     }
   }

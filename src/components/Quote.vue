@@ -50,7 +50,7 @@ export default Quote;
   &:before,
   &:after {
     position: absolute;
-    color: var(--color-secondary);
+    color: var(--color-icon);
     font-size: clamp(3rem, 8rem, 13rem);
     font-family: var(--font-family-primary);
     font-weight: 900;

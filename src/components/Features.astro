@@ -44,9 +44,7 @@ const features = [
 
 <style lang="scss">
   .features {
-    position: relative;
-    width: 100%;
-    padding: 0 3.25rem;
+    padding: 2rem 3.25rem;
     margin: 0 auto;
     background-color: var(--color-background);
 
@@ -57,8 +55,7 @@ const features = [
     .items {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 6rem;
-      align-items: center;
+      gap: 4rem;
 
       .feature {
         position: relative;
@@ -74,6 +71,7 @@ const features = [
         user-select: none;
         isolation: isolate;
         transition: transform 250ms ease-in-out;
+        box-shadow: var(--shadow-elevation-high);
 
         &:hover {
           transform: scale(1.03);
@@ -141,6 +139,7 @@ const features = [
       }
 
       .items {
+        gap: 6rem;
         grid-template-columns: repeat(3, minmax(120px, 1fr));
       }
     }

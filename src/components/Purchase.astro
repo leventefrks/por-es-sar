@@ -1,6 +1,11 @@
 ---
 const shops = [
   {
+    name: 'Hype and Hyper',
+    url: 'https://hypeandhyper.com/',
+    src: 'hypeandhyper',
+  },
+  {
     name: 'ISBN',
     url: 'https://www.isbnbooks.hu/',
     src: 'isbn',
@@ -14,43 +19,44 @@ const shops = [
     name: 'Urbanum',
     url: 'https://urbanum.hu/',
     src: 'urbanum',
-  },
-  {
-    name: 'Hype and Hyper',
-    url: 'https://hypeandhyper.com/',
-    src: 'hypeandhyper',
-  },
+  }
 ];
 ---
 
 <section class="purchase">
   <h2 class="main-title">Főváros nevezetességei másképp</h2>
-  <div class="card">
-    <a href="mailto:poressar@gmail.com" class="cta">Írj nekem</a>
-    <span class="divider">vagy</span>
-    <h3>
-      <strong>Vásárold meg</strong><br />
-      <span>az alábbi helyek egyikében</span>
-    </h3>
-    <ul class="shops">
-      {
-        shops.map(shop => {
-          return (
-            <li class="shop">
-              <a href={shop.url} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={`/purchase-${shop.src}-logo.webp`}
-                  alt={shop.name}
-                  loading="lazy"
-                  height="40"
-                />
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </div>
+  <article class="purchase-wrapper">
+    <div class="image-wrapper">
+      <img src="/por-es-sar-cover.jpg" alt="Por és sár borító" />
+    </div>
+    <div class="card">
+      <a href="mailto:poressar@gmail.com" class="cta">Írj nekem</a>
+      <span class="divider">vagy</span>
+      <h3>
+        <strong>Vásárold meg</strong><br />
+        <span>az alábbi helyek egyikében</span>
+      </h3>
+      <ul class="shops">
+        {
+          shops.map(shop => {
+            return (
+              <li class="shop">
+                <a href={shop.url} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={`/purchase-${shop.src}-logo.webp`}
+                    alt={shop.name}
+                    loading="lazy"
+                    height="40"
+                  />
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </article>
+  <p class="text">A füzetben a főváros jól ismert helyeit és alkotásait mutatom be 1873 és 1918 között megjelent szövegek segítségével, egy sajátos nézőpontból: nem a megszokott, feltétlen csodálat és kötelező áhítat nevében, vagy sosem hallott titkok feltárásának céljából, hanem hogy láthatóvá tegyem, elődeinknek mi nem tetszett és miért nem tetszett a fokozatosan világvárossá váló Budapesten.</p>
 </section>
 
 <style lang="scss">
@@ -60,16 +66,35 @@ const shops = [
     content-visibility: auto;
     background-color: var(--color-background);
 
+    .purchase-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .image-wrapper {
+        max-width: 450px;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: var(--shadow-elevation-medium);
+
+        img {
+          border-radius: inherit;
+        }
+      }
+    }
+
     .card {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 3rem 3.5rem;
+      padding: 2rem 2.5rem;
       border-radius: 10px;
       gap: 2rem;
       max-width: 525px;
       width: 100%;
+      color: var(--color-primary);
       background-color: var(--color-secondary);
+      box-shadow: var(--shadow-elevation-medium);
 
       h3 {
         text-align: center;
@@ -104,7 +129,7 @@ const shops = [
           content: '';
           position: absolute;
           top: 0;
-          width: 150px;
+          width: 100%;
           height: 1px;
           background-color: var(--color-primary);
         }
@@ -112,13 +137,13 @@ const shops = [
         &:before {
           left: 5rem;
           top: 50%;
-          transform: translateY(-50%);
+          transform: translateY(50%);
         }
 
         &:after {
           right: 5rem;
           top: 50%;
-          transform: translateY(-50%);
+          transform: translateY(50%);
         }
       }
 
@@ -127,11 +152,22 @@ const shops = [
         font-size: clamp(1.3rem, 1.7rem, 1.9rem);
       }
     }
+
+    .text {
+      margin: 4rem auto;
+      font-size: clamp(1.15rem, 1.35rem, 1.55rem);
+      line-height: 1.6;
+      max-width: 60rem;
+      color: var(--color-primary);
+    }
   }
 
   @media screen and (min-width: 1000px) {
     .purchase {
       padding: 4rem 7rem 7rem;
+      .purchase-wrapper {
+        flex-direction: row;
+      }
     }
   }
 </style>
