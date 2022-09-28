@@ -1,5 +1,5 @@
 <template>
-  <div class="switch-wrapper" aria-label="Switch visual theme">
+  <div class="switch-wrapper">
     <label>
       <input
         class="switch"
