@@ -59,7 +59,7 @@ const shops = [
   <p class="text">A füzetben a főváros jól ismert helyeit és alkotásait mutatom be 1873 és 1918 között megjelent szövegek segítségével, egy sajátos nézőpontból: nem a megszokott, feltétlen csodálat és kötelező áhítat nevében, vagy sosem hallott titkok feltárásának céljából, hanem hogy láthatóvá tegyem, elődeinknek mi nem tetszett és miért nem tetszett a fokozatosan világvárossá váló Budapesten.</p>
 </section>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .purchase {
     padding: 2rem 1.25rem;
     margin: 0 auto;
@@ -73,10 +73,36 @@ const shops = [
       justify-content: center;
 
       .image-wrapper {
-        max-width: 450px;
+        position: relative;
+        max-width: 480px;
         width: 100%;
         border-radius: 10px;
         box-shadow: var(--shadow-elevation-medium);
+        isolation: isolate;
+
+
+        &:before {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          top: 50%;
+          left: -3rem;
+          width: 300px;
+          height: 300px;
+          transform: translateY(-50%);
+          background-image: url('/rectangle-grid--yellow.svg');
+          animation: horizontalMovement 4s ease-in infinite backwards;
+        }
+
+        @keyframes horizontalMovement {
+          0%, 100% {
+            transform: translate(.5rem, -50%);
+          }
+
+          50% {
+            transform: translate(-.5rem, -50%)
+          }  
+        }
 
         img {
           border-radius: inherit;
@@ -91,7 +117,7 @@ const shops = [
       padding: 2rem 2.5rem;
       border-radius: 10px;
       gap: 2rem;
-      max-width: 525px;
+      max-width: 400px;
       width: 100%;
       color: var(--color-primary);
       background-color: var(--color-secondary);
@@ -102,11 +128,11 @@ const shops = [
         font-family: var(--font-family-secondary);
 
         strong {
-          font-size: 22px;
+          font-size: clamp(1.1rem, 1.375rem, 1575rem);
         }
 
         span {
-          font-size: 16px;
+          font-size: 1rem;
           font-weight: 400;
         }
       }
@@ -124,7 +150,6 @@ const shops = [
             overflow: hidden;
 
           &:focus {
-            padding: 0.1rem 0.2rem;
             outline: 1px dashed var(--color-primary);
             border-radius: 0.2rem;
             }
@@ -170,10 +195,11 @@ const shops = [
     }
 
     .text {
+      max-width: 50rem;
       margin: 4rem auto;
+      font-family: var(--font-family-secondary);
       font-size: clamp(1.15rem, 1.35rem, 1.55rem);
       line-height: 1.6;
-      max-width: 60rem;
       color: var(--color-primary);
     }
   }

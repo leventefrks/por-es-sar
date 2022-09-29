@@ -14,7 +14,7 @@
   </div>
 </section>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .hero {
     position: relative;
     display: grid;
@@ -86,11 +86,22 @@
           position: absolute;
           content: '';
           bottom: -4rem;
-          right: -2rem;
-          width: 341px;
-          height: 348px;
+          right: -3rem;
+          width: 300px;
+          height: 300px;
           z-index: 1;
           background: url('/rectangle-grid--gray.svg') no-repeat;
+          animation: verticalMovement 5s ease-in infinite backwards;
+        }
+
+        @keyframes verticalMovement {
+          0%, 100% {
+            transform: translateX(.5rem);
+          }
+
+          50% {
+            transform: translateY(.5rem)
+          }  
         }
 
         .hero-image {
