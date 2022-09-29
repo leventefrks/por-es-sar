@@ -44,7 +44,6 @@ export default Quote;
   line-height: 1.5;
   color: var(--color-primary);
   font-family: var(--font-family-secondary);
-  margin-bottom: 0.5rem;
   max-width: 80ch;
 
   &:before,

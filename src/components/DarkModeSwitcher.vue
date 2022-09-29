@@ -1,10 +1,10 @@
 <template>
-  <div class="switch-wrapper">
+  <button class="switch-wrapper">
     <label>
       <input
         class="switch"
         type="checkbox"
-        @change.prevent="toggleDarkMode($event)"
+        @change.space="toggleDarkMode($event.target.checked)"
       />
       <div>
         <div class="moon">
@@ -85,7 +85,7 @@
         </div>
       </div>
     </label>
-  </div>
+  </button>
 </template>
 <script>
 const DarkModeSwitcher = {
@@ -98,13 +98,12 @@ const DarkModeSwitcher = {
   },
 
   mounted() {
-    console.log('theme', this.getTheme(), 'preference');
     this.isDarkMode = this.getTheme();
   },
 
   methods: {
-    toggleDarkMode($event) {
-      this.isDarkMode = $event.target.checked;
+    toggleDarkMode(isDarkMode) {
+      this.isDarkMode = isDarkMode;
 
       if (this.isDarkMode) {
         document.querySelector('html').classList.add('dark');
@@ -140,6 +139,15 @@ export default DarkModeSwitcher;
   place-content: center;
   min-height: 100%;
   margin-left: 0;
+  background-color: transparent;
+  border: 0;
+  height: 100%;
+  align-self: center;
+
+  &:focus {
+    outline: 1px dashed var(--color-primary);
+    border-radius: 0.2rem;
+  }
 
   .switch {
     display: none;
