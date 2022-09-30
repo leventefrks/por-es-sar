@@ -69,9 +69,10 @@ const tours = [
 
 <style lang="scss">
   .city-tour {
-    max-width: 70rem;
+    width: 100%;
     padding: 8rem 1rem;
     margin: 0 auto;
+    background-color: var(--color-background);
     article {
       display: flex;
       flex-direction: column;
@@ -80,6 +81,7 @@ const tours = [
 
     .title {
       font-family: var(--font-family-primary);
+      color: var(--color-primary);
       margin-bottom: 2rem;
       font-size: clamp(2rem, 3rem, 3.5rem);
       text-align: center;
@@ -87,6 +89,7 @@ const tours = [
 
     .text {
       font-family: var(--font-family-secondary);
+      color: var(--color-primary);
       font-size: clamp(1.1rem, 1.2rem, 1.3rem);
       line-height: 1.7;
       font-weight: 600;
@@ -102,6 +105,9 @@ const tours = [
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       place-content: center;
+      max-width: 70rem;
+      width: 100%;
+      margin: 0 auto;
       gap: 2rem;
       margin-top: 4rem;
 

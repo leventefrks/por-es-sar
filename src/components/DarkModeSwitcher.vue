@@ -97,7 +97,19 @@ const DarkModeSwitcher = {
     };
   },
 
-  mounted() {
+  watch: {
+    isDarkMode(value) {
+      console.log('watcher',value);
+      
+      if (value) {
+        document.querySelector('html').classList.add('dark');
+      } else {
+        document.querySelector('html').classList.remove('dark');
+      }
+    }
+  },
+
+  created() {
     this.isDarkMode = this.getTheme();
   },
 
@@ -115,7 +127,7 @@ const DarkModeSwitcher = {
     },
 
     getTheme() {
-      return JSON.parse(localStorage.getItem('darkMode'));
+      return JSON.parse(localStorage.getItem('dark'));
     },
 
     // getMediaPreference() {
