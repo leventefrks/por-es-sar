@@ -97,17 +97,11 @@ const DarkModeSwitcher = {
     };
   },
 
-  watch: {
-    isDarkMode(value) {
-      console.log('watcher',value);
-      
-      if (value) {
-        document.querySelector('html').classList.add('dark');
-      } else {
-        document.querySelector('html').classList.remove('dark');
-      }
-    }
-  },
+  // watch: {
+  //   isDarkMode(value) {
+  //     this.toggleDarkMode(value);
+  //   }
+  // },
 
   created() {
     this.isDarkMode = this.getTheme();
@@ -128,13 +122,7 @@ const DarkModeSwitcher = {
 
     getTheme() {
       return JSON.parse(localStorage.getItem('dark'));
-    },
-
-    // getMediaPreference() {
-    //   return (hasDarkPreference = window.matchMedia(
-    //     '(prefers-color-scheme: dark)'
-    //   ).matches);
-    // },
+    }
   },
 };
 

@@ -26,7 +26,7 @@ const tours = [
 
 <Layout>
   <Nav />
-  <section class="city-tour">
+  <section class="city-tour content">
     <article>
       <h2 class="title">Antivárosnéző séta</h2>
       <p class="text">
@@ -82,8 +82,7 @@ const tours = [
     .title {
       font-family: var(--font-family-primary);
       color: var(--color-primary);
-      margin-bottom: 2rem;
-      font-size: clamp(2rem, 3rem, 3.5rem);
+      font-size: clamp(2rem, 2.2rem, 2.5rem);
       text-align: center;
     }
 
@@ -105,7 +104,7 @@ const tours = [
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       place-content: center;
-      max-width: 70rem;
+      max-width: 50rem;
       width: 100%;
       margin: 0 auto;
       gap: 2rem;
