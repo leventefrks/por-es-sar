@@ -4,21 +4,29 @@ const shops = [
     name: 'Hype and Hyper',
     url: 'https://hypeandhyper.com/',
     src: 'hypeandhyper',
+    width: 40,
+    height: 40
   },
   {
     name: 'ISBN',
     url: 'https://www.isbnbooks.hu/',
     src: 'isbn',
+    width: 46,
+    height: 40
   },
   {
     name: 'Írók boltja',
     url: 'https://irokboltja.hu/',
     src: 'irokboltja',
+    width: 153,
+    height: 43
   },
   {
     name: 'Urbanum',
     url: 'https://urbanum.hu/',
     src: 'urbanum',
+    width: 159,
+    height: 43
   }
 ];
 ---
@@ -46,7 +54,8 @@ const shops = [
                     src={`/purchase-${shop.src}-logo.webp`}
                     alt={shop.name}
                     loading="lazy"
-                    height="40"
+                    height={shop.height}
+                    width={shop.width}
                   />
                 </a>
               </li>
