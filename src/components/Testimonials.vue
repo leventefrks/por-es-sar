@@ -101,7 +101,7 @@ export default Testimonials;
     position: relative;
     max-width: 70rem;
     margin: 0 auto;
-    height: minmax(600px, 10vh);
+    height: min(600px, 30vh);
   }
 }
 
