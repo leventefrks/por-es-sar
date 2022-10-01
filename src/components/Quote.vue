@@ -11,7 +11,7 @@
         :height="80"
       />
       <span class="name">{{ currentQuote.name }}</span>
-      <span class="position">{{ currentQuote.company }}</span>
+      <span class="company">{{ currentQuote.company }}</span>
     </div>
   </blockquote>
 </template>
@@ -88,7 +88,7 @@ export default Quote;
     font-weight: 900;
   }
 
-  .position {
+  .company {
     position: relative;
     display: flex;
     align-items: center;
