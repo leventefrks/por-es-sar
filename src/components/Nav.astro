@@ -126,7 +126,7 @@ const navItems = [
       transform: translateY(-100%);
       isolation: isolate;
       z-index: 1;
-      transition: transform 250ms;
+      transition: var(--base-transform-transition);
 
       strong {
         font-size: 1.3rem;
@@ -181,7 +181,7 @@ const navItems = [
           padding: 0.2rem;
           color: var(--color-primary);
           font-family: var(--font-family-secondary);
-          transition: transform 250ms ease-in;
+          transition: var(--base-transform-transition);
 
           &:hover {
             text-shadow: 0 0 .65px var(--color-primary), 0 0 .65px var(--color-primary);
@@ -197,7 +197,7 @@ const navItems = [
             background-color: var(--color-primary);
             transform-origin: left;
             transform: scaleX(0);
-            transition: transform 250ms ease-in;
+            transition: var(--base-transform-transition);
             z-index: -1;
           }
 
