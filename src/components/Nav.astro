@@ -33,17 +33,19 @@ const navItems = [
       /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     const hasInterSectionObserver = () => 'IntersectionObserver' in window;
-
-    const headerEffect = () => {
-      const header = document.querySelector('.header');
-      const target = document.querySelector('.content');
-
-      const options = {
-        rootMargin: '0px',
-        threshold: 0.85,
+   
+    const header = document.querySelector('.header');
+   
+    const options = {
+        rootMargin: '-40px',
+        threshold: 1,
       };
 
-      const observer = new IntersectionObserver((entries, observer) => {
+    const headerEffect = () => {
+      const target = document.querySelector('.page-title');
+
+      const observer = new IntersectionObserver((entries = [], observer) => {
+        console.log(entries);
         entries.forEach(entry => {
           if (!entry.isIntersecting) {
             header.classList.add('header--white');
@@ -57,7 +59,6 @@ const navItems = [
     };
 
     if (isMobile() || !hasInterSectionObserver()) {
-      const header = document.querySelector('.header');
       header.classList.add('header--white');
     } else {
       headerEffect();
@@ -156,7 +157,7 @@ const navItems = [
 
     &--white {
       background-color: var(--color-navigation);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(8px);
       box-shadow: var(--shadow-elevation-low);
 
 

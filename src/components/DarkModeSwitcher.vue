@@ -1,10 +1,12 @@
 <template>
-  <button class="switch-wrapper">
+  <button class="switch-wrapper" :aria-label="darkModeAriaLabel">
     <label>
       <input
         class="switch"
         type="checkbox"
-        @change.space="toggleDarkMode($event.target.checked)"
+        v-model="isDarkMode"
+        :value="isDarkMode"
+        @input="toggleDarkMode($event.target.checked)"
       />
       <div>
         <div class="moon">
@@ -93,34 +95,43 @@ const DarkModeSwitcher = {
 
   data() {
     return {
-      isDarkMode: false,
+      isDarkMode: '',
     };
   },
 
-  // watch: {
-  //   isDarkMode(value) {
-  //     this.toggleDarkMode(value);
-  //   }
-  // },
+  mounted() {
+    this.onAnimation();
+    this.isDarkMode = this.getLocalStorageTheme();
+    this.toggleDarkMode(this.isDarkMode);
+  },
 
-  created() {
-    this.isDarkMode = this.getTheme();
+  computed: {
+    darkModeAriaLabel() {
+      const labelPostfix = 'mód bekapcsolása';
+      return this.isDarkMode ? `Sötét ${labelPostfix}` : `Világos ${labelPostfix}`;
+    }
   },
 
   methods: {
-    toggleDarkMode(isDarkMode) {
-      this.isDarkMode = isDarkMode;
+    onAnimation() {
+    setTimeout(() =>  document.querySelector('.switch-wrapper').classList.add('switch-wrapper--animated'), 250);
+  },
 
+    toggleDarkMode(isDarkMode) {
+      const html = document.querySelector('html');
+      this.isDarkMode = isDarkMode;
+    
       if (this.isDarkMode) {
-        document.querySelector('html').classList.add('dark');
+        html.classList.add('dark');
       } else {
-        document.querySelector('html').classList.remove('dark');
+        html.classList.remove('dark');
       }
 
       localStorage.setItem('dark', this.isDarkMode);
+
     },
 
-    getTheme() {
+    getLocalStorageTheme() {
       return JSON.parse(localStorage.getItem('dark'));
     }
   },
@@ -142,7 +153,13 @@ export default DarkModeSwitcher;
   background-color: transparent;
   border: 0;
   height: 100%;
+  opacity: 0;
   align-self: center;
+  transition: opacity 150ms ease-in;
+
+  &--animated {
+    opacity: 1;
+  }
 
   &:focus {
     outline: 1px dashed var(--color-primary);

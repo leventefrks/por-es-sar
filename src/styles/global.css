@@ -2,17 +2,16 @@
 
 :root {
   --color-primary: #333;
+  --color-main-background: #fff;
   --color-secondary: #fadb85;
   --color-icon: #fadb85;
-  --color-title-primary: #333;
-  --color-title-secondary: #fadb85;
   --color-background: #fff;
-  --color-main-background: #f3f4f6;
   --color-navigation: #ffffffe6;
   --color-footer: #333;
+  --color-footer-focus: fff;
+  --color-sub-title: #fadb85;
   --color-feature: #333;
   --color-selection: #dabd68;
-  --color-skeleton: #ddd;
   --color-cta-background: #333;
   --color-cta-font-color: #fff;
   --color-hero-gradient: linear-gradient(
@@ -47,7 +46,7 @@
   --color-primary: #F9F7F5;
   --color-secondary: #404040;
   --color-background: #121212;
-  --color-main-background: #333;
+  --color-main-background: #121212;
   --color-navigation: #181818;
   --color-feature: #333;
   --color-footer: #181818;
@@ -55,6 +54,10 @@
   --color-cta-font-color: #333;
   --color-hero-gradient: linear-gradient(180deg, #282828 51%, #121212 84%);
   --shadow-color: 0;
+}
+
+html {
+  background-color: var(--color-main-background);
 }
 
 ::selection {

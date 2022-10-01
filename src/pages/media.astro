@@ -1,5 +1,4 @@
 ---
-import FullPage from '../layouts/FullPage.astro';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -14,7 +13,7 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
   <Nav />
   <section class="media content">
     <article>
-      <h2 class="title">Szép (volt) Budapest?!</h2>
+      <h2 class="title page-title">Szép volt Budapest?!</h2>
       <h3 class="sub-title">Beszélgetés a Budapesti por és sárról</h3>
       <p class="text">
         2022. június 20-án <a
@@ -57,7 +56,7 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
       font-family: var(--font-family-primary);
       font-size: clamp(1.3rem, 1.5rem, 2rem);
       text-align: center;
-      color: var(--color-secondary);
+      color: var(--color-sub-title);
     }
 
     .text {

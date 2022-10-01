@@ -1,9 +1,40 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+---
+
 <html lang="hu">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Author: Gáspár Balázs, por és sár" />
   <title>Por és sár</title>
+  <head>
+    <script>
+      const html = document.querySelector("html");
+      const isStorage = typeof localStorage !== 'undefined';
+      const isSavedStorage = localStorage.getItem('dark')
+
+      const theme = (() => {
+        if (
+          isStorage && isSavedStorage
+        ) {
+          return JSON.parse(isSavedStorage);
+        }
+
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          localStorage.setItem('dark', true);
+          return true;
+        }
+      })();
+
+    if (theme) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+    </script>
+  </head>
 
   <div class="layout">
     <slot />

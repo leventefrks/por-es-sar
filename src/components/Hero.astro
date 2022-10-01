@@ -1,6 +1,6 @@
 <section class="hero content">
   <article class="intro-text">
-    <h2 class="title">Az antivárosnéző füzet</h2>
+    <h2 class="title ">Az antivárosnéző füzet</h2>
     <p class="text">
       „Tudd meg, elődeinknek mi minden nem tetszett hazánkban – gyengéd irónia
       és maró gúny, örökös elégedetlenkedés és folytonos pocskondiázás!”
@@ -8,7 +8,7 @@
     <!-- <a href="/" class="cta">Tovább</a> -->
   </article>
   <div class="jumbotron">
-    <div class="image-wrapper">
+    <div class="image-wrapper page-title">
       <img src="/hero-image-opt.jpg" class="hero-image" alt="por és sár" />
     </div>
   </div>
@@ -25,6 +25,9 @@
     height: min(800px, 100vh);
 
     .intro-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       max-width: 62ch;
       width: 100%;
       padding: 0rem 1.25rem 2rem;
