@@ -1,6 +1,8 @@
 ---
+import { Seo } from 'astro-seo-meta';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Title from '../components/Title.astro';
 import Footer from '../components/Footer.astro';
 
 const infos = [
@@ -32,15 +34,26 @@ const infos = [
 ];
 ---
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <Seo title="por és sár | Rólam" description="My fast astro website" icon="" />
+</head>
+
 <Layout>
   <Nav />
   <section class="about-me content">
     <article>
       <div class="profile">
-        <img src="/profile.jpg" />
+        <img
+          src="/profile.jpg"
+          alt="Gáspár Balázs"
+          decoding="async"
+          loading="lazy"
+        />
       </div>
       <div class="text">
-        <h2 class="page-title">Gáspár Balázs</h2>
+        <Title>Gáspár Balázs</Title>
         <h3>Lorem ipsum</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -87,13 +100,6 @@ const infos = [
       flex-direction: column;
       gap: 1rem;
 
-      
-      h2 {
-        text-align: center;
-        font-size: clamp(1.8rem, 3rem, 3.5rem);
-        color: var(--color-primary);
-      }
-
       h3 {
         color: var(--color-primary);
       }
@@ -118,7 +124,6 @@ const infos = [
         filter: grayscale(100%);
         border-radius: inherit;
       }
-
 
       &:before,
       &:after {

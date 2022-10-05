@@ -45,7 +45,7 @@ const features = [
 
 <style lang="scss">
   .features {
-    padding: 2rem 3.25rem;
+    padding: 12rem 3.25rem 6rem;
     margin: 0 auto;
     background-color: var(--color-background);
 
@@ -55,7 +55,7 @@ const features = [
 
     .items {
       display: grid;
-      grid-template-columns: 1fr;
+      place-items: center;
       gap: 4rem;
 
       .feature {
@@ -67,6 +67,8 @@ const features = [
         text-align: center;
         padding: 2rem 0.5rem;
         gap: 5px;
+        max-width: 380px;
+        width: 100%;
         border-radius: 10px;
         cursor: auto;
         user-select: none;
@@ -133,7 +135,7 @@ const features = [
 
   @media screen and (min-width: 1000px) {
     .features {
-      padding: 3rem 7rem 8rem;
+      padding: 6rem 7rem 8rem;
 
       .main-title {
         margin-bottom: 6rem;

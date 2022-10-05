@@ -37,13 +37,14 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
 <style lang="scss">
   .introduction {
     position: relative;
-    padding: 10rem 1.25rem;
+    padding: 6rem 1.25rem;
     background-color: var(--color-secondary);
     content-visibility: auto;
 
     &:before,
     &:after {
       position: absolute;
+      display: none;
       content: '';
       left: 0;
       background: url('/torn-ripped-paper.svg') no-repeat;
@@ -80,22 +81,22 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
         color: var(--color-primary);
 
         &:after {
-            position: absolute;
-            content: '';
-            left: 0;
-            bottom: 0;
-            width: 95%;
-            height: 2px;
-            background-color: var(--color-primary);
-            transform-origin: left;
-            transform: scaleX(0);
-            transition: var(--base-transform-transition);
-            z-index: -1;
-          }
+          position: absolute;
+          content: '';
+          left: 0;
+          bottom: 0;
+          width: 95%;
+          height: 2px;
+          background-color: var(--color-primary);
+          transform-origin: left;
+          transform: scaleX(0);
+          transition: var(--base-transform-transition);
+          z-index: -1;
+        }
 
-          &:hover:after {
-            transform: scaleX(1);
-          }
+        &:hover:after {
+          transform: scaleX(1);
+        }
       }
     }
 
@@ -104,9 +105,14 @@ const instagramUrl = 'https://www.instagram.com/poressar/';
     }
   }
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 1000px) {
     .introduction {
-      padding: 8rem 0rem;
+      padding: 8rem 7rem;
+
+      &:before,
+      &:after {
+        display: block;
+      }
     }
   }
 </style>

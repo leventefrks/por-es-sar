@@ -143,7 +143,6 @@ export default DarkModeSwitcher;
 .switch-wrapper {
   --light-color: #f9fafb;
   --dark-color: #1f2937;
-  --border-width: 2px;
   --icon-size: 35px;
   position: relative;
   display: grid;
@@ -155,7 +154,7 @@ export default DarkModeSwitcher;
   height: 100%;
   opacity: 0;
   align-self: center;
-  transition: opacity 150ms ease-in;
+  transition: opacity 180ms ease-in;
 
   &--animated {
     opacity: 1;

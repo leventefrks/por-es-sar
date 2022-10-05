@@ -1,6 +1,6 @@
 <section class="hero content">
   <article class="intro-text">
-    <h2 class="title ">Az antivárosnéző füzet</h2>
+    <h2 class="title">Az antivárosnéző füzet</h2>
     <p class="text">
       „Tudd meg, elődeinknek mi minden nem tetszett hazánkban – gyengéd irónia
       és maró gúny, örökös elégedetlenkedés és folytonos pocskondiázás!”
@@ -9,7 +9,12 @@
   </article>
   <div class="jumbotron">
     <div class="image-wrapper page-title">
-      <img src="/hero-image-opt.jpg" class="hero-image" alt="por és sár" />
+      <img
+        src="/hero-image-opt.jpg"
+        class="hero-image"
+        alt="por és sár"
+        decoding="async"
+      />
     </div>
   </div>
 </section>
@@ -18,10 +23,8 @@
   .hero {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr;
-    place-items: end;
+    gap: 2rem;
     background-color: var(--color-background);
-    padding-left: 0;
     height: min(800px, 100vh);
 
     .intro-text {
@@ -30,7 +33,7 @@
       justify-content: center;
       max-width: 62ch;
       width: 100%;
-      padding: 4.5rem 1.25rem 2rem;
+      margin: 0 auto;
       color: var(--color-primary);
 
       .title {
@@ -76,10 +79,10 @@
 
       .image-wrapper {
         position: relative;
-        top: 50%;
-        transform: translateY(-50%);
+        top: -2rem;
         border-radius: 10px;
         max-width: 650px;
+        margin: 0 auto;
         box-shadow: var(--shadow-elevation-high);
 
         &:before {
@@ -97,13 +100,14 @@
         }
 
         @keyframes verticalMovement {
-          0%, 100% {
-            transform: translateX(.5rem);
+          0%,
+          100% {
+            transform: translateX(0.5rem);
           }
 
           50% {
-            transform: translateY(.5rem)
-          }  
+            transform: translateY(0.5rem);
+          }
         }
 
         .hero-image {
@@ -123,11 +127,12 @@
   @media screen and (min-width: 1000px) {
     .hero {
       grid-template-columns: 1fr 1fr;
-      gap: 0;
+      gap: 4rem;
       place-items: center;
 
       .intro-text {
-        padding: 0;
+        padding-left: 2rem;
+        animation: fade-down 250ms ease-in;
 
         .title {
           &:before {
@@ -143,12 +148,15 @@
         }
 
         .image-wrapper {
-        left: -10%;
+          left: -10%;
+          top: 50%;
+          transform: translateY(-50%);
+          animation: opacity 350ms ease-in;
 
-        &:before {
-          display: block;
+          &:before {
+            display: block;
+          }
         }
-      }
       }
     }
   }

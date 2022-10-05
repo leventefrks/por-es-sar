@@ -1,6 +1,8 @@
 ---
+import { Seo } from 'astro-seo-meta';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Title from '../components/Title.astro';
 import Footer from '../components/Footer.astro';
 
 const urbanumUrl = 'https://urbanum.hu/';
@@ -9,11 +11,17 @@ const wikipediaUrl =
 const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
 ---
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <Seo title="por és sár | Média" description="My fast astro website" icon="" />
+</head>
+
 <Layout>
   <Nav />
   <section class="media content">
     <article>
-      <h2 class="title page-title">Szép volt Budapest?!</h2>
+      <Title>Szép volt Budapest?!</Title>
       <h3 class="sub-title">Beszélgetés a Budapesti por és sárról</h3>
       <p class="text">
         2022. június 20-án <a
@@ -38,7 +46,6 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
   </section>
   <Footer />
 </Layout>
-
 <style lang="scss">
   .media {
     width: 100%;

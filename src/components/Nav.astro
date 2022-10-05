@@ -1,4 +1,5 @@
 ---
+import MobileMenu from './MobileMenu.astro';
 import DarkModeSwitcher from './DarkModeSwitcher.vue';
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -33,19 +34,18 @@ const navItems = [
       /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     const hasInterSectionObserver = () => 'IntersectionObserver' in window;
-   
+
     const header = document.querySelector('.header');
-   
+
     const options = {
-        rootMargin: '-40px',
-        threshold: 1,
-      };
+      rootMargin: '-40px',
+      threshold: 1,
+    };
 
     const headerEffect = () => {
       const target = document.querySelector('.page-title');
 
       const observer = new IntersectionObserver((entries = [], observer) => {
-        console.log(entries);
         entries.forEach(entry => {
           if (!entry.isIntersecting) {
             header.classList.add('header--white');
@@ -68,7 +68,7 @@ const navItems = [
 
 <header class="header">
   <a class="skip-to-content-link" href="#main">
-    Ugrás a <strong>por és sár </strong>tartalmához
+    Ugrás a <strong>por és sár</strong>tartalmához
   </a>
   <nav role="navigation">
     <h1 class="brand-logo">
@@ -95,6 +95,7 @@ const navItems = [
     </ul>
   </nav>
   <DarkModeSwitcher client:load />
+  <!-- <MobileMenu /> -->
 </header>
 
 <style lang="scss">
@@ -120,7 +121,7 @@ const navItems = [
       width: 100%;
       font-family: var(--font-family-secondary);
       font-size: 1rem;
-      background: var(--color-cta-background) ;
+      background: var(--color-cta-background);
       color: var(--color-cta-font-color);
       padding: 1.2rem;
       transform: translateY(-100%);
@@ -132,9 +133,9 @@ const navItems = [
         font-size: 1.3rem;
       }
     }
-      .skip-to-content-link:focus {
-        transform: translateY(0);
-      }
+    .skip-to-content-link:focus {
+      transform: translateY(0);
+    }
 
     nav {
       display: flex;
@@ -160,7 +161,6 @@ const navItems = [
       backdrop-filter: blur(8px);
       box-shadow: var(--shadow-elevation-low);
 
-
       nav {
         .brand-logo {
           a {
@@ -177,14 +177,15 @@ const navItems = [
         a {
           position: relative;
           text-decoration: none;
-          font-size: clamp(1.1rem, 1.2rem, 1.5rem);
+          font-size: clamp(1rem, 1.1rem, 1.3rem);
           padding: 0.2rem;
           color: var(--color-primary);
           font-family: var(--font-family-secondary);
           transition: var(--base-transform-transition);
 
           &:hover {
-            text-shadow: 0 0 .65px var(--color-primary), 0 0 .65px var(--color-primary);
+            text-shadow: 0 0 0.65px var(--color-primary),
+              0 0 0.65px var(--color-primary);
           }
 
           &:after {
@@ -236,7 +237,7 @@ const navItems = [
 
       .nav-items {
         display: flex;
-        gap: 2rem;
+        gap: 1.5rem;
       }
     }
   }

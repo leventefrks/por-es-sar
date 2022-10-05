@@ -1,14 +1,26 @@
 ---
+import { Seo } from 'astro-seo-meta';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Title from '../components/Title.astro';
 import Footer from '../components/Footer.astro';
 ---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <Seo
+    title="por és sár | Kapcsolat"
+    description="My fast astro website"
+    icon=""
+  />
+</head>
 
 <Layout>
   <Nav />
   <section class="contact content">
     <article>
-      <h2 class="title page-title">Kapcsolat</h2>
+      <Title>Kapcsolat</Title>
       <p class="text"></p>
     </article>
   </section>
@@ -21,11 +33,6 @@ import Footer from '../components/Footer.astro';
     margin: 0 auto;
     background-color: var(--color-background);
     min-height: 100vh;
-    .title {
-      color: var(--color-primary);
-      font-size: clamp(2rem, 3rem, 3.5rem);
-      text-align: center;
-    }
 
     .sub-title {
       font-size: clamp(1.3rem, 1.5rem, 2rem);

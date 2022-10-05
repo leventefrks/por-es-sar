@@ -1,6 +1,8 @@
 ---
+import { Seo } from 'astro-seo-meta';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Title from '../components/Title.astro';
 import Footer from '../components/Footer.astro';
 
 const tours = [
@@ -23,11 +25,17 @@ const tours = [
 ];
 ---
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <Seo title="por és sár | Séták" description="My fast astro website" icon="" />
+</head>
+
 <Layout>
   <Nav />
   <section class="city-tour content">
     <article>
-      <h2 class="title page-title">Antivárosnéző séta</h2>
+      <Title>Antivárosnéző séta</Title>
       <p class="text">
         Ha kíváncsi vagy, hogy elődeinknek mi nem tetszett és miért nem tetszett
         az 1873 és 1914 között fokozatosan világvárossá váló Budapesten, gyere
@@ -78,12 +86,6 @@ const tours = [
       gap: 2rem;
     }
 
-    .title {
-      color: var(--color-primary);
-      font-size: clamp(2rem, 2.2rem, 2.5rem);
-      text-align: center;
-    }
-
     .text {
       font-family: var(--font-family-secondary);
       color: var(--color-primary);
@@ -111,6 +113,7 @@ const tours = [
       .image-wrapper {
         padding: 1rem;
         border-radius: 3px;
+        background-color: var(--color-photo);
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 10px 0px;
         .image {
           border-radius: inherit;

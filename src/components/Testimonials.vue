@@ -92,7 +92,7 @@ export default Testimonials;
 
 <style lang="scss">
 .testimonials {
-  padding: 1.25rem;
+  padding: 6rem 1.25rem;
   margin: 0 auto;
   content-visibility: auto;
   background-color: var(--color-background);
@@ -127,7 +127,7 @@ export default Testimonials;
 
 @media screen and (min-width: 700px) {
   .testimonials {
-    padding: 8rem 7rem 8rem;
+    padding: 8rem 7rem;
 
     .quote {
       &:before {
