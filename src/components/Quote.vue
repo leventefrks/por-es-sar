@@ -7,8 +7,8 @@
         :src="`/${currentQuote.src}.jpeg`"
         :alt="currentQuote.name"
         class="profile"
-        :width="80"
-        :height="80"
+        :width="70"
+        :height="70"
       />
       <span class="name">{{ currentQuote.name }}</span>
       <span class="company">{{ currentQuote.company }}</span>

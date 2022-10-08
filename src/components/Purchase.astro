@@ -5,29 +5,29 @@ const shops = [
     url: 'https://hypeandhyper.com/',
     src: 'hypeandhyper',
     width: 40,
-    height: 40
+    height: 40,
   },
   {
     name: 'ISBN',
     url: 'https://www.isbnbooks.hu/',
     src: 'isbn',
     width: 46,
-    height: 40
+    height: 40,
   },
   {
     name: 'Írók boltja',
     url: 'https://irokboltja.hu/',
     src: 'irokboltja',
     width: 153,
-    height: 43
+    height: 43,
   },
   {
     name: 'Urbanum',
     url: 'https://urbanum.hu/',
     src: 'urbanum',
     width: 159,
-    height: 43
-  }
+    height: 43,
+  },
 ];
 ---
 
@@ -35,7 +35,12 @@ const shops = [
   <h2 class="main-title">Főváros nevezetességei másképp</h2>
   <article class="purchase-wrapper">
     <div class="image-wrapper">
-      <img src="/por-es-sar-cover.jpg" alt="Por és sár füzetének borítója" decoding="async" loading="lazy" />
+      <img
+        src="/por-es-sar-cover.jpg"
+        alt="Por és sár füzetének borítója"
+        decoding="async"
+        loading="lazy"
+      />
     </div>
     <div class="card">
       <a href="mailto:poressar@gmail.com" class="cta">Írj nekem</a>
@@ -65,15 +70,22 @@ const shops = [
       </ul>
     </div>
   </article>
-  <p class="text">A füzetben a főváros jól ismert helyeit és alkotásait mutatom be 1873 és 1918 között megjelent szövegek segítségével, egy sajátos nézőpontból: nem a megszokott, feltétlen csodálat és kötelező áhítat nevében, vagy sosem hallott titkok feltárásának céljából, hanem hogy láthatóvá tegyem, elődeinknek mi nem tetszett és miért nem tetszett a fokozatosan világvárossá váló Budapesten.</p>
+  <p class="text">
+    A füzetben a főváros jól ismert helyeit és alkotásait mutatom be 1873 és
+    1918 között megjelent szövegek segítségével, egy sajátos nézőpontból: nem a
+    megszokott, feltétlen csodálat és kötelező áhítat nevében, vagy sosem
+    hallott titkok feltárásának céljából, hanem hogy láthatóvá tegyem,
+    elődeinknek mi nem tetszett és miért nem tetszett a fokozatosan világvárossá
+    váló Budapesten.
+  </p>
 </section>
 
 <style lang="scss" scoped>
   .purchase {
-    padding: 2rem 1.25rem;
+    padding: 4rem 1.25rem;
     margin: 0 auto;
     content-visibility: auto;
-    background-color: var(--color-background);
+    background-color: var(--color-purchase);
 
     .purchase-wrapper {
       display: flex;
@@ -88,7 +100,6 @@ const shops = [
         border-radius: 10px;
         box-shadow: var(--shadow-elevation-medium);
         isolation: isolate;
-
 
         &:before {
           content: '';
@@ -105,13 +116,14 @@ const shops = [
         }
 
         @keyframes horizontalMovement {
-          0%, 100% {
-            transform: translate(.5rem, -50%);
+          0%,
+          100% {
+            transform: translate(0.5rem, -50%);
           }
 
           50% {
-            transform: translate(-.5rem, -50%)
-          }  
+            transform: translate(-0.5rem, -50%);
+          }
         }
 
         img {
@@ -159,12 +171,11 @@ const shops = [
             padding: 0.1rem 0.2rem;
             overflow: hidden;
 
-          &:focus {
-            outline: 1px dashed var(--color-primary);
-            border-radius: 0.2rem;
+            &:focus {
+              outline: 1px dashed var(--color-primary);
+              border-radius: 0.2rem;
             }
           }
-
         }
       }
 
@@ -216,7 +227,7 @@ const shops = [
 
   @media screen and (min-width: 1000px) {
     .purchase {
-      padding: 4rem 7rem 7rem;
+      padding: 8rem 7rem 7rem;
       .purchase-wrapper {
         flex-direction: row;
       }

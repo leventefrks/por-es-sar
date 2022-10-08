@@ -108,19 +108,27 @@ const DarkModeSwitcher = {
   computed: {
     darkModeAriaLabel() {
       const labelPostfix = 'mód bekapcsolása';
-      return this.isDarkMode ? `Sötét ${labelPostfix}` : `Világos ${labelPostfix}`;
-    }
+      return this.isDarkMode
+        ? `Sötét ${labelPostfix}`
+        : `Világos ${labelPostfix}`;
+    },
   },
 
   methods: {
     onAnimation() {
-    setTimeout(() =>  document.querySelector('.switch-wrapper').classList.add('switch-wrapper--animated'), 250);
-  },
+      setTimeout(
+        () =>
+          document
+            .querySelector('.switch-wrapper')
+            .classList.add('switch-wrapper--animated'),
+        250
+      );
+    },
 
     toggleDarkMode(isDarkMode) {
       const html = document.querySelector('html');
       this.isDarkMode = isDarkMode;
-    
+
       if (this.isDarkMode) {
         html.classList.add('dark');
       } else {
@@ -128,12 +136,11 @@ const DarkModeSwitcher = {
       }
 
       localStorage.setItem('dark', this.isDarkMode);
-
     },
 
     getLocalStorageTheme() {
       return JSON.parse(localStorage.getItem('dark'));
-    }
+    },
   },
 };
 
@@ -221,7 +228,7 @@ export default DarkModeSwitcher;
 
 @media screen and (min-width: 1000px) {
   .switch-wrapper {
-    margin-left: 2rem;
+    margin-left: 1.5rem;
   }
 }
 </style>

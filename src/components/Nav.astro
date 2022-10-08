@@ -21,10 +21,10 @@ const navItems = [
     name: 'Rólam',
     route: 'rolam',
   },
-  {
-    name: 'Kapcsolat',
-    route: 'kapcsolat',
-  },
+  // {
+  //   name: 'Kapcsolat',
+  //   route: 'kapcsolat',
+  // },
 ];
 ---
 
@@ -112,30 +112,6 @@ const navItems = [
     isolation: isolate;
     z-index: 2;
     transition: all 150ms ease-in-out;
-
-    .skip-to-content-link {
-      position: absolute;
-      left: 0;
-      display: block;
-      text-align: center;
-      width: 100%;
-      font-family: var(--font-family-secondary);
-      font-size: 1rem;
-      background: var(--color-cta-background);
-      color: var(--color-cta-font-color);
-      padding: 1.2rem;
-      transform: translateY(-100%);
-      isolation: isolate;
-      z-index: 1;
-      transition: var(--base-transform-transition);
-
-      strong {
-        font-size: 1.3rem;
-      }
-    }
-    .skip-to-content-link:focus {
-      transform: translateY(0);
-    }
 
     nav {
       display: flex;
@@ -237,7 +213,7 @@ const navItems = [
 
       .nav-items {
         display: flex;
-        gap: 1.5rem;
+        gap: 2rem;
       }
     }
   }
