@@ -5,7 +5,17 @@
       „Tudd meg, elődeinknek mi minden nem tetszett hazánkban – gyengéd irónia
       és maró gúny, örökös elégedetlenkedés és folytonos pocskondiázás!”
     </p>
-    <!-- <a href="/" class="cta">Tovább</a> -->
+    <a href="#features" class="cta"
+      >Tovább <svg
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 38 23"
+      >
+        <path
+          d="M37.325 12.796a1.5 1.5 0 0 0-.03-2.121l-9.679-9.411a1.5 1.5 0 1 0-2.091 2.15l8.604 8.366-8.365 8.604a1.5 1.5 0 0 0 2.15 2.091l9.411-9.68ZM.771 13.75l35.5-.5-.042-3-35.5.5.042 3Z"
+        ></path>
+      </svg>
+    </a>
   </article>
   <div class="jumbotron">
     <div class="image-wrapper page-title">
@@ -33,8 +43,22 @@
       justify-content: center;
       max-width: 62ch;
       width: 100%;
-      margin: 0 auto;
+      padding: 0 1.25rem;
+      margin: 60px auto;
       color: var(--color-primary);
+
+      .cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        svg {
+          fill: var(--color-cta-font-color);
+          width: 30px;
+          height: 15px;
+        }
+      }
 
       .title {
         position: relative;

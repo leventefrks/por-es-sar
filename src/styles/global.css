@@ -13,6 +13,7 @@
   --color-feature: #333;
   --color-selection: #dabd68;
   --color-cta-background: #333;
+  --color-cta-hover-background: #181818;
   --color-cta-font-color: #f1f1f1;
   --color-photo: #f9fafb;
   --color-hero-gradient: linear-gradient(
@@ -50,6 +51,7 @@
   --color-feature: #333;
   --color-footer: #181818;
   --color-cta-background: #fadb85;
+  --color-cta-hover-background: #dabd68;
   --color-cta-font-color: #333;
   --color-photo: #404040;
   --color-hero-gradient: linear-gradient(180deg, #121212 51%, #282828 84%);
@@ -80,6 +82,7 @@ a:focus-visible {
 
 .cta {
   text-align: center;
+  width: fit-content;
   background-color: var(--color-cta-background);
   font-family: var(--font-family-secondary);
   padding: 0.5rem 2.5rem;
@@ -87,6 +90,12 @@ a:focus-visible {
   border-radius: 5px;
   border: 0;
   text-decoration: none;
+  box-shadow: var(--shadow-elevation-medium);
+  transition: background-color 250ms ease-in;
+}
+
+.cta:hover {
+  background-color: var(--color-cta-hover-background);
 }
 
 @keyframes opacity {

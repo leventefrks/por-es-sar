@@ -101,7 +101,7 @@ export default Testimonials;
     position: relative;
     max-width: 70rem;
     margin: 0 auto;
-    height: min(600px, 30vh);
+    height: 400px;
   }
 }
 
@@ -128,6 +128,10 @@ export default Testimonials;
 @media screen and (min-width: 700px) {
   .testimonials {
     padding: 8rem 7rem;
+
+    .quote-container {
+      height: 100%;
+    }
 
     .quote {
       &:before {

@@ -53,6 +53,7 @@ export default Quote;
     font-size: clamp(3rem, 8rem, 13rem);
     font-family: var(--font-family-primary);
     font-weight: 900;
+    opacity: 0.4;
   }
 
   &:before {
@@ -63,7 +64,7 @@ export default Quote;
 
   &:after {
     content: close-quote;
-    bottom: -8.5rem;
+    bottom: -9.5rem;
     right: 0;
   }
 }
