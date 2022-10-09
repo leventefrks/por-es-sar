@@ -7,6 +7,7 @@ import Features from '../components/Features.astro';
 import Introduction from '../components/Introduction.astro';
 import Testimonials from '../components/Testimonials.vue';
 import Purchase from '../components/Purchase.astro';
+import ScrollTop from '../components/ScrollTop.vue';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -16,21 +17,26 @@ import Footer from '../components/Footer.astro';
   <Seo
     title="por és sár"
     description="My fast astro website"
-    keywords={["por és sár", "antivárosnéző füzet", "antivárosnéző séta", "blog", "anti blog"]}
+    keywords={[
+      'por és sár',
+      'antivárosnéző füzet',
+      'antivárosnéző séta',
+      'blog',
+      'anti blog',
+    ]}
     icon="/favicon.ico"
     themeColor="#000000"
     colorScheme="light"
     facebook={{
-        image: "/facebook.png",
-        url: "https://www.poressar.hu",
-        type: "website",
+      image: '/facebook.png',
+      url: 'https://www.poressar.hu',
+      type: 'website',
     }}
-     twitter={{
-      image: "/twitter.png",
-      site: "@astrodotbuild",
-      card: "summary",
-  }}
-
+    twitter={{
+      image: '/twitter.png',
+      site: '@astrodotbuild',
+      card: 'summary',
+    }}
   />
 </head>
 
@@ -41,5 +47,6 @@ import Footer from '../components/Footer.astro';
   <Introduction />
   <Testimonials client:visible />
   <Purchase />
+  <ScrollTop client:load />
   <Footer />
 </Layout>
