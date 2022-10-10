@@ -51,10 +51,10 @@ export default MobileMenu;
   top: 61px;
   inset: 0;
   height: 0;
-  max-height: 100vh;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.35s, visibility 0.35s, height 0.35s ease-in;
+  will-change: auto;
 
   .nav-item {
     opacity: 0;
@@ -99,6 +99,7 @@ export default MobileMenu;
       transition: var(--base-transform-transition);
 
       &:hover {
+        transform: scale(1.15);
         text-shadow: 0 0 0.65px var(--color-primary),
           0 0 0.65px var(--color-primary);
       }

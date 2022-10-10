@@ -1,9 +1,19 @@
 <template>
-  <a href="#hero" :class="['scroll-top', { 'scroll-top--visible': isVisible }]">
-    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 40">
-      <path
-        d="M13.06.94a1.5 1.5 0 0 0-2.12 0l-9.547 9.545a1.5 1.5 0 1 0 2.122 2.122L12 4.12l8.485 8.486a1.5 1.5 0 1 0 2.122-2.122L13.06.94ZM13.5 40V2h-3v38h3Z"
-      />
+  <a
+    href="#hero"
+    :class="['scroll-top', { 'scroll-top--visible': isVisible }]"
+    aria-label="Ugrás a lap tetejére"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      viewBox="0 0 24 24"
+    >
+      <path d="m18 15-6-6-6 6" />
     </svg>
   </a>
 </template>
@@ -56,37 +66,40 @@ export default ScrollTop;
 .scroll-top {
   display: grid;
   place-items: center;
+  position: fixed;
   background-color: var(--color-cta-background);
+  color: var(--color-cta-font-color);
   width: 50px;
   height: 50px;
   border-radius: 50% !important;
   user-select: none;
-  position: fixed;
-  bottom: 200px;
-  right: 0.5rem;
+  bottom: 12.5rem;
+  right: 1rem;
   opacity: 0;
+  visibility: hidden;
   box-shadow: var(--shadow-elevation-medium);
   transform: translateY(4rem);
-  transition: all 450ms ease-in;
+  transition: all 250ms ease-in;
 
   &--visible {
     opacity: 0.8;
+    visibility: visible;
     transform: translateY(0);
   }
 
   &:hover {
+    transform: scale(1.1);
     background-color: var(--color-cta-hover-background);
   }
 
   svg {
-    fill: var(--color-cta-font-color);
     height: 25px;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .scroll-top {
-    bottom: 100px;
+    bottom: 6.25rem;
     right: 1.25rem;
   }
 }

@@ -80,6 +80,10 @@ const Nav = {
     }
   },
 
+  beforeDestroy() {
+    this.observer.unobserve(document.querySelector('.page-title'));
+  },
+
   computed: {
     isMobile() {
       return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -92,8 +96,6 @@ const Nav = {
 
   methods: {
     headerEffect() {
-      const target = document.querySelector('.page-title');
-
       this.observer = new IntersectionObserver((entries = [], observer) => {
         entries.forEach(entry => {
           if (!entry.isIntersecting) {
@@ -104,7 +106,7 @@ const Nav = {
         });
       }, this.observerOptions);
 
-      this.observer.observe(target);
+      this.observer.observe(document.querySelector('.page-title'));
     },
 
     onMobileMenuToggle() {
@@ -139,12 +141,6 @@ export default Nav;
   isolation: isolate;
   z-index: 2;
   transition: all 150ms ease-in-out;
-
-  &--inverse {
-    background-color: var(--color-navigation);
-    backdrop-filter: blur(8px);
-  }
-
   .mobile-menu {
     position: absolute;
     top: 1.25rem;
@@ -199,7 +195,10 @@ export default Nav;
   }
 
   .brand-logo {
+    position: absolute;
     align-self: center;
+    left: 50%;
+    transform: translateX(-50%);
 
     a {
       font-family: var(--font-family-primary);
@@ -215,16 +214,6 @@ export default Nav;
     display: flex;
     align-items: center;
     margin-left: auto;
-  }
-
-  .brand-logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
-    a {
-      font-size: clamp(0.95rem, 1.85rem, 2.25rem);
-    }
   }
 
   .nav-items {
@@ -277,6 +266,17 @@ export default Nav;
           background-color: var(--color-primary);
           transform: scaleX(1);
         }
+      }
+    }
+  }
+
+  &--inverse {
+    background-color: var(--color-navigation);
+    backdrop-filter: blur(8px);
+
+    .brand-logo {
+      a {
+        font-size: clamp(0.95rem, 1.85rem, 2.25rem);
       }
     }
   }
