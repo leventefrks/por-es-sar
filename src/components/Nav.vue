@@ -98,10 +98,10 @@ const Nav = {
     headerEffect() {
       this.observer = new IntersectionObserver((entries = [], observer) => {
         entries.forEach(entry => {
-          if (!entry.isIntersecting) {
-            this.isIntersecting = true;
-          } else {
+          if (entry.isIntersecting) {
             this.isIntersecting = false;
+          } else {
+            this.isIntersecting = true;
           }
         });
       }, this.observerOptions);

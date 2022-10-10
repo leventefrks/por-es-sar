@@ -35,7 +35,7 @@ export default Quote;
 .quote {
   margin: 0 auto;
   max-width: 50rem;
-  will-change: transform;
+  will-change: contents;
 }
 
 .text {

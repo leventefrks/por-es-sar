@@ -85,6 +85,7 @@ export default ScrollTop;
     opacity: 0.8;
     visibility: visible;
     transform: translateY(0);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
   &:hover {
@@ -93,7 +94,7 @@ export default ScrollTop;
   }
 
   svg {
-    height: 25px;
+    width: 30px;
   }
 }
 

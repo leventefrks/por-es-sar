@@ -94,7 +94,6 @@ export default Testimonials;
 .testimonials {
   padding: 6rem 0;
   margin: 0 auto;
-  content-visibility: auto;
   height: 700px;
   background-color: var(--color-background);
 

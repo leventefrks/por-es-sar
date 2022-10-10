@@ -123,7 +123,7 @@ a:focus-visible {
   border-radius: 5px;
   border: 0;
   text-decoration: none;
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: background-color 250ms ease-in;
 }
 

@@ -38,12 +38,27 @@ const shops = [
       <img
         src="/por-es-sar-cover.jpg"
         alt="Por és sár füzetének borítója"
-        decoding="async"
         loading="lazy"
       />
     </div>
     <div class="card">
-      <a href="mailto:poressar@gmail.com" class="cta">Írj nekem</a>
+      <a href="mailto:poressar@gmail.com" class="cta">
+        Írj nekem
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+          ></path>
+          <path d="m22 6-10 7L2 6"></path>
+        </svg>
+      </a>
       <span class="divider">vagy</span>
       <h3>
         <strong>Vásárold meg</strong><br />
@@ -58,7 +73,6 @@ const shops = [
                   <img
                     src={`/purchase-${shop.src}-logo.webp`}
                     alt={shop.name}
-                    loading="lazy"
                     height={shop.height}
                     width={shop.width}
                   />
@@ -84,7 +98,6 @@ const shops = [
   .purchase {
     padding: 4rem 1.25rem;
     margin: 0 auto;
-    content-visibility: auto;
     background-color: var(--color-purchase);
 
     .purchase-wrapper {
@@ -210,8 +223,16 @@ const shops = [
       }
 
       .cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
         min-width: 100%;
-        font-size: clamp(1.3rem, 1.7rem, 1.9rem);
+        font-size: clamp(1.3rem, 1.6rem, 1.9rem);
+
+        svg {
+          width: 20px;
+        }
       }
     }
 
