@@ -97,7 +97,7 @@ h6 {
   padding: 1.2rem;
   transform: translateY(-100%);
   isolation: isolate;
-  z-index: 1;
+  z-index: 10;
   transition: var(--base-transform-transition);
 
   strong {
