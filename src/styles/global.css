@@ -79,6 +79,11 @@ h6 {
   font-family: var(--font-family-primary);
 }
 
+.fixed {
+  position: fixed;
+  overflow: hidden;
+}
+
 .skip-to-content-link {
   position: absolute;
   left: 0;

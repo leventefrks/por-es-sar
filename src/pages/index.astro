@@ -1,7 +1,7 @@
 ---
 import { Seo } from 'astro-seo-meta';
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
+import Nav from '../components/Nav.vue';
 import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
 import Introduction from '../components/Introduction.astro';
@@ -41,7 +41,7 @@ import Footer from '../components/Footer.astro';
 </head>
 
 <Layout>
-  <Nav />
+  <Nav client:load />
   <Hero />
   <Features />
   <Introduction />

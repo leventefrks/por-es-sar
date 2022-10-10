@@ -16,8 +16,10 @@
     "vue": "^3.2.37"
   },
   "dependencies": {
+    "@nanostores/vue": "^0.6.0",
     "astro-seo-meta": "^1.0.2",
     "autoprefixer": "^10.4.12",
-    "cssnano": "^5.1.13"
+    "cssnano": "^5.1.13",
+    "nanostores": "^0.7.0"
   }
 }

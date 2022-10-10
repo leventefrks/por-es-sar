@@ -1,0 +1,305 @@
+<template>
+  <header :class="['header', { 'header--white': isIntersecting }]">
+    <a class="skip-to-content-link" href="#main">
+      Ugrás a <strong>por és sár</strong>tartalmához
+    </a>
+
+    <h1 class="brand-logo">
+      <a href="/" rel="home">por és sár</a>
+    </h1>
+
+    <nav role="navigation">
+      <button
+        :class="['button', { 'button--active': isMobileMenuVisible }]"
+        aria-label="Mobil Menü"
+        @click="onMobileMenuToggle"
+      >
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </button>
+
+      <ul class="nav-items" role="list">
+        <li class="nav-item" role="listitem">
+          <a href="/" class="">Föoldal</a>
+        </li>
+        <li
+          v-for="({ name, route }, index) in navItems"
+          class="nav-item"
+          role="listitem"
+        >
+          <a class="" :href="route">
+            {{ name }}
+          </a>
+        </li>
+      </ul>
+      <DarkModeSwitcher />
+    </nav>
+    <MobileMenu :is-visible="isMobileMenuVisible" />
+  </header>
+</template>
+
+<script>
+import { isMobileMenuVisible } from '../store/index.js';
+import MobileMenu from './MobileMenu.vue';
+import DarkModeSwitcher from './DarkModeSwitcher.vue';
+import { NAV_ITEMS } from '../constants/index.js';
+
+const Nav = {
+  name: 'Nav',
+
+  components: {
+    MobileMenu,
+    DarkModeSwitcher,
+  },
+
+  data() {
+    return {
+      navItems: NAV_ITEMS,
+      isMobileMenuVisible: false,
+      observer: null,
+      isIntersecting: false,
+      observerOptions: {
+        ootMargin: '-40px',
+        threshold: 1,
+      },
+    };
+  },
+
+  mounted() {
+    this.headerEffect();
+
+    if (this.isMobile || !this.hasInterSectionObserver) {
+      this.isIntersecting = true;
+    } else {
+      this.headerEffect();
+    }
+  },
+
+  computed: {
+    isMobile() {
+      return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    },
+
+    hasIntersectionObserver() {
+      return 'IntersectionObserver' in window;
+    },
+  },
+
+  methods: {
+    headerEffect() {
+      const target = document.querySelector('.page-title');
+
+      this.observer = new IntersectionObserver((entries = [], observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            this.isIntersecting = true;
+          } else {
+            this.isIntersecting = false;
+          }
+        });
+      }, this.observerOptions);
+
+      this.observer.observe(target);
+    },
+
+    onMobileMenuToggle() {
+      this.isMobileMenuVisible = !this.isMobileMenuVisible;
+      isMobileMenuVisible.set(this.isMobileMenuVisible);
+
+      if (this.isMobileMenuVisible) {
+        document.querySelector('body').classList.add('fixed');
+      } else {
+        document.querySelector('body').classList.remove('fixed');
+      }
+    },
+  },
+};
+
+export default Nav;
+</script>
+
+<style lang="scss" scoped>
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  min-height: 60px;
+  padding: 0 1.25rem;
+  isolation: isolate;
+  z-index: 2;
+  transition: all 150ms ease-in-out;
+
+  &--white {
+    background-color: var(--color-navigation);
+    backdrop-filter: blur(8px);
+  }
+
+  .button {
+    position: fixed;
+    top: 1.25rem;
+    left: 1.125rem;
+    height: 27px;
+    width: 35px;
+    padding: 2px;
+    isolation: isolate;
+    z-index: 1;
+    border: none;
+    background: transparent;
+    transition: opacity 0.25s ease;
+
+    &:focus {
+      outline: 1px dashed var(--color-primary);
+    }
+
+    &--active {
+      .top {
+        transform: translateY(11px) translateX(0) rotate(45deg);
+        background: var(--color-primary);
+      }
+      .middle {
+        opacity: 0;
+        background: var(--color-primary);
+      }
+
+      .bottom {
+        transform: translateY(-11px) translateX(0) rotate(-45deg);
+        background: var(--color-primary);
+      }
+    }
+
+    span {
+      background: var(--color-primary);
+      border: none;
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.35s ease;
+      cursor: pointer;
+
+      &:nth-of-type(2) {
+        top: 11px;
+      }
+
+      &:nth-of-type(3) {
+        top: 22px;
+      }
+    }
+  }
+
+  .brand-logo {
+    align-self: center;
+    a {
+      font-family: var(--font-family-primary);
+      font-size: clamp(1.1rem, 2.2rem, 2.5rem);
+      font-weight: 900;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: font-size 250ms ease-in;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .brand-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    a {
+      font-size: clamp(0.95rem, 1.85rem, 2.25rem);
+    }
+  }
+
+  .nav-items {
+    display: none;
+
+    .nav-item {
+      a {
+        position: relative;
+        text-decoration: none;
+        font-size: clamp(1rem, 1.1rem, 1.3rem);
+        padding: 0.2rem;
+        color: var(--color-primary);
+        font-family: var(--font-family-secondary);
+        transition: var(--base-transform-transition);
+
+        &:hover {
+          text-shadow: 0 0 0.65px var(--color-primary),
+            0 0 0.65px var(--color-primary);
+        }
+
+        &:after {
+          position: absolute;
+          content: '';
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background-color: var(--color-primary);
+          transform-origin: left;
+          transform: scaleX(0);
+          transition: var(--base-transform-transition);
+          z-index: -1;
+        }
+
+        &:hover:after {
+          transform: scaleX(1);
+        }
+      }
+
+      .active {
+        position: relative;
+
+        &:after {
+          position: absolute;
+          content: '';
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background-color: var(--color-primary);
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .header {
+    padding: 0 2rem;
+
+    .button {
+      display: none;
+    }
+
+    .nav {
+      margin: unset;
+    }
+
+    .brand-logo {
+      position: relative;
+      left: unset;
+      transform: unset;
+    }
+
+    .nav-items {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+}
+</style>

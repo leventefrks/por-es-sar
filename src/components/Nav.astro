@@ -1,5 +1,8 @@
 ---
-import MobileMenu from './MobileMenu.astro';
+import { isMobileMenuVisible } from '../store/index.js';
+import { useStore } from '@nanostores/vue';
+
+import MobileMenu from './MobileMenu.vue';
 import DarkModeSwitcher from './DarkModeSwitcher.vue';
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -42,6 +45,20 @@ const navItems = [
       threshold: 1,
     };
 
+    // let $isMobileMenuVisible = useStore(isMobileMenuVisible);
+
+    document.getElementById('button').addEventListener('click', () => {
+      isMobileMenuVisible.set(!$isMobileMenuVisible);
+
+      console.log($isMobileMenuVisible);
+
+      if (!$isMobileMenuVisible) {
+        document.querySelector('body').classList.remove('fixed');
+      } else {
+        document.querySelector('body').classList.add('fixed');
+      }
+    });
+
     const headerEffect = () => {
       const target = document.querySelector('.page-title');
 
@@ -66,10 +83,13 @@ const navItems = [
   });
 </script>
 
+<template>
 <header class="header">
   <a class="skip-to-content-link" href="#main">
     Ugrás a <strong>por és sár</strong>tartalmához
   </a>
+  <button id="button">Menu</button>
+
   <nav role="navigation">
     <h1 class="brand-logo">
       <a href="/" rel="home">{title}</a>
@@ -94,11 +114,12 @@ const navItems = [
       }
     </ul>
   </nav>
-  <DarkModeSwitcher client:load />
-  <!-- <MobileMenu /> -->
+  <DarkModeSwitcher client:only />
+  <MobileMenu client:only />
 </header>
+</template>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .header {
     position: fixed;
     top: 0;

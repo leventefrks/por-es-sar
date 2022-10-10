@@ -95,7 +95,7 @@ const DarkModeSwitcher = {
 
   data() {
     return {
-      isDarkMode: '',
+      isDarkMode: null,
     };
   },
 
@@ -151,17 +151,14 @@ export default DarkModeSwitcher;
   --light-color: #fff;
   --dark-color: #222;
   --icon-size: 35px;
-  position: relative;
   display: grid;
   place-content: center;
   min-height: 100%;
-  margin-left: 0;
   background-color: transparent;
   border: 0;
   height: 100%;
   opacity: 0;
-  align-self: center;
-  transition: opacity 180ms ease-in;
+  transition: opacity 250ms ease-in;
 
   &--animated {
     opacity: 1;
@@ -228,7 +225,7 @@ export default DarkModeSwitcher;
 
 @media screen and (min-width: 1000px) {
   .switch-wrapper {
-    margin-left: 1.5rem;
+    margin-left: 2rem;
   }
 }
 </style>

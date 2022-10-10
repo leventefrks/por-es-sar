@@ -27,12 +27,13 @@ const ScrollTop = {
     this.onObserver();
   },
 
+  beforeDestroy() {
+    this.observer.unobserve(document.querySelector('.purchase'));
+  },
+
   methods: {
     onObserver() {
-      const scrollTopElement = document.querySelector('.scroll-top');
-      const target = document.querySelector('.purchase');
       const elementClass = 'scroll-top--visible';
-
       this.observer = new IntersectionObserver((entries = [], observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -43,7 +44,7 @@ const ScrollTop = {
         });
       }, this.observerOptions);
 
-      this.observer.observe(target);
+      this.observer.observe(document.querySelector('.purchase'));
     },
   },
 };
@@ -66,7 +67,7 @@ export default ScrollTop;
   opacity: 0;
   box-shadow: var(--shadow-elevation-medium);
   transform: translateY(4rem);
-  transition: all 250ms ease-in;
+  transition: all 450ms ease-in;
 
   &--visible {
     opacity: 0.8;
