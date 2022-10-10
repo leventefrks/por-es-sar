@@ -152,11 +152,10 @@ export default DarkModeSwitcher;
   --dark-color: #222;
   --icon-size: 35px;
   display: grid;
+  height: min-content;
   place-content: center;
-  min-height: 100%;
   background-color: transparent;
   border: 0;
-  height: 100%;
   opacity: 0;
   transition: opacity 250ms ease-in;
 

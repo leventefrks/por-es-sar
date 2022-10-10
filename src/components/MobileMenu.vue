@@ -54,36 +54,43 @@ export default MobileMenu;
   max-height: 100vh;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 350ms, visibility 350ms, height 350ms ease-in;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s ease-in;
+
+  .nav-item {
+    opacity: 0;
+  }
 
   &--visible {
-    opacity: 0.95;
+    opacity: 0.97;
     height: 100vh;
     visibility: visible;
 
     .nav-item {
+      position: relative;
       animation: fadeUp 250ms ease-in forwards;
+      animation-delay: 100ms;
 
       &:nth-of-type(1) {
-        animation-delay: 100ms;
-      }
-
-      &:nth-of-type(2) {
-        animation-delay: 150ms;
-      }
-
-      &:nth-of-type(3) {
         animation-delay: 200ms;
       }
 
+      &:nth-of-type(2) {
+        animation-delay: 300ms;
+      }
+
+      &:nth-of-type(3) {
+        animation-delay: 400ms;
+      }
+
       &:nth-of-type(4) {
-        animation-delay: 250ms;
+        animation-delay: 500ms;
       }
     }
 
     .nav-item-link {
       position: relative;
       display: block;
+      text-decoration: none;
       font-size: clamp(1.2rem, 2rem, 2.4rem);
       padding: 0.2rem;
       overflow: hidden;

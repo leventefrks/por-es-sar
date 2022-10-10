@@ -1,5 +1,8 @@
 <template>
-  <header :class="['header', { 'header--white': isIntersecting }]">
+  <header :class="['header', { 'header--inverse': isIntersecting }]">
+    <a class="skip-to-content-link" href="#main">
+      Ugrás a <strong>por és sár</strong>tartalmához
+    </a>
     <h1 class="brand-logo">
       <a href="/" rel="home">por és sár</a>
     </h1>
@@ -20,7 +23,7 @@
 
       <ul class="nav-items" role="list">
         <li class="nav-item" role="listitem">
-          <a href="/" class="">Föoldal</a>
+          <a href="/" class="">Főoldal</a>
         </li>
         <li
           v-for="({ name, route }, index) in navItems"
@@ -32,13 +35,11 @@
           </a>
         </li>
       </ul>
+
       <DarkModeSwitcher />
     </nav>
-    <MobileMenu :is-visible="isMobileMenuVisible" />
 
-    <a class="skip-to-content-link" href="#main">
-      Ugrás a <strong>por és sár</strong>tartalmához
-    </a>
+    <MobileMenu :is-visible="isMobileMenuVisible" />
   </header>
 </template>
 
@@ -63,7 +64,7 @@ const Nav = {
       observer: null,
       isIntersecting: false,
       observerOptions: {
-        ootMargin: '-40px',
+        rootMargin: '-100px',
         threshold: 1,
       },
     };
@@ -139,7 +140,7 @@ export default Nav;
   z-index: 2;
   transition: all 150ms ease-in-out;
 
-  &--white {
+  &--inverse {
     background-color: var(--color-navigation);
     backdrop-filter: blur(8px);
   }
@@ -149,9 +150,8 @@ export default Nav;
     top: 1.25rem;
     left: 1.125rem;
     display: block;
-    height: 27px;
+    height: 35px;
     width: 35px;
-    padding: 2px;
     isolation: isolate;
     z-index: 1;
     border: none;
@@ -162,7 +162,7 @@ export default Nav;
       outline: 1px dashed var(--color-primary);
     }
 
-    &--active {
+    &--is-active {
       .top {
         transform: translateY(11px) translateX(0) rotate(45deg);
         background: var(--color-primary);
@@ -179,18 +179,17 @@ export default Nav;
     }
 
     span {
-      background: var(--color-primary);
-      border: none;
-      height: 3px;
-      width: 100%;
       position: absolute;
       top: 0;
       left: 0;
+      background: var(--color-primary);
+      height: 3px;
+      width: 100%;
       transition: all 0.35s ease;
       cursor: pointer;
 
       &:nth-of-type(2) {
-        top: 11px;
+        top: 10px;
       }
 
       &:nth-of-type(3) {
@@ -201,6 +200,7 @@ export default Nav;
 
   .brand-logo {
     align-self: center;
+
     a {
       font-family: var(--font-family-primary);
       font-size: clamp(1.1rem, 2.2rem, 2.5rem);
