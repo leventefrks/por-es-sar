@@ -43,7 +43,7 @@ export default MobileMenu;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 2.3rem;
   background-color: var(--color-background);
   top: 60px;
   inset: 0;
@@ -59,7 +59,7 @@ export default MobileMenu;
 
   &--visible {
     opacity: 0.97;
-    min-height: 100vh;
+    height: 100vh;
     visibility: visible;
 
     .nav-item {
