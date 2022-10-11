@@ -146,7 +146,7 @@ const DarkModeSwitcher = {
 
 export default DarkModeSwitcher;
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .switch-wrapper {
   --light-color: #fff;
   --dark-color: #222;

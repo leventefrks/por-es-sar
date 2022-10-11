@@ -62,7 +62,7 @@ const ScrollTop = {
 export default ScrollTop;
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .scroll-top {
   display: grid;
   place-items: center;

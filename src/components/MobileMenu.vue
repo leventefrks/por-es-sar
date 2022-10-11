@@ -58,7 +58,7 @@ export default MobileMenu;
   }
 
   &--visible {
-    opacity: 0.97;
+    opacity: 0.98;
     height: 100vh;
     visibility: visible;
 

@@ -90,7 +90,7 @@ const Testimonials = {
 export default Testimonials;
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .testimonials {
   padding: 6rem 0;
   margin: 0 auto;

@@ -182,7 +182,7 @@ export default Nav;
 
       &:nth-of-type(2) {
         top: 10px;
-        width: 80%;
+        width: 70%;
       }
 
       &:nth-of-type(3) {
