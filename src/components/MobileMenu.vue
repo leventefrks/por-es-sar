@@ -43,7 +43,7 @@ export default MobileMenu;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.3rem;
+  gap: 2rem;
   background-color: var(--color-background);
   top: 60px;
   inset: 0;
@@ -87,8 +87,8 @@ export default MobileMenu;
     .nav-item-link {
       position: relative;
       display: block;
+      font-size: clamp(1.2rem, 2.5rem, 2.4rem);
       text-decoration: none;
-      font-size: clamp(1.2rem, 2rem, 2.4rem);
       padding: 0.2rem;
       overflow: hidden;
       color: var(--color-primary);
