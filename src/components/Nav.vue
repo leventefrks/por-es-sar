@@ -200,11 +200,10 @@ export default Nav;
 
     a {
       font-family: var(--font-family-primary);
-      font-size: clamp(1.1rem, 2.2rem, 2.5rem);
+      font-size: clamp(1.1rem, 2rem, 2.5rem);
       font-weight: 900;
       color: var(--color-primary);
       text-decoration: none;
-      transition: font-size 250ms ease-in;
     }
   }
 
@@ -274,7 +273,8 @@ export default Nav;
 
     .brand-logo {
       a {
-        font-size: clamp(0.95rem, 1.85rem, 2.25rem);
+        font-size: clamp(0.95rem, 1.8rem, 2.25rem);
+        transition: font-size 250ms ease-in;
       }
     }
   }
