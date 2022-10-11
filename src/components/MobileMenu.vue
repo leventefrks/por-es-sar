@@ -3,9 +3,6 @@
     :class="['mobile-nav-items', { 'mobile-nav-items--visible': isVisible }]"
     role="list"
   >
-    <div class="nav-item" role="listitem">
-      <a href="/" class="nav-item-link">Főoldal</a>
-    </div>
     <div
       v-for="({ name, route }, index) in navItems"
       class="nav-item"

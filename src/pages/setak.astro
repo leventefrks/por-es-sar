@@ -1,25 +1,19 @@
 ---
 import { Seo } from 'astro-seo-meta';
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
 import Title from '../components/Title.astro';
-import Footer from '../components/Footer.astro';
 
 const tours = [
   {
-    id: 1,
     name: 'city-tour-1',
   },
   {
-    id: 2,
     name: 'city-tour-2',
   },
   {
-    id: 3,
     name: 'city-tour-3',
   },
   {
-    id: 4,
     name: 'city-tour-4',
   },
 ];
@@ -32,7 +26,6 @@ const tours = [
 </head>
 
 <Layout>
-  <Nav />
   <section class="city-tour content">
     <article>
       <Title>Antivárosnéző séta</Title>
@@ -71,7 +64,6 @@ const tours = [
       }
     </div>
   </section>
-  <Footer />
 </Layout>
 
 <style lang="scss">

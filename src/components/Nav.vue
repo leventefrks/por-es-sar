@@ -22,9 +22,6 @@
       </button>
 
       <ul class="nav-items" role="list">
-        <li class="nav-item" role="listitem">
-          <a href="/" class="">Főoldal</a>
-        </li>
         <li
           v-for="({ name, route }, index) in navItems"
           class="nav-item"

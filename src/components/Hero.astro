@@ -48,6 +48,7 @@
       padding: 0 1.25rem;
       margin: 6.25rem auto;
       color: var(--color-primary);
+      text-align: center;
 
       .cta {
         display: flex;
@@ -55,6 +56,7 @@
         justify-content: center;
         gap: 0.5rem;
         font-size: clamp(1.1rem, 1.3rem, 1.5rem);
+        margin: 0 auto;
 
         svg {
           width: min-content;
@@ -110,7 +112,6 @@
         border-radius: 10px;
         max-width: 650px;
         margin: 0 auto;
-        box-shadow: var(--shadow-elevation-high);
 
         &:before {
           display: none;
@@ -160,6 +161,11 @@
       .intro-text {
         padding-left: 2rem;
         animation: fade-down 250ms ease-in;
+        text-align: left;
+
+        .cta {
+          margin: unset;
+        }
 
         .title {
           &:before {

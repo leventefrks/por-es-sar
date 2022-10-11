@@ -1,9 +1,7 @@
 ---
 import { Seo } from 'astro-seo-meta';
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
 import Title from '../components/Title.astro';
-import Footer from '../components/Footer.astro';
 
 const infos = [
   {
@@ -41,7 +39,6 @@ const infos = [
 </head>
 
 <Layout>
-  <Nav />
   <section class="about-me content">
     <article>
       <div class="profile">
@@ -79,12 +76,11 @@ const infos = [
       }
     </ul>
   </section>
-  <Footer />
 </Layout>
 
 <style lang="scss" scoped>
   .about-me {
-    padding: 2rem 1.25rem;
+    padding: 6rem 1.25rem;
     margin: 0 auto;
     background-color: var(--color-background);
 

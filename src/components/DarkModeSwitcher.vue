@@ -126,13 +126,13 @@ const DarkModeSwitcher = {
     },
 
     toggleDarkMode(isDarkMode) {
-      const html = document.querySelector('html');
+      const body = document.querySelector('body');
       this.isDarkMode = isDarkMode;
 
       if (this.isDarkMode) {
-        html.classList.add('dark');
+        body.classList.add('dark');
       } else {
-        html.classList.remove('dark');
+        body.classList.remove('dark');
       }
 
       localStorage.setItem('dark', this.isDarkMode);

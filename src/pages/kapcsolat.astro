@@ -1,9 +1,7 @@
 ---
 import { Seo } from 'astro-seo-meta';
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
 import Title from '../components/Title.astro';
-import Footer from '../components/Footer.astro';
 ---
 
 <head>
@@ -17,7 +15,6 @@ import Footer from '../components/Footer.astro';
 </head>
 
 <Layout>
-  <Nav />
   <section class="contact content">
     <article>
       <Title>Kapcsolat</Title>
@@ -25,7 +22,6 @@ import Footer from '../components/Footer.astro';
     </article>
   </section>
 </Layout>
-<Footer />
 
 <style lang="scss">
   .contact {

@@ -1,9 +1,7 @@
 ---
 import { Seo } from 'astro-seo-meta';
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
 import Title from '../components/Title.astro';
-import Footer from '../components/Footer.astro';
 
 const urbanumUrl = 'https://urbanum.hu/';
 const wikipediaUrl =
@@ -18,7 +16,6 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
 </head>
 
 <Layout>
-  <Nav />
   <section class="media content">
     <article>
       <Title>Szép volt Budapest?!</Title>
@@ -44,8 +41,8 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
       <div class="video-player"></div>
     </article>
   </section>
-  <Footer />
 </Layout>
+
 <style lang="scss">
   .media {
     width: 100%;

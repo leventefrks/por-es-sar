@@ -1,15 +1,19 @@
 ---
 import '../styles/reset.css';
 import '../styles/global.css';
+
+import Nav from '../components/Nav.vue';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="hu">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
 
   <script>
-    const html = document.querySelector('html');
+    const body = document.querySelector('body');
     const isStorage = typeof localStorage !== 'undefined';
     const isSavedStorage = localStorage.getItem('dark');
 
@@ -25,14 +29,16 @@ import '../styles/global.css';
     })();
 
     if (theme) {
-      html.classList.add('dark');
+      body.classList.add('dark');
     } else {
-      html.classList.remove('dark');
+      body.classList.remove('dark');
     }
   </script>
 
   <div class="layout">
+    <Nav client:load />
     <slot />
+    <Footer />
   </div>
 
   <style is:global lang="scss">

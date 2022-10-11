@@ -1,5 +1,9 @@
 export const NAV_ITEMS = [
   {
+    name: 'Főoldal',
+    route: '/',
+  },
+  {
     name: 'Séták',
     route: '/setak',
   },
