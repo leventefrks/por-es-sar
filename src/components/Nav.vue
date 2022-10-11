@@ -174,15 +174,15 @@ export default Nav;
     span {
       position: absolute;
       top: 0;
-      left: 0;
+      right: 0;
       background: var(--color-primary);
       height: 2px;
       width: 100%;
-      transition: all 0.35s ease;
-      cursor: pointer;
+      transition: all 350ms ease;
 
       &:nth-of-type(2) {
         top: 10px;
+        width: 80%;
       }
 
       &:nth-of-type(3) {

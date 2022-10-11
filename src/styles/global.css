@@ -134,6 +134,10 @@ a:focus-visible {
   background-color: var(--color-cta-hover-background);
 }
 
+.content {
+  min-height: 100vh;
+}
+
 @keyframes opacity {
   from {
     opacity: 0;
