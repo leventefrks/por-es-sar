@@ -1,16 +1,16 @@
 <template>
-  <div
+  <ul
     :class="['mobile-nav-items', { 'mobile-nav-items--visible': isVisible }]"
     role="list"
   >
-    <div
+    <li
       v-for="({ name, route }, index) in navItems"
       class="nav-item"
       role="listitem"
     >
       <a class="nav-item-link" :href="route">{{ name }}</a>
-    </div>
-  </div>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -45,7 +45,7 @@ export default MobileMenu;
   justify-content: center;
   gap: 4rem;
   background-color: var(--color-background);
-  top: 61px;
+  top: 60px;
   inset: 0;
   height: 0;
   opacity: 0;
@@ -59,7 +59,7 @@ export default MobileMenu;
 
   &--visible {
     opacity: 0.97;
-    height: 100vh;
+    min-height: 100vh;
     visibility: visible;
 
     .nav-item {

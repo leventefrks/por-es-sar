@@ -143,7 +143,7 @@ export default Nav;
     top: 1.25rem;
     left: 1.125rem;
     display: block;
-    height: 35px;
+    height: 24px;
     width: 35px;
     isolation: isolate;
     z-index: 1;
@@ -157,7 +157,7 @@ export default Nav;
 
     &--is-active {
       .top {
-        transform: translateY(11px) translateX(0) rotate(45deg);
+        transform: translateY(10px) translateX(0) rotate(45deg);
         background: var(--color-primary);
       }
       .middle {
@@ -166,7 +166,7 @@ export default Nav;
       }
 
       .bottom {
-        transform: translateY(-11px) translateX(0) rotate(-45deg);
+        transform: translateY(-10px) translateX(0) rotate(-45deg);
         background: var(--color-primary);
       }
     }
@@ -176,7 +176,7 @@ export default Nav;
       top: 0;
       left: 0;
       background: var(--color-primary);
-      height: 3px;
+      height: 2px;
       width: 100%;
       transition: all 0.35s ease;
       cursor: pointer;
@@ -186,7 +186,7 @@ export default Nav;
       }
 
       &:nth-of-type(3) {
-        top: 22px;
+        top: 20px;
       }
     }
   }

@@ -124,7 +124,7 @@ a:focus-visible {
   border: 0;
   text-decoration: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: background-color 250ms ease-in;
+  transition: all 250ms ease-in;
 }
 
 .cta:hover {
@@ -137,7 +137,7 @@ a:focus-visible {
   }
 }
 
-@keyframes fade-down {
+@keyframes fadeDown {
   from {
     opacity: 0;
     transform: translateY(-1rem);
