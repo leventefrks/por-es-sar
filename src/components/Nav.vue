@@ -194,7 +194,7 @@ export default Nav;
   .brand-logo {
     position: absolute;
     align-self: center;
-    width: fit-content;
+    width: auto;
     left: 50%;
     transform: translateX(-50%);
 
