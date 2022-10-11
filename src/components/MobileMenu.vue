@@ -43,7 +43,7 @@ export default MobileMenu;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.2rem;
   background-color: var(--color-background);
   top: 60px;
   inset: 0;
