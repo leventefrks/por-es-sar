@@ -165,7 +165,7 @@ export default DarkModeSwitcher;
 
   &:focus {
     outline: 1px dashed var(--color-primary);
-    border-radius: 0.2rem;
+    border-radius: var(--border-radius-small);
   }
 
   .switch {
