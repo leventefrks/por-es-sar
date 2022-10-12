@@ -1,0 +1,26 @@
+---
+import '../styles/reset.css';
+import '../styles/global.css';
+---
+
+<html lang="hu">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+
+  <div class="full-screen">
+    <slot />
+  </div>
+
+  <style lang="scss">
+    .full-screen {
+      min-height: 100vh;
+      min-width: 320px;
+      width: 100%;
+      background-color: var(--color-secondary);
+    }
+  </style>
+
+
+</html>

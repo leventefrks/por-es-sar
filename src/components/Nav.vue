@@ -3,6 +3,7 @@
     <a class="skip-to-content-link" href="#main">
       Ugrás a <strong>por és sár</strong> tartalmához
     </a>
+
     <h1 class="brand-logo">
       <a href="/" rel="home">por és sár</a>
     </h1>
