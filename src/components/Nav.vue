@@ -124,9 +124,9 @@ const Nav = {
       isMobileMenuVisible.set(this.isMobileMenuVisible);
 
       if (this.isMobileMenuVisible) {
-        document.querySelector('body').classList.add('fixed');
+        document.querySelector('html').classList.add('fixed');
       } else {
-        document.querySelector('body').classList.remove('fixed');
+        document.querySelector('html').classList.remove('fixed');
       }
     },
   },

@@ -4,9 +4,6 @@ import '../styles/global.css';
 
 import Nav from '../components/Nav.vue';
 import Footer from '../components/Footer.astro';
-
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
 ---
 
 <html lang="hu">
@@ -31,9 +28,9 @@ const currentPath = pathname.slice(1);
     })();
 
     if (theme) {
-      document.querySelector('body').classList.add('dark');
+      document.querySelector('html').classList.add('dark');
     } else {
-      document.querySelector('body').classList.remove('dark');
+      document.querySelector('html').classList.remove('dark');
     }
   </script>
 

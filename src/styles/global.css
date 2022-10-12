@@ -2,7 +2,7 @@
 
 :root {
   --color-primary: #333;
-  --color-main-background: #f1f1f1;
+  --color-main-background: #fff;
   --color-secondary: #fadb85;
   --color-icon: #fadb85;
   --color-background: #fff;
@@ -11,7 +11,7 @@
   --color-footer-focus: fff;
   --color-sub-title: #fadb85;
   --color-features: #333;
-  --color-introduction: #d3d3d3;
+  --color-introduction: #dfdfde;
   --color-selection: #dabd68;
   --color-purchase: #fadb85;
   --color-cta-background: #333;
