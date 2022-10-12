@@ -118,6 +118,7 @@ a:focus-visible {
 
 .cta {
   text-align: center;
+  align-self: start;
   max-width: 180px;
   background-color: var(--color-cta-background);
   font-family: var(--font-family-secondary);
@@ -126,12 +127,16 @@ a:focus-visible {
   border-radius: var(--border-radius-small);
   border: 0;
   text-decoration: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   transition: all 250ms ease-in;
 }
 
-.cta:hover {
+.cta:hover,
+.cta:focus {
   background-color: var(--color-cta-hover-background);
+}
+
+.cta:focus {
+  outline: 1px dashed var(--color-primary);
 }
 
 .content {
