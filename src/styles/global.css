@@ -111,6 +111,7 @@ h6 {
   transform: translateY(0);
 }
 
+a:focus,
 a:focus-visible {
   outline: 1px dashed var(--color-primary);
   border-radius: var(--border-radius-small);
