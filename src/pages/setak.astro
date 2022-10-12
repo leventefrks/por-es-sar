@@ -27,7 +27,7 @@ const tours = [
 </head>
 
 <Layout>
-  <section class="city-tour content">
+  <section class="city-tour content" id="main">
     <article>
       <Title>Antivárosnéző séta</Title>
       <p class="text">
@@ -48,7 +48,7 @@ const tours = [
       </p>
     </article>
 
-    <div class="gallery visible">
+    <div class="gallery">
       {
         tours.map(tour => {
           return (

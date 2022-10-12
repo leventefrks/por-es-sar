@@ -1,6 +1,6 @@
 <template>
   <a
-    href="#hero"
+    href="#main"
     :class="['scroll-top', { 'scroll-top--visible': isVisible }]"
     aria-label="Ugrás a lap tetejére"
   >
@@ -27,8 +27,8 @@ const ScrollTop = {
       observer: null,
       isVisible: false,
       observerOptions: {
-        rootMargin: '0px',
-        threshold: 0.5,
+        rootMargin: '50px',
+        threshold: 0.9,
       },
     };
   },
@@ -38,7 +38,7 @@ const ScrollTop = {
   },
 
   beforeDestroy() {
-    this.observer.unobserve(document.querySelector('.visible'));
+    this.observer.unobserve(document.querySelector('.footer'));
   },
 
   methods: {
@@ -54,7 +54,7 @@ const ScrollTop = {
         });
       }, this.observerOptions);
 
-      this.observer.observe(document.querySelector('.visible'));
+      this.observer.observe(document.querySelector('.footer'));
     },
   },
 };
