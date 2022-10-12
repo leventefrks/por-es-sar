@@ -69,8 +69,8 @@ export default ScrollTop;
   position: fixed;
   background-color: var(--color-cta-background);
   color: var(--color-cta-font-color);
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50% !important;
   user-select: none;
   bottom: 12.5rem;
@@ -102,6 +102,8 @@ export default ScrollTop;
   .scroll-top {
     bottom: 6.25rem;
     right: 1.25rem;
+    width: 55px;
+    height: 55px;
   }
 }
 </style>
