@@ -35,13 +35,9 @@ export default MobileToggle;
 <style lang="scss" scoped>
 .mobile-toggle {
   position: absolute;
-  top: 1.25rem;
   left: 1.125rem;
-  display: block;
   height: 24px;
   width: 35px;
-  isolation: isolate;
-  z-index: 1;
   border: none;
   background: transparent;
   transition: opacity 0.25s ease;

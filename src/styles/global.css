@@ -7,7 +7,6 @@
   --color-icon: #fadb85;
   --color-background: #fff;
   --color-navigation: #ffffffe6;
-  --color-introduction: #fadb85;
   --color-footer: #333;
   --color-footer-focus: fff;
   --color-sub-title: #fadb85;
@@ -52,17 +51,16 @@
   --color-secondary: #404040;
   --color-background: #222;
   --color-main-background: #222;
-  --color-introduction: #27272a;
-  --color-navigation: #0a0a0a;
+  --color-navigation: #181818;
   --color-feature: #121212;
   --color-purchase: #333;
   --color-footer: #181818;
   --color-cta-background: #fadb85;
   --color-cta-hover-background: #dabd68;
-  --color-cta-font-color: #333;
-  --color-photo: #404040;
-  --color-hero-gradient: var(--color-background);
+  --color-cta-font-color: #181818;
+  --color-photo: #ced2d6;
   --shadow-color: 0;
+  --color-hero-gradient: var(--color-background);
 }
 
 html {
@@ -128,6 +126,7 @@ a:focus-visible {
   border: 0;
   text-decoration: none;
   transition: all 250ms ease-in;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .cta:hover,
