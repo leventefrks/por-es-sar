@@ -137,7 +137,7 @@ export default Nav;
   padding: 0 1.25rem;
   isolation: isolate;
   z-index: 2;
-  transition: all 150ms ease-in-out;
+  transition: all 250ms ease-in-out;
   .mobile-menu {
     position: absolute;
     top: 1.25rem;
@@ -148,6 +148,7 @@ export default Nav;
     isolation: isolate;
     z-index: 1;
     border: none;
+    visibility: visible;
     background: transparent;
     transition: opacity 0.25s ease;
 
@@ -286,6 +287,7 @@ export default Nav;
 
     .mobile-menu {
       display: none;
+      visibility: none;
     }
 
     .nav {
