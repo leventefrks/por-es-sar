@@ -148,7 +148,7 @@ export default DarkModeSwitcher;
 </script>
 <style lang="scss" scoped>
 .switch-wrapper {
-  --light-color: #fff;
+  --light-color: #f9f7f5;
   --dark-color: #222;
   --icon-size: 35px;
   display: grid;
