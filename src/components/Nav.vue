@@ -28,7 +28,10 @@
           class="nav-item"
           role="listitem"
         >
-          <a class="" :href="route">
+          <a
+            :class="{ 'nav-item--active': isActiveNavLink(route) }"
+            :href="route"
+          >
             {{ name }}
           </a>
         </li>
@@ -90,6 +93,10 @@ const Nav = {
     hasIntersectionObserver() {
       return 'IntersectionObserver' in window;
     },
+
+    currentPath() {
+      return document.location.pathName.slice('1');
+    },
   },
 
   methods: {
@@ -116,6 +123,10 @@ const Nav = {
       } else {
         document.querySelector('body').classList.remove('fixed');
       }
+    },
+
+    isActiveNavLink(route) {
+      return this.currentPath === route;
     },
   },
 };
