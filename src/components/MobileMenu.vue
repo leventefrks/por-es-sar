@@ -87,7 +87,7 @@ export default MobileMenu;
     .nav-item-link {
       position: relative;
       display: block;
-      font-size: clamp(1.2rem, 2.5rem, 2.4rem);
+      font-size: clamp(1.2rem, 2.3rem, 3.4rem);
       text-decoration: none;
       padding: 0.2rem;
       overflow: hidden;
