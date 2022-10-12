@@ -94,9 +94,9 @@ const Nav = {
       return 'IntersectionObserver' in window;
     },
 
-    currentPath() {
-      return document.location.pathName.slice('1');
-    },
+    // currentPath() {
+    //   return document.location.pathName.slice('1');
+    // },
   },
 
   methods: {
