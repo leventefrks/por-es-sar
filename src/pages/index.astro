@@ -7,7 +7,6 @@ import Introduction from '../components/Introduction.astro';
 import Testimonials from '../components/Testimonials.vue';
 import Purchase from '../components/Purchase.astro';
 import ScrollTop from '../components/ScrollTop.vue';
-import Footer from '../components/Footer.astro';
 ---
 
 <head>
@@ -43,7 +42,7 @@ import Footer from '../components/Footer.astro';
   <Hero />
   <Features />
   <Introduction />
-  <Testimonials client:visible />
+  <Testimonials client:idle />
   <Purchase />
-  <ScrollTop client:load />
+  <ScrollTop client:idle />
 </Layout>

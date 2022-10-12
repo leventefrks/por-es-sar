@@ -2,6 +2,7 @@
 import { Seo } from 'astro-seo-meta';
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
+import ScrollTop from '../components/ScrollTop.vue';
 
 const tours = [
   {
@@ -47,7 +48,7 @@ const tours = [
       </p>
     </article>
 
-    <div class="gallery">
+    <div class="gallery visible">
       {
         tours.map(tour => {
           return (
@@ -64,6 +65,7 @@ const tours = [
       }
     </div>
   </section>
+  <ScrollTop client:idle />
 </Layout>
 
 <style lang="scss" scoped>
@@ -100,7 +102,7 @@ const tours = [
       margin: 0 auto;
       max-width: 50rem;
       gap: 2rem;
-      margin-top: 4rem;
+      margin-top: 2rem;
 
       .image-wrapper {
         padding: 1rem;

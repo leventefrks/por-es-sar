@@ -28,7 +28,7 @@ const ScrollTop = {
       isVisible: false,
       observerOptions: {
         rootMargin: '0px',
-        threshold: 0.1,
+        threshold: 0.5,
       },
     };
   },
@@ -38,7 +38,7 @@ const ScrollTop = {
   },
 
   beforeDestroy() {
-    this.observer.unobserve(document.querySelector('.purchase'));
+    this.observer.unobserve(document.querySelector('.visible'));
   },
 
   methods: {
@@ -54,7 +54,7 @@ const ScrollTop = {
         });
       }, this.observerOptions);
 
-      this.observer.observe(document.querySelector('.purchase'));
+      this.observer.observe(document.querySelector('.visible'));
     },
   },
 };

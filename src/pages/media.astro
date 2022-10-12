@@ -2,6 +2,7 @@
 import { Seo } from 'astro-seo-meta';
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
+import ScrollTop from '../components/ScrollTop.vue';
 
 const urbanumUrl = 'https://urbanum.hu/';
 const wikipediaUrl =
@@ -38,9 +39,10 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
         és hogy mi (volt) szép és mi nem Budapesten.
       </p>
 
-      <div class="video-player"></div>
+      <div class="video-player visible"></div>
     </article>
   </section>
+  <ScrollTop client:idle />
 </Layout>
 
 <style lang="scss" scoped>

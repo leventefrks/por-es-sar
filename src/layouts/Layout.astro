@@ -4,6 +4,9 @@ import '../styles/global.css';
 
 import Nav from '../components/Nav.vue';
 import Footer from '../components/Footer.astro';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
 ---
 
 <html lang="hu">
@@ -13,7 +16,6 @@ import Footer from '../components/Footer.astro';
   <meta name="color-scheme" content="light dark" />
 
   <script>
-    const body = document.querySelector('body');
     const isStorage = typeof localStorage !== 'undefined';
     const isSavedStorage = localStorage.getItem('dark');
 
@@ -23,15 +25,15 @@ import Footer from '../components/Footer.astro';
       }
 
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        localStorage.setItem('dark', true);
+        localStorage.setItem('dark', JSON.stringify(true));
         return true;
       }
     })();
 
     if (theme) {
-      body.classList.add('dark');
+      document.querySelector('body').classList.add('dark');
     } else {
-      body.classList.remove('dark');
+      document.querySelector('body').classList.remove('dark');
     }
   </script>
 
@@ -60,5 +62,6 @@ import Footer from '../components/Footer.astro';
       border-radius: var(--border-radius-small);
     }
   </style>
+
 
 </html>
