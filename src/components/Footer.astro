@@ -141,13 +141,14 @@ const socialIcons = [
       .icon {
         transition: var(--base-transform-transition);
 
+        a {
+          display: inline-flex;
+          padding: 2px;
+        }
+
         &:hover {
           transform: scale(1.3);
         }
-      }
-
-      a:focus {
-        outline-color: var(--color-footer-focus);
       }
     }
   }

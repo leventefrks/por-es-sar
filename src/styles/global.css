@@ -164,3 +164,9 @@ a:focus-visible {
     transform: translateY(-1rem);
   }
 }
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1.05);
+  }
+}
