@@ -77,7 +77,6 @@ export default ScrollTop;
   right: 1rem;
   opacity: 0;
   visibility: hidden;
-  box-shadow: var(--shadow-elevation-medium);
   transform: translateY(4rem);
   transition: all 250ms ease-in;
 
@@ -85,7 +84,6 @@ export default ScrollTop;
     opacity: 0.8;
     visibility: visible;
     transform: translateY(0);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
   &:hover {
