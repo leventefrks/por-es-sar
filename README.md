@@ -3,5 +3,6 @@
 ## Tech Stack
 
 - Astro.js
+- Astro-embed-youtube
 - Vue.js
 - Sass

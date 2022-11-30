@@ -1,5 +1,6 @@
 ---
 import { Seo } from 'astro-seo-meta';
+import { YouTube } from '@astro-community/astro-embed-youtube';
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import ScrollTop from '../components/ScrollTop.vue';
@@ -39,7 +40,9 @@ const youtubeUrl = 'https://www.youtube.com/watch?v=Tv79BeYEInQ';
         és hogy mi (volt) szép és mi nem Budapesten.
       </p>
 
-      <div class="video-player"></div>
+      <div class="video-player">
+        <YouTube id={youtubeUrl} />
+      </div>
     </article>
   </section>
   <ScrollTop client:idle />
