@@ -2,7 +2,7 @@
 
 ## Work In Progress Demo
 
-[Demo](https://por-es-sar.netlify.app/
+[Demo](https://por-es-sar.netlify.app/)
 
 ## Tech Stack
 
