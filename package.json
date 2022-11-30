@@ -12,7 +12,6 @@
   "devDependencies": {
     "@astrojs/vue": "^1.0.0",
     "astro": "^1.1.1",
-    "astro-html-minifier": "^0.2.0",
     "sass": "^1.54.9",
     "vue": "^3.2.37"
   },

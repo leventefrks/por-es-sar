@@ -11,7 +11,6 @@ export default defineConfig({
       fontFace: true,
       keyframes: true,
     }),
-    htmlMinifier(),
   ],
   server: {
     port: 4000,
