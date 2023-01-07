@@ -18,4 +18,4 @@ Current version of the [site](https://poressar.wordpress.com/)  that will be rep
 - Sass
 
 ## Support
-Feel free to contact me and share your ideas or if you find something.
+Feel free to contact me if you found something or have better solutions, ideas.
