@@ -10,7 +10,7 @@ Current version of the [site](https://poressar.wordpress.com/)  that will be rep
 
 [Demo](https://por-es-sar.netlify.app/)
 
-## Tech Stack
+## Tech Stack 🚀
 
 - Astro.js
 - Astro-embed-youtube
