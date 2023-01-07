@@ -16,3 +16,6 @@ Current version of the [site](https://poressar.wordpress.com/)  that will be rep
 - Astro-embed-youtube
 - Vue.js
 - Sass
+
+## Support
+Feel free to contact me and share your ideas or if you find something.
