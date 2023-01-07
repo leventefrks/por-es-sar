@@ -2,6 +2,10 @@
 
 I created this site for a friend of mine who has published recently two books and I hope this will help him in his career.
 
+
+## Redesign & development
+Current version of the [site](https://poressar.wordpress.com/)  that will be replaced with this project.
+
 ## Work In Progress demo
 
 [Demo](https://por-es-sar.netlify.app/)
