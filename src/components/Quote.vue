@@ -2,14 +2,6 @@
   <blockquote class="quote">
     <p class="text">{{ currentQuote.quote }}</p>
     <div class="author">
-      <img
-        v-if="currentQuote.src"
-        :src="`/${currentQuote.src}.jpeg`"
-        :alt="currentQuote.name"
-        class="profile"
-        :width="70"
-        :height="70"
-      />
       <span class="name">{{ currentQuote.name }}</span>
       <span class="company">{{ currentQuote.company }}</span>
     </div>
